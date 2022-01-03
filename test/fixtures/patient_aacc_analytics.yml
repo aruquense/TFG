@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  id_aacc: one
+  medicalrecord: one
+  id_parameter: one
+  id_analytics: one
+
+two:
+  id: 1
+  id_aacc: two
+  medicalrecord: two
+  id_parameter: two
+  id_analytics: two

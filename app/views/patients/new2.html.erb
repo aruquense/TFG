@@ -1,0 +1,10 @@
+<%= form_with(model: @patient, local: true) do |form|%>
+<hr width=400>
+    <div >
+        <%=form.label :name,"Nombre (*)"%>
+        <%=form.text_field :name%>
+    </div>
+        <div>
+        <%=form.submit %>
+    </div> 
+<%end%>

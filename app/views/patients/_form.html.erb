@@ -1,0 +1,136 @@
+<%= form_with(model: @patient, local: true) do |form|%>
+<hr width=400>
+    <div >
+        <%=form.label :name,"Nombre (*)"%>
+        <%=form.text_field :name%>
+    </div>
+
+    <div>
+        <%=form.label :surname,"Apellidos (*)"%>
+        <%=form.text_field :surname %>
+    </div>
+    
+    <div>
+        <%=form.label :surname,"Fecha de Nacimiento (*)"%>
+        <%=form.date_field :surname %>
+    </div>
+
+    <div>
+        <%=form.label :surname,"Sexo (*)"%>
+        <%=form.select(:gender, options_for_select([['Hombre', 'Hombre'], ['Mujer', 'Mujer']]), prompt: "Please Select")%>
+    </div>
+
+    <div>
+        <%=form.label :surname,"Estado civil (*)" %>
+        <%=form.select(:gender, options_for_select([['Soltero', 'Soltero'], ['Casado', 'Casado']]), prompt: "Please Select")%>
+        <%=form.text_field :surname %>
+    </div>
+<hr width=400>
+    <div>
+        <%=form.label :surname,"NIF (*)"%> 
+        <%=form.text_field :surname %>
+    </div>
+
+    <div>
+        <%=form.label :surname,"Pasaporte (si extranjero)"%>
+        <%=form.text_field :surname %>
+    </div>
+
+    <div>
+        <%=form.label :surname,"Núm. Seg. Social" %>
+        <%=form.text_field :surname %>
+    </div>
+
+    <div>
+        <%=form.label :surname,"Tarjeta Sanitaria"%>
+        <%=form.text_field :surname %>
+    </div>
+<hr width=400>
+    <div>
+        <%=form.label :surname,"NHC"%>
+        <%=form.text_field :surname %>
+    </div>
+
+    <div>
+        <%=form.label :created_at,"Fecha de Creación" %>
+        <%=form.date_field :created_at %>
+    </div>
+
+    <div>
+        <%=form.label :surname,"Exitus (*)" %>
+        <%=form.select(:gender, options_for_select([['Sí', 'Sí'], ['No', 'No']]), prompt: "Please Select")%>
+        <%=form.text_field :surname %>
+    </div>
+<hr width=400>
+    <div>
+        <%=form.label :telephone,"Teléfono fijo (*)"%>
+        <%=form.text_field :telephone %>
+    </div>
+
+    <div>
+        <%=form.label :telephone2,"Teléfono fijo 2" %>
+        <%=form.text_field :telephone2 %>
+    </div>
+
+    <div>
+        <%=form.label :surname,"Teléfono móvil" %>
+        <%=form.text_field :surname %>
+    </div>
+
+<hr width=400>
+    <div>
+        <%=form.label :birthcity,"birthcity" %>
+        <%=form.text_field :birthcity %>
+    </div>
+
+    <div>
+        <%=form.label :birthcountry,"birthcountry" %>
+        <%=form.text_field :birthcountry %>
+    </div>
+
+    <div>
+        <%=form.label :address,"address" %>
+        <%=form.text_field :address %>
+    </div>
+
+    <div>
+        <%=form.label :city,"city" %>
+        <%=form.text_field :city %>
+    </div>
+
+    <div>
+        <%=form.label :state,"state" %>
+        <%=form.text_field :state %>
+    </div>
+
+    <div>
+        <%=form.label :country,"country" %>
+        <%=form.text_field :country %>
+    </div>
+
+<hr width=400>
+    <div>
+        <%=form.label :employeestatus,"Situación Laboral" %>
+        <%=form.select(:employeestatus, options_for_select([['Hombre', 'Hombre'], ['Mujer', 'Mujer']]), prompt: "Please Select")%>
+    </div>
+
+    <div>
+        <%=form.label :profession,"Profesión" %>
+        <%=form.text_field :profession %>
+    </div>
+    <div>
+        <%=form.label :incoming_rate_id,"Situación Económica" %>
+        <%=form.select(:incoming_rate_id, options_for_select([['Pobre', 'Pobre'], ['Rico', 'Rico']]), prompt: "Please Select")%>
+    </div>
+
+    <div>
+        <%=form.label :institution_id,"Institucionalizado" %>
+        <%=form.select(:institution_id, options_for_select([['Hombre', 'Hombre'], ['Mujer', 'Mujer']]), prompt: "Please Select")%>
+    </div>
+<hr width=400>
+
+    
+    <div>
+        <%=form.submit %>
+    </div> 
+<% end %>

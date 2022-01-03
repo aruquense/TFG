@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  id_aacc: one
+  id_exploration_type: one
+  id_physician: one
+
+two:
+  id: 1
+  id_aacc: two
+  id_exploration_type: two
+  id_physician: two
