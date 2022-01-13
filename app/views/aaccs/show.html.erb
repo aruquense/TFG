@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medicalrecord:</strong>
+  <%= @aacc.medicalrecord %>
+</p>
+
+<p>
+  <strong>Id activity type:</strong>
+  <%= @aacc.id_activity_type %>
+</p>
+
+<p>
+  <strong>Id physician:</strong>
+  <%= @aacc.id_physician %>
+</p>
+
+<p>
+  <strong>Observations:</strong>
+  <%= @aacc.observations %>
+</p>
+
+<p>
+  <strong>Finished:</strong>
+  <%= @aacc.finished %>
+</p>
+
+<%= link_to 'Edit', edit_aacc_path(@aacc) %> |
+<%= link_to 'Back', aaccs_path %>

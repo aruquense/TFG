@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Búsqueda de Pacientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Surname</th>
+      <th>Name</th>
+      <th>Nhc</th>
+      <th>Nif</th>
+      <th>Birthdate</th>
+      <th>Gender</th>
+      <th>Exitus</th>
+      <th>PACIENTE</th>
+      <th>HIST. CLINICA</th>
+      
+
+
+      <th>Medicalrecord</th>
+      <th>Nss</th>
+      <th>Medicalcard</th>
+      <th>Scholarship</th>
+      <th>Maritalstatus</th>
+      <th>Passport</th>
+      <th>Birthcity</th>
+      <th>Birthcountry</th>
+      <th>Adress</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Profession</th>
+      <th>Employeestatus</th>
+      <th>Incoming rate</th>
+      <th>Telephone</th>
+      <th>Telephone2</th>
+      <th>Mobilephone</th>
+      <th>Institution</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+
+
+        <td><%= patient.surname %></td>
+        <td><%= patient.name %></td>
+        <td><%= patient.nhc %></td>
+
+        <td><%= patient.nif %></td>
+        <td><%= patient.birthdate %></td>
+        <td><%= patient.gender %></td>
+        <td><%= patient.exitus %></td>
+        <td><%= link_to 'Más datos', patient %></td>
+        <td><%= link_to 'Ver Historia ROTO', patient %></td>
+
+
+        <td><%= patient.medicalrecord %></td>
+        <td><%= patient.nss %></td>
+        <td><%= patient.medicalcard %></td>
+        <td><%= patient.scholarship %></td>
+        <td><%= patient.maritalstatus %></td>
+        <td><%= patient.passport %></td>
+        <td><%= patient.birthcity %></td>
+        <td><%= patient.birthcountry %></td>
+        <td><%= patient.adress %></td>
+        <td><%= patient.city %></td>
+        <td><%= patient.state %></td>
+        <td><%= patient.country %></td>
+        <td><%= patient.profession %></td>
+        <td><%= patient.employeestatus %></td>
+        <td><%= patient.incoming_rate_id %></td>
+        <td><%= patient.telephone %></td>
+        <td><%= patient.telephone2 %></td>
+        <td><%= patient.mobilephone %></td>
+        <td><%= patient.institution_id %></td>
+        <td><%= patient.comments %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patient', new_patient_path %>

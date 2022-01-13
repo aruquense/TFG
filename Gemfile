@@ -8,6 +8,7 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 
 gem "mongo", "~> 2"
 gem'mongoid', '~> 7.1.0'
+gem 'mongoid_auto_increment'
 
 # Use Puma as the app server
 gem 'puma', '~> 5.0'

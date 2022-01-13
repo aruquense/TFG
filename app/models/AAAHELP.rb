@@ -10,6 +10,8 @@ end
 class Country
   include Mongoid::Document
   field :name, type: String
+  
+  field :name, type: Integer, default: proc { object_type== "a" ?  nil : 0}
   has_one :capital_city
  end
  class CapitalCity

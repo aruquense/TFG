@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Aaccs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Medicalrecord</th>
+      <th>Id activity type</th>
+      <th>Id physician</th>
+      <th>Observations</th>
+      <th>Finished</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aaccs.each do |aacc| %>
+      <tr>
+        <td><%= aacc.medicalrecord %></td>
+        <td><%= aacc.id_activity_type %></td>
+        <td><%= aacc.id_physician %></td>
+        <td><%= aacc.observations %></td>
+        <td><%= aacc.finished %></td>
+        <td><%= link_to 'Show', aacc %></td>
+        <td><%= link_to 'Edit', edit_aacc_path(aacc) %></td>
+        <td><%= link_to 'Destroy', aacc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aacc', new_aacc_path %>

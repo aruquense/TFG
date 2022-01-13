@@ -1,0 +1,42 @@
+<%= form_with(model: aacc) do |form| %>
+  <% if aacc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(aacc.errors.count, "error") %> prohibited this aacc from being saved:</h2>
+
+      <ul>
+        <% aacc.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :medicalrecord %>
+    <%= form.number_field :medicalrecord %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_activity_type %>
+    <%= form.number_field :id_activity_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_physician %>
+    <%= form.text_field :id_physician %>
+  </div>
+
+  <div class="field">
+    <%= form.label :observations %>
+    <%= form.text_area :observations %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finished %>
+    <%= form.text_field :finished %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

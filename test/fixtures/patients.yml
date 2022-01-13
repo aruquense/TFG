@@ -1,11 +1,59 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  medicalrecord: 1
+  nhc: MyString
+  nss: MyString
+  medicalcard: MyText
+  name: MyString
+  surname: MyString
+  scholarship: 1
+  gender: 1
+  maritalstatus: 1
+  nif: MyString
+  passport: MyString
+  birthdate: 2022-01-10
+  birthcity: 1
+  birthcountry: 1
+  adress: MyString
+  city: MyString
+  state: MyString
+  country: 1
+  exitus: MyString
+  profession: 1
+  employeestatus: 1
+  incoming_rate_id: 1
+  telephone: MyString
+  telephone2: MyString
+  mobilephone: MyString
+  institution_id: 1
+  comments: MyText
+
+two:
+  medicalrecord: 1
+  nhc: MyString
+  nss: MyString
+  medicalcard: MyText
+  name: MyString
+  surname: MyString
+  scholarship: 1
+  gender: 1
+  maritalstatus: 1
+  nif: MyString
+  passport: MyString
+  birthdate: 2022-01-10
+  birthcity: 1
+  birthcountry: 1
+  adress: MyString
+  city: MyString
+  state: MyString
+  country: 1
+  exitus: MyString
+  profession: 1
+  employeestatus: 1
+  incoming_rate_id: 1
+  telephone: MyString
+  telephone2: MyString
+  mobilephone: MyString
+  institution_id: 1
+  comments: MyText

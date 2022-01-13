@@ -1,8 +1,139 @@
-<h1 class=""><%=@patient.name%></h1>
+<p id="notice"><%= notice %></p>
 
-<div>
-    <%=@patient.adress%>
-</div>
-<div class="">
-    <%=link_to "Eliminar artículo"%>
-</div>
+<p>
+  <strong>Medicalrecord:</strong>
+  <%= @patient.medicalrecord %>
+</p>
+
+<p>
+  <strong>Nhc:</strong>
+  <%= @patient.nhc %>
+</p>
+
+<p>
+  <strong>Nss:</strong>
+  <%= @patient.nss %>
+</p>
+
+<p>
+  <strong>Medicalcard:</strong>
+  <%= @patient.medicalcard %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @patient.surname %>
+</p>
+
+<p>
+  <strong>Scholarship:</strong>
+  <%= @patient.scholarship %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @patient.gender %>
+</p>
+
+<p>
+  <strong>Maritalstatus:</strong>
+  <%= @patient.maritalstatus %>
+</p>
+
+<p>
+  <strong>Nif:</strong>
+  <%= @patient.nif %>
+</p>
+
+<p>
+  <strong>Passport:</strong>
+  <%= @patient.passport %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @patient.birthdate %>
+</p>
+
+<p>
+  <strong>Birthcity:</strong>
+  <%= @patient.birthcity %>
+</p>
+
+<p>
+  <strong>Birthcountry:</strong>
+  <%= @patient.birthcountry %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @patient.adress %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @patient.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @patient.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @patient.country %>
+</p>
+
+<p>
+  <strong>Exitus:</strong>
+  <%= @patient.exitus %>
+</p>
+
+<p>
+  <strong>Profession:</strong>
+  <%= @patient.profession %>
+</p>
+
+<p>
+  <strong>Employeestatus:</strong>
+  <%= @patient.employeestatus %>
+</p>
+
+<p>
+  <strong>Incoming rate:</strong>
+  <%= @patient.incoming_rate_id %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @patient.telephone %>
+</p>
+
+<p>
+  <strong>Telephone2:</strong>
+  <%= @patient.telephone2 %>
+</p>
+
+<p>
+  <strong>Mobilephone:</strong>
+  <%= @patient.mobilephone %>
+</p>
+
+<p>
+  <strong>Institution:</strong>
+  <%= @patient.institution_id %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @patient.comments %>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>
