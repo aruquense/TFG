@@ -1,0 +1,2 @@
+module PatientAaccsHelper
+end

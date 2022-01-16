@@ -1,9 +1,11 @@
 class AaccsController < ApplicationController
   before_action :set_aacc, only: %i[ show edit update destroy ]
+  before_action :set_aacc_mr, only: %i[ index ]
 
   # GET /aaccs or /aaccs.json
   def index
-    @aaccs = Aacc.all
+    @aaccs = @aacc
+    
   end
 
   # GET /aaccs/1 or /aaccs/1.json
@@ -22,6 +24,7 @@ class AaccsController < ApplicationController
   # POST /aaccs or /aaccs.json
   def create
     @aacc = Aacc.new(aacc_params)
+    @aacc.Patient_id = Patient.last
 
     respond_to do |format|
       if @aacc.save
@@ -60,6 +63,15 @@ class AaccsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_aacc
       @aacc = Aacc.find(params[:id])
+    end
+
+    def set_aacc_mr
+      @paciente = Patient.find(params[:patient_id])
+      puts @paciente.idn
+      puts "\n\n\n Paciente medicalrecord #{@paciente.idn} \n\n\n"
+      @aacc =Aacc.where(medicalrecord: @paciente.idn)
+      puts "\n\n cuantos casos tiene #{@aacc.count} \n\n\n"
+
     end
 
     # Only allow a list of trusted parameters through.

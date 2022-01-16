@@ -34,8 +34,8 @@
         <td><%= patient.birthdate %></td>
         <td><%= patient.gender %></td>
         <td><%= patient.exitus %></td>
-        <td><%= link_to 'Más datos', patient %></td>
-        <td><%= link_to 'Ver Historia ROTO', aaccs_url %></td>
+        <td><%= link_to 'Más datos', patient  %></td>
+        <td><%= link_to 'Ver Historia ROTO', patient_aaccs_path(patient) %></td>
 
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

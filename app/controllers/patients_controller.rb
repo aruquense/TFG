@@ -6,6 +6,7 @@ class PatientsController < ApplicationController
     @patients = Patient.all
   end
 
+
   # GET /patients/1 or /patients/1.json
   def show
   end
@@ -19,9 +20,23 @@ class PatientsController < ApplicationController
   def edit
   end
 
+
+
+
+
+  def aacc
+    puts "Random text "
+  end
+
+
+
+
+
+
   # POST /patients or /patients.json
   def create
     @patient = Patient.new(patient_params)
+    #@patient.PatientAacc='1'
 
     respond_to do |format|
       if @patient.save
@@ -64,6 +79,6 @@ class PatientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def patient_params
-      params.require(:patient).permit(:medicalrecord, :nhc, :nss, :medicalcard, :name, :surname, :scholarship, :gender, :maritalstatus, :nif, :passport, :birthdate, :birthcity, :birthcountry, :adress, :city, :state, :country, :exitus, :profession, :employeestatus, :incoming_rate_id, :telephone, :telephone2, :mobilephone, :institution_id, :comments)
+      params.require(:patient).permit(:medicalrecord, :nhc, :nss, :medicalcard, :name, :surname, :scholarship, :gender, :maritalstatus, :nif, :passport, :birthdate, :birthcity, :birthcountry, :adress, :city, :state, :country, :exitus, :profession, :employeestatus, :incoming_rate_id, :telephone, :telephone2, :mobilephone, :institution_id, :comments, :patient_aaccs)
     end
 end

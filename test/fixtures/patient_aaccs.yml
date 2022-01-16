@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  medicalrecord: 1
+  id_activity_type: 1
+  id_physician: MyString
+  observations: MyText
+  finished: MyString
+  Patient: one
+
+two:
+  medicalrecord: 1
+  id_activity_type: 1
+  id_physician: MyString
+  observations: MyText
+  finished: MyString
+  Patient: two

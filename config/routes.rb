@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'home/index'
+  devise_for :users
+  #resources :patient_aaccs
   resources :aaccs
   resources :posts
   resources :patients
@@ -15,5 +18,9 @@ Rails.application.routes.draw do
   get "patients/new2", to: "patients#new2"
   post "patients", to: "patients#create"
 
-  get "patients/:id/aacc", to: "aacc#index"
+
+  resources :patients do
+    resources :aaccs
+  end
+
 end
