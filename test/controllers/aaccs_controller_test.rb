@@ -17,7 +17,7 @@ class AaccsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create aacc" do
     assert_difference('Aacc.count') do
-      post aaccs_url, params: { aacc: { finished: @aacc.finished, id_activity_type: @aacc.id_activity_type, id_physician: @aacc.id_physician, medicalrecord: @aacc.medicalrecord, observations: @aacc.observations } }
+      post aaccs_url, params: { aacc: { Patient_id: @aacc.Patient_id, finished: @aacc.finished, id_activity_type: @aacc.id_activity_type, id_physician: @aacc.id_physician, medicalrecord: @aacc.medicalrecord, observations: @aacc.observations } }
     end
 
     assert_redirected_to aacc_url(Aacc.last)
@@ -34,7 +34,7 @@ class AaccsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update aacc" do
-    patch aacc_url(@aacc), params: { aacc: { finished: @aacc.finished, id_activity_type: @aacc.id_activity_type, id_physician: @aacc.id_physician, medicalrecord: @aacc.medicalrecord, observations: @aacc.observations } }
+    patch aacc_url(@aacc), params: { aacc: { Patient_id: @aacc.Patient_id, finished: @aacc.finished, id_activity_type: @aacc.id_activity_type, id_physician: @aacc.id_physician, medicalrecord: @aacc.medicalrecord, observations: @aacc.observations } }
     assert_redirected_to aacc_url(@aacc)
   end
 

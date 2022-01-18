@@ -25,5 +25,10 @@
   <%= @aacc.finished %>
 </p>
 
-<%= link_to 'Edit', edit_aacc_path(@aacc) %> |
-<%= link_to 'Back', aaccs_path %>
+<p>
+  <strong>Patient:</strong>
+  <%= @aacc.Patient_id %>
+</p>
+
+<%= link_to 'Edit', edit_patient_aacc_url(@aacc) %> |
+<%= link_to 'Back', patient_aaccs_path(@aacc.Patient_id) %>

@@ -36,6 +36,7 @@ class PatientsController < ApplicationController
   # POST /patients or /patients.json
   def create
     @patient = Patient.new(patient_params)
+    @patient.medicalrecord = @patient.idn
     #@patient.PatientAacc='1'
 
     respond_to do |format|

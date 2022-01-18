@@ -14,6 +14,7 @@ class AaccsTest < ApplicationSystemTestCase
     visit aaccs_url
     click_on "New Aacc"
 
+    fill_in "Patient", with: @aacc.Patient_id
     fill_in "Finished", with: @aacc.finished
     fill_in "Id activity type", with: @aacc.id_activity_type
     fill_in "Id physician", with: @aacc.id_physician
@@ -29,6 +30,7 @@ class AaccsTest < ApplicationSystemTestCase
     visit aaccs_url
     click_on "Edit", match: :first
 
+    fill_in "Patient", with: @aacc.Patient_id
     fill_in "Finished", with: @aacc.finished
     fill_in "Id activity type", with: @aacc.id_activity_type
     fill_in "Id physician", with: @aacc.id_physician

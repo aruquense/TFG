@@ -30,7 +30,7 @@ class Patient
   field :mobilephone, type: String
   field :institution_id, type: Integer
   field :comments, type: String, default: 'PACIENTE DE PRUEBA'
-  has_many :patient_aaccs, dependent: :destroy
+  has_many :aaccs, dependent: :destroy
   #has_many :objects, through: :join_association, source: :join_association_table_foreign_key_to_objects_table
   #has_and_belongs_to_many :object, join_table: "table_name", foreign_key: "object_id"
   #has_many :objects, class_name: "object", foreign_key: "reference_id", dependent: :destroy
