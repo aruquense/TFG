@@ -1,9 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  idn: MyString
+  idn: 1
+  habit: MyString
+  comments: MyText
   aacc: one
+  patient: one
 
 two:
-  idn: MyString
+  idn: 1
+  habit: MyString
+  comments: MyText
   aacc: two
+  patient: two

@@ -1,8 +1,45 @@
 <p id="notice"><%= notice %></p>
+    <%= render "partials/aacc" %>
+<%= link_to 'Volver al listado de Actividad del Paciente', patient_aaccs_path(@aacc.Patient_id) %>
+<hr>
+
+<h1>Protocolo Clínico de Consulta '<%= @aacc.idn %>'</h1>
+
+<hr>
+<div class="">
+  <li class="nav-item">
+    <%=link_to "Sintomatología Cognitiva", new_patient_aacc_patient_aacc_symptom_path(:patient_id => @aacc.Patient_id, :aacc_id => @aacc)%>
+    
+  </li>
+    <%=link_to "Sintomatología No Cognitiva"%>
+    <%=link_to "Exploración Funcional"%>
+    <%=link_to "Exploración Neurológica"%>
+    <%=link_to "Exploración Física"%>
+    
+    <%=link_to "Hábitos"%>
+    <%=link_to "Patologías Intercurrentes"%>
+    <%=link_to "Pruebas Complementarias"%>
+    <%=link_to "Prescripción Farmacológica"%>
+    <%=link_to "Diagnóstico"%>
+</div>
+
+<hr>
+<h2>Resumen de Sintomatología Exploradas</h2>
+<%# your_ruby_code %>
+    <%#= render "partials/symptoms" %>
+    <%= render "partials/symptoms" %>
+    
+<hr>
+<h2>Resumen de Tests Realizados</h2>
+
 
 <p>
   <strong>Medicalrecord:</strong>
   <%= @aacc.medicalrecord %>
+</p>
+<p>
+  <strong>idn:</strong>
+  <%= @aacc.idn %>
 </p>
 
 <p>

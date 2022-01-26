@@ -5,13 +5,13 @@
 <table>
   <thead>
     <tr>
-      <th>Surname</th>
-      <th>Name</th>
-      <th>Nhc</th>
-      <th>Nif</th>
-      <th>Birthdate</th>
-      <th>Gender</th>
-      <th>Exitus</th>
+      <th>APELLIDOS</th>
+      <th>NOMBRE</th>
+      <th>NHC</th>
+      <th>NIF</th>
+      <th>F.NAC</th>
+      <th>SEXO</th>
+      <th>EXITUS</th>
       <th>PACIENTE</th>
       <th>HIST. CLINICA</th>
       
@@ -35,7 +35,7 @@
         <td><%= patient.gender %></td>
         <td><%= patient.exitus %></td>
         <td><%= link_to 'Más datos', patient  %></td>
-        <td><%= link_to 'Ver Historia ROTO', patient_aaccs_path(patient) %></td>
+        <td><%= link_to 'Ver Historia', patient_aaccs_path(patient) %></td>
 
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

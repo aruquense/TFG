@@ -1,0 +1,44 @@
+<%= form_with(model: patient_aacc_habit) do |form| %>
+  <% if patient_aacc_habit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient_aacc_habit.errors.count, "error") %> prohibited this patient_aacc_habit from being saved:</h2>
+
+      <ul>
+        <% patient_aacc_habit.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.number_field :idn %>
+  </div>
+
+  <div class="field">
+    
+    <%= form.label :habit,"Hábito (*)"%>
+    <%=form.select(:habit, options_for_select([['Drogas', 'Drogas'], ['Alcohol', 'Alcohol'], ['Tabaco', 'Tabaco']]), prompt: "Please Select")%>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :comments,"Comentario" %>
+    <%= form.text_area :comments %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aacc_id %>
+    <%= form.text_field :aacc_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.text_field :patient_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

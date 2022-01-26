@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idn:</strong>
+  <%= @patient_aacc_habit.idn %>
+</p>
+
+<p>
+  <strong>Habit:</strong>
+  <%= @patient_aacc_habit.habit %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @patient_aacc_habit.comments %>
+</p>
+
+<p>
+  <strong>Aacc:</strong>
+  <%= @patient_aacc_habit.aacc_id %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @patient_aacc_habit.patient_id %>
+</p>
+
+<%= link_to 'Edit', edit_patient_aacc_habit_path(@patient_aacc_habit) %> |
+<%= link_to 'Back', patient_aacc_habits_path %>

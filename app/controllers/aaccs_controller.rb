@@ -11,6 +11,7 @@ class AaccsController < ApplicationController
 
   # GET /aaccs/1 or /aaccs/1.json
   def show
+    @paciente = Patient.find(params[:patient_id])
   end
   # GET /:patient_id/aaccs/
   
@@ -33,7 +34,7 @@ class AaccsController < ApplicationController
 
     respond_to do |format|
       if @aacc.save
-        format.html { redirect_to @aacc, notice: "Aacc was successfully created." }
+        format.html { redirect_to patient_aacc_url(:patient_id => @aacc.Patient_id, :id => @aacc), notice: "Aacc was successfully created." }
         format.json { render :show, status: :created, location: @aacc }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,7 +47,7 @@ class AaccsController < ApplicationController
   def update
     respond_to do |format|
       if @aacc.update(aacc_params)
-        format.html { redirect_to @aacc, notice: "Aacc was successfully updated." }
+        format.html { redirect_to patient_aacc_url(:patient_id => @aacc.Patient_id, :id => @aacc), notice: "Aacc was successfully updated." }
         format.json { render :show, status: :ok, location: @aacc }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -69,6 +70,7 @@ class AaccsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_aacc
       @aacc = Aacc.find(params[:id])
+      @patient_aacc_symptoms = PatientAaccSymptom.where(aacc: @aacc)
     end
 
     # Only allow a list of trusted parameters through.

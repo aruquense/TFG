@@ -7,5 +7,6 @@ class Aacc
   field :id_physician, type: String
   field :observations, type: String
   field :finished, type: String
+  has_many :PatientAaccSymptom, dependent: :destroy
   belongs_to :Patient
 end

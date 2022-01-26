@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :patient_aacc_habits
+  resources :patient_aacc_symptoms
   resources :aaccs
   get 'home/index'
   devise_for :users
@@ -8,7 +10,9 @@ Rails.application.routes.draw do
 
 
   resources :patients do
-    resources :aaccs#, shallow: true
+    resources :aaccs do
+      resources :patient_aacc_symptoms#, shallow: true
+    end
   end
   #get 'patients/:patient_id/aaccs/:id/edit', to: 'aaccs#edit'
 

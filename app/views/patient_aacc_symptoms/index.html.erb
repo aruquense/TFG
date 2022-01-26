@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Patient Aacc Symptoms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idn</th>
+      <th>Aacc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patient_aacc_symptoms.each do |patient_aacc_symptom| %>
+      <tr>
+        <td><%= patient_aacc_symptom.idn %></td>
+        <td><%= patient_aacc_symptom.aacc_id %></td>
+        <td><%= link_to 'Show', patient_aacc_symptom %></td>
+        <td><%= link_to 'Edit', edit_patient_aacc_symptom_path(patient_aacc_symptom) %></td>
+        <td><%= link_to 'Destroy', patient_aacc_symptom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patient Aacc Symptom', new_patient_aacc_symptom_path %>

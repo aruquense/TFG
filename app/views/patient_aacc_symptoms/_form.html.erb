@@ -1,0 +1,75 @@
+<%= form_with(model: patient_aacc_symptom) do |form| %>
+  <% if patient_aacc_symptom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient_aacc_symptom.errors.count, "error") %> prohibited this patient_aacc_symptom from being saved:</h2>
+
+      <ul>
+        <% patient_aacc_symptom.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<h1>Sintomatología Cognitiva</h1>
+
+
+
+  <div class="field">
+    <%= form.label :aacc_id %>
+    <%= form.hidden_field :aacc_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  <hr>
+  
+    <div>
+        <%=form.label :s1,"Alteración de la memoria" %>
+        <%=form.select(:s1, options_for_select([['Si', 'Sí'], ['No', 'No'],['No Explorado', 'No Explorado']]), prompt: "Please Select")%>
+    </div>    
+    <div>
+        <%=form.label :s2,"Desorientación" %>
+        <%=form.select(:s2, options_for_select([['Si', 'Sí'], ['No', 'No'],['No Explorado', 'No Explorado']]), prompt: "Please Select")%>
+    </div>
+    <div>
+        <%=form.label :s3,"Trastorno del Lenguaje (Afasia)" %>
+        <%=form.select(:s3, options_for_select([['Si', 'Sí'], ['No', 'No'],['No Explorado', 'No Explorado']]), prompt: "Please Select")%>
+    </div>
+    <div>
+        <%=form.label :s4,"Trastorno Motor (Apraxia)" %>
+        <%=form.select(:s4, options_for_select([['Si', 'Sí'], ['No', 'No'],['No Explorado', 'No Explorado']]), prompt: "Please Select")%>
+    </div>
+    <div>
+        <%=form.label :s5,"Trastorno Sensitivo (Agnosia)" %>
+        <%=form.select(:s5, options_for_select([['Si', 'Sí'], ['No', 'No'],['No Explorado', 'No Explorado']]), prompt: "Please Select")%>
+    </div>
+    <div>
+        <%=form.label :s6,"Alteración de las Funciones Ejecutivas" %>
+        <%=form.select(:s6, options_for_select([['Si', 'Sí'], ['No', 'No'],['No Explorado', 'No Explorado']]), prompt: "Please Select")%>
+    </div>
+    <div>
+        <%=form.label :s7,"Trastorno del Razonamiento y Abstracción" %>
+        <%=form.select(:s7, options_for_select([['Si', 'Sí'], ['No', 'No'],['No Explorado', 'No Explorado']]), prompt: "Please Select")%>
+    </div>
+    <div>
+        <%=form.label :s8,"Alteración de las Funciones Visuoespaciales" %>
+        <%=form.select(:s8, options_for_select([['Si', 'Sí'], ['No', 'No'],['No Explorado', 'No Explorado']]), prompt: "Please Select")%>
+    </div>
+    <div>
+        <%=form.submit "Almacenar Sintomatología Cognitiva"%>
+    </div> 
+    <hr>
+    
+<% end %>
+<h1>Realización de Tests</h1>
+<%=link_to "Realizar Test Informador "%>
+    <%=link_to "Realizar Test Minimental"%>
+    <%=link_to "Realizar Test MEC"%>
+    <%=link_to "Realizar Test de Pfeiffer"%>
+    <%=link_to "Realizar Test del Reloj"%>
+    TABLA Tests
+

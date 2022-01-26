@@ -1,7 +1,8 @@
 class PatientAaccSymptom
   include Mongoid::Document
   include Mongoid::Timestamps
-  field :id, type: Integer
-  belongs_to :medicalrecord
-  belongs_to :id_symptom
+  include Mongoid::Attributes::Dynamic
+  auto_increment :idn
+  field :idn, type: String
+  belongs_to :aacc
 end
