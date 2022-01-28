@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   scope :admin do
+    resources :professions
+    resources :institutions
+    resources :activity_types #FAP o FAE
+    resources :habits
     resources :prescription_drugs_types
     resources :exploration_types
   end
