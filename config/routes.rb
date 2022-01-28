@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :patient_aacc_symptoms
   resources :aaccs
   get 'home/index'
+  get "admin", to: "admin#index"
   devise_for :users
   #resources :patients
   root "patients#index"
