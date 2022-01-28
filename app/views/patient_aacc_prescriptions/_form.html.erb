@@ -1,0 +1,50 @@
+<%= form_with(model: patient_aacc_prescription) do |form| %>
+  <% if patient_aacc_prescription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient_aacc_prescription.errors.count, "error") %> prohibited this patient_aacc_prescription from being saved:</h2>
+
+      <ul>
+        <% patient_aacc_prescription.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.hidden_field :idn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_physician %>
+    <%= form.text_field :id_physician %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+  <div class="field">
+    <%= form.label :prescription_drugs_type_id %>
+    <%= form.select :prescription_drugs_type_id, options_from_collection_for_select(PrescriptionDrugsType.all, :_id, :description) , {:prompt => 'Selected Vendor'}  %>
+    
+  </div>
+
+  <div class="field">
+    <%= form.label :aacc_id %>
+    <%= form.text_field :aacc_id %>
+    <%= form.select :aacc_id, options_from_collection_for_select(Aacc.all, :_id, :idn) , {:prompt => 'Selected Vendor'}  %>
+    
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.select :patient_id, options_from_collection_for_select(Patient.all, :_id, :name) , {:prompt => 'Selected Vendor'}  %>
+    
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

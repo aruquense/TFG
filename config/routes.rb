@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  scope :admin do
+    resources :prescription_drugs_types
+    resources :exploration_types
+  end
+  resources :patient_aacc_prescriptions
+  resources :patient_aacc_tests
   resources :patient_aacc_habits
   resources :patient_aacc_symptoms
   resources :aaccs

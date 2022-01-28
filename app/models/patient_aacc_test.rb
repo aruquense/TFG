@@ -1,9 +1,11 @@
 class PatientAaccTest
   include Mongoid::Document
   include Mongoid::Timestamps
-  field :id, type: Integer
-  belongs_to :id_aacc
-  belongs_to :id_type
-  belongs_to :medicalrecord
-  belongs_to :id_test_type
+  auto_increment :idn
+  field :score, type: String
+  field :comments, type: String
+  belongs_to :exploration_type
+  belongs_to :test
+  belongs_to :aacc
+  belongs_to :patient
 end

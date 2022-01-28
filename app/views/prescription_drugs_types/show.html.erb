@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idn:</strong>
+  <%= @prescription_drugs_type.idn %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @prescription_drugs_type.description %>
+</p>
+
+<p>
+  <strong>Description en:</strong>
+  <%= @prescription_drugs_type.description_EN %>
+</p>
+
+<%= link_to 'Edit', edit_prescription_drugs_type_path(@prescription_drugs_type) %> |
+<%= link_to 'Back', prescription_drugs_types_path %>

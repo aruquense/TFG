@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @exploration_type.id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @exploration_type.description %>
+</p>
+
+<p>
+  <strong>Description en:</strong>
+  <%= @exploration_type.description_EN %>
+</p>
+
+<%= link_to 'Edit', edit_exploration_type_path(@exploration_type) %> |
+<%= link_to 'Back', exploration_types_path %>

@@ -1,15 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
-  id_aacc: one
-  id_type: one
-  medicalrecord: one
-  id_physician: one
+  idn: 1
+  id_physician: MyString
+  value: 
+  prescription_drugs_type: one
+  aacc: one
+  patient: one
 
 two:
-  id: 1
-  id_aacc: two
-  id_type: two
-  medicalrecord: two
-  id_physician: two
+  idn: 1
+  id_physician: MyString
+  value: 
+  prescription_drugs_type: two
+  aacc: two
+  patient: two

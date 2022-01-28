@@ -1,0 +1,32 @@
+<%= form_with(model: exploration_type) do |form| %>
+  <% if exploration_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(exploration_type.errors.count, "error") %> prohibited this exploration_type from being saved:</h2>
+
+      <ul>
+        <% exploration_type.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.number_field :id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description_EN %>
+    <%= form.text_field :description_EN %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,15 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
-  id_aacc: one
-  id_type: one
-  medicalrecord: one
-  id_test_type: one
+  idn: 1
+  score: MyString
+  comments: MyText
+  exploration_type: one
+  test: one
+  aacc: one
 
 two:
-  id: 1
-  id_aacc: two
-  id_type: two
-  medicalrecord: two
-  id_test_type: two
+  idn: 1
+  score: MyString
+  comments: MyText
+  exploration_type: two
+  test: two
+  aacc: two
