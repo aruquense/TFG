@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :habits
     resources :prescription_drugs_types
     resources :exploration_types
+    resources :tests
   end
   resources :patient_aacc_prescriptions
   resources :patient_aacc_tests
@@ -23,8 +24,11 @@ Rails.application.routes.draw do
   resources :patients do
     resources :aaccs do
       resources :patient_aacc_symptoms#, shallow: true
+      resources :patient_aacc_tests
     end
   end
+  get 'new2', to: "patient_aacc_symptoms#new2", as: :newtest
+
   #get 'patients/:patient_id/aaccs/:id/edit', to: 'aaccs#edit'
 
 

@@ -17,7 +17,7 @@ class PatientAaccTestsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create patient_aacc_test" do
     assert_difference('PatientAaccTest.count') do
-      post patient_aacc_tests_url, params: { patient_aacc_test: { aacc_id: @patient_aacc_test.aacc_id, comments: @patient_aacc_test.comments, exploration_type_id: @patient_aacc_test.exploration_type_id, idn: @patient_aacc_test.idn, score: @patient_aacc_test.score, test_id: @patient_aacc_test.test_id } }
+      post patient_aacc_tests_url, params: { patient_aacc_test: { aacc_id: @patient_aacc_test.aacc_id, answers: @patient_aacc_test.answers, exploration_type_id: @patient_aacc_test.exploration_type_id, idn: @patient_aacc_test.idn, patient_id: @patient_aacc_test.patient_id, score: @patient_aacc_test.score, test_id: @patient_aacc_test.test_id } }
     end
 
     assert_redirected_to patient_aacc_test_url(PatientAaccTest.last)
@@ -34,7 +34,7 @@ class PatientAaccTestsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update patient_aacc_test" do
-    patch patient_aacc_test_url(@patient_aacc_test), params: { patient_aacc_test: { aacc_id: @patient_aacc_test.aacc_id, comments: @patient_aacc_test.comments, exploration_type_id: @patient_aacc_test.exploration_type_id, idn: @patient_aacc_test.idn, score: @patient_aacc_test.score, test_id: @patient_aacc_test.test_id } }
+    patch patient_aacc_test_url(@patient_aacc_test), params: { patient_aacc_test: { aacc_id: @patient_aacc_test.aacc_id, answers: @patient_aacc_test.answers, exploration_type_id: @patient_aacc_test.exploration_type_id, idn: @patient_aacc_test.idn, patient_id: @patient_aacc_test.patient_id, score: @patient_aacc_test.score, test_id: @patient_aacc_test.test_id } }
     assert_redirected_to patient_aacc_test_url(@patient_aacc_test)
   end
 

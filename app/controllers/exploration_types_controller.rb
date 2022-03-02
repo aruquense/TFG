@@ -64,6 +64,6 @@ class ExplorationTypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def exploration_type_params
-      params.require(:exploration_type).permit(:id, :description, :description_EN)
+      params.require(:exploration_type).permit(:idn, :description, :description_EN)
     end
 end

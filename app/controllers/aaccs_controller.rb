@@ -71,6 +71,7 @@ class AaccsController < ApplicationController
     def set_aacc
       @aacc = Aacc.find(params[:id])
       @patient_aacc_symptoms = PatientAaccSymptom.where(aacc: @aacc)
+      @tests = PatientAaccTest.where(aacc: @aacc)
     end
 
     # Only allow a list of trusted parameters through.

@@ -13,6 +13,11 @@ class PatientAaccTestsController < ApplicationController
   # GET /patient_aacc_tests/new
   def new
     @patient_aacc_test = PatientAaccTest.new
+    
+    @patient_aacc_test.exploration_type_id = ExplorationType.where(idn: params[:exploration_type_id]).first.description
+    @patient_aacc_test.test_id = Test.where(idn: params[:test_id]).first.description
+    @patient_aacc_test.aacc_id = Aacc.find(params[:aacc_id])._id
+    @patient_aacc_test.patient_id = Patient.find(params[:patient_id])._id
   end
 
   # GET /patient_aacc_tests/1/edit
@@ -64,6 +69,6 @@ class PatientAaccTestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def patient_aacc_test_params
-      params.require(:patient_aacc_test).permit(:idn, :score, :comments, :exploration_type_id, :test_id, :aacc_id)
+      params.require(:patient_aacc_test).permit(:idn, :answers, :score, :exploration_type_id, :test_id, :aacc_id, :patient_id)
     end
 end

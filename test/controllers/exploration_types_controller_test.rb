@@ -17,7 +17,7 @@ class ExplorationTypesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create exploration_type" do
     assert_difference('ExplorationType.count') do
-      post exploration_types_url, params: { exploration_type: { description: @exploration_type.description, description_EN: @exploration_type.description_EN, id: @exploration_type.id } }
+      post exploration_types_url, params: { exploration_type: { description: @exploration_type.description, description_EN: @exploration_type.description_EN, idn: @exploration_type.idn } }
     end
 
     assert_redirected_to exploration_type_url(ExplorationType.last)
@@ -34,7 +34,7 @@ class ExplorationTypesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update exploration_type" do
-    patch exploration_type_url(@exploration_type), params: { exploration_type: { description: @exploration_type.description, description_EN: @exploration_type.description_EN, id: @exploration_type.id } }
+    patch exploration_type_url(@exploration_type), params: { exploration_type: { description: @exploration_type.description, description_EN: @exploration_type.description_EN, idn: @exploration_type.idn } }
     assert_redirected_to exploration_type_url(@exploration_type)
   end
 

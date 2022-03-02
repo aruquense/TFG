@@ -1,8 +1,8 @@
 class Test
   include Mongoid::Document
   include Mongoid::Timestamps
-  field :id, type: Integer
+  auto_increment :idn
   field :description, type: String
   field :description_EN, type: String
-  belongs_to :id_type
+  belongs_to :exploration_type
 end

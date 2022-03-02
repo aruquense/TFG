@@ -14,8 +14,19 @@ class PatientAaccSymptomsController < ApplicationController
 
   # GET /patient_aacc_symptoms/new
   def new
+    @paciente = Patient.find(params[:patient_id])
+    puts @paciente.idn
+    puts "\n\n\n Paciente medicalrecord #{@paciente.idn} \n\n\n"
+    @aacc =Aacc.where(medicalrecord: @paciente.idn)
     @patient_aacc_symptom = PatientAaccSymptom.new
     @patient_aacc_symptom.aacc = Aacc.find(params[:aacc_id])
+    @patient_aacc_symptom.save ####
+    
+    @patient_aacc_tests = PatientAaccTest.all
+  end
+  def new2
+    
+    puts "\n\n\nholahola\n\n\n"
   end
 
   # GET /patient_aacc_symptoms/1/edit
@@ -65,6 +76,7 @@ class PatientAaccSymptomsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_patient_aacc_symptom
       @patient_aacc_symptom = PatientAaccSymptom.find(params[:id])
+      
     end
 
     # Only allow a list of trusted parameters through.

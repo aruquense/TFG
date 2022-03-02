@@ -67,9 +67,68 @@
 <% end %>
 <h1>Realización de Tests</h1>
 <%=link_to "Realizar Test Informador "%>
-    <%=link_to "Realizar Test Minimental"%>
-    <%=link_to "Realizar Test MEC"%>
-    <%=link_to "Realizar Test de Pfeiffer"%>
-    <%=link_to "Realizar Test del Reloj"%>
+patient_aacc_patient_aacc_tests
+
+  <li class="nav-item">
+    <%= link_to "patient_aacc_patient_aacc_tests",new_patient_aacc_patient_aacc_test_url(:exploration_type_id => 1, :test_id => 2)%>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Realizar Test Informador",new_patient_aacc_patient_aacc_test_url(:exploration_type_id => 2, :test_id => 5)%>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Realizar Test Minimental",new_patient_aacc_patient_aacc_test_url(:exploration_type_id => 2, :test_id => 7)%>
+  </li>
+  <li class="nav-item">
+    <%=link_to "Realizar Test MEC",new_patient_aacc_patient_aacc_test_url(:exploration_type_id => 2, :test_id => 6)%>
+  </li>
+  <li class="nav-item">
+    <%=link_to "Realizar Test de Pfeiffer",new_patient_aacc_patient_aacc_test_url(:exploration_type_id => 2, :test_id => 8)%>
+  </li>
+  <li class="nav-item">
+    <%=link_to "Realizar Test del Reloj",new_patient_aacc_patient_aacc_test_url(:exploration_type_id => 2, :test_id => 9)%>
+  </li>
+    <%=%>
+    <%=%>
+    <%=%>
+    <%=%>
     TABLA Tests
+
+    <h1>Patient Aacc Tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idn</th>
+      <th>Answers</th>
+      <th>Score</th>
+      <th>Exploration type</th>
+      <th>Test</th>
+      <th>Aacc</th>
+      <th>Patient</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patient_aacc_tests.each do |patient_aacc_test| %>
+      <tr>
+        <td><%= patient_aacc_test.idn %></td>
+        <td><%= patient_aacc_test.answers %></td>
+        <td><%= patient_aacc_test.score %></td>
+        <td><%= patient_aacc_test.exploration_type_id %></td>
+        <td><%= patient_aacc_test.test_id %></td>
+        <td><%= patient_aacc_test.aacc_id %></td>
+        <td><%= patient_aacc_test.patient_id %></td>
+        <td><%= link_to 'Show', patient_aacc_test %></td>
+        <td><%= link_to 'Edit', edit_patient_aacc_test_path(patient_aacc_test) %></td>
+        <td><%= link_to 'Destroy', patient_aacc_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patient Aacc Test', new_patient_aacc_test_path %>
+
 

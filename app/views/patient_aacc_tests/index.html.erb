@@ -6,11 +6,12 @@
   <thead>
     <tr>
       <th>Idn</th>
+      <th>Answers</th>
       <th>Score</th>
-      <th>Comments</th>
       <th>Exploration type</th>
       <th>Test</th>
       <th>Aacc</th>
+      <th>Patient</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,11 +20,12 @@
     <% @patient_aacc_tests.each do |patient_aacc_test| %>
       <tr>
         <td><%= patient_aacc_test.idn %></td>
+        <td><%= patient_aacc_test.answers %></td>
         <td><%= patient_aacc_test.score %></td>
-        <td><%= patient_aacc_test.comments %></td>
         <td><%= patient_aacc_test.exploration_type_id %></td>
         <td><%= patient_aacc_test.test_id %></td>
         <td><%= patient_aacc_test.aacc_id %></td>
+        <td><%= patient_aacc_test.patient_id %></td>
         <td><%= link_to 'Show', patient_aacc_test %></td>
         <td><%= link_to 'Edit', edit_patient_aacc_test_path(patient_aacc_test) %></td>
         <td><%= link_to 'Destroy', patient_aacc_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>

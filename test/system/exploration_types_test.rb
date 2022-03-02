@@ -16,7 +16,7 @@ class ExplorationTypesTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @exploration_type.description
     fill_in "Description en", with: @exploration_type.description_EN
-    fill_in "Id", with: @exploration_type.id
+    fill_in "Idn", with: @exploration_type.idn
     click_on "Create Exploration type"
 
     assert_text "Exploration type was successfully created"
@@ -29,7 +29,7 @@ class ExplorationTypesTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @exploration_type.description
     fill_in "Description en", with: @exploration_type.description_EN
-    fill_in "Id", with: @exploration_type.id
+    fill_in "Idn", with: @exploration_type.idn
     click_on "Update Exploration type"
 
     assert_text "Exploration type was successfully updated"

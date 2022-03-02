@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
+      <th>Idn</th>
       <th>Description</th>
       <th>Description en</th>
       <th colspan="3"></th>
@@ -15,7 +15,7 @@
   <tbody>
     <% @exploration_types.each do |exploration_type| %>
       <tr>
-        <td><%= exploration_type.id %></td>
+        <td><%= exploration_type.idn %></td>
         <td><%= exploration_type.description %></td>
         <td><%= exploration_type.description_EN %></td>
         <td><%= link_to 'Show', exploration_type %></td>

@@ -2,16 +2,18 @@
 
 one:
   idn: 1
+  answers: MyText
   score: MyString
-  comments: MyText
   exploration_type: one
   test: one
   aacc: one
+  patient: one
 
 two:
   idn: 1
+  answers: MyText
   score: MyString
-  comments: MyText
   exploration_type: two
   test: two
   aacc: two
+  patient: two

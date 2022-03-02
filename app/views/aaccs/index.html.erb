@@ -79,7 +79,7 @@
         <td><%= aacc.Patient_id %></td>
         <td><%= link_to 'Show', patient_aacc_url(:patient_id => aacc.Patient_id, :id => aacc) %></td>
         <td><%= link_to 'Edit', edit_patient_aacc_url(:patient_id => aacc.Patient_id, :id => aacc) %></td>
-        <td><%= link_to 'Destroy', patient_aaccs_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', patient_aacc_url(:patient_id => aacc.Patient_id, :id => aacc), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,7 +1,7 @@
 class ExplorationType
   include Mongoid::Document
   include Mongoid::Timestamps
-  field :id, type: Integer
+  auto_increment :idn
   field :description, type: String
   field :description_EN, type: String
 end

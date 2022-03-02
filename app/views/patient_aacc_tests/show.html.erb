@@ -6,13 +6,13 @@
 </p>
 
 <p>
-  <strong>Score:</strong>
-  <%= @patient_aacc_test.score %>
+  <strong>Answers:</strong>
+  <%= @patient_aacc_test.answers %>
 </p>
 
 <p>
-  <strong>Comments:</strong>
-  <%= @patient_aacc_test.comments %>
+  <strong>Score:</strong>
+  <%= @patient_aacc_test.score %>
 </p>
 
 <p>
@@ -28,6 +28,11 @@
 <p>
   <strong>Aacc:</strong>
   <%= @patient_aacc_test.aacc_id %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @patient_aacc_test.patient_id %>
 </p>
 
 <%= link_to 'Edit', edit_patient_aacc_test_path(@patient_aacc_test) %> |
