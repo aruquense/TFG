@@ -45,6 +45,14 @@
     <%= form.label :patient_id %>
     <%= form.text_field :patient_id %>
   </div>
+    <div>
+        <%=form.label :s1,"para recordar los nombres de personas mas intimas" %>
+        <%=form.select(:s1, options_for_select([['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5']]), prompt: "Please Select")%>
+    </div>
+    <div>
+        <%=form.label :s2,"PRUEBA PABLO para recordar los nombres de personas mas intimas" %>
+        <%=form.select(:s2, options_for_select([['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5']]), prompt: "Please Select")%>
+    </div>
 
   <div class="actions">
     <%= form.submit %>
