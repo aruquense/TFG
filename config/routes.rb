@@ -24,10 +24,27 @@ Rails.application.routes.draw do
   resources :patients do
     resources :aaccs do
       resources :patient_aacc_symptoms#, shallow: true
-      resources :patient_aacc_tests
+      resources :patient_aacc_tests, only: [:index, :new] #, shallow: true
+      
+      
+      
+      get 'patient_aacc_tests/new_test_barthel', to: "patient_aacc_tests#new_test_barthel", as: :new_test_barthel
+      get 'patient_aacc_tests/new_test_fast', to: "patient_aacc_tests#new_test_fast", as: :new_test_fast
+      get 'patient_aacc_tests/new_test_informador', to: "patient_aacc_tests#new_test_informador", as: :new_test_informador
+      get 'patient_aacc_tests/new_test_katz', to: "patient_aacc_tests#new_test_katz", as: :new_test_katz
+      get 'patient_aacc_tests/new_test_lawton_brody', to: "patient_aacc_tests#new_test_lawton_brody", as: :new_test_lawton_brody
+      get 'patient_aacc_tests/new_test_mec', to: "patient_aacc_tests#new_test_mec", as: :new_test_mec
+      get 'patient_aacc_tests/new_test_minimental', to: "patient_aacc_tests#new_test_minimental", as: :new_test_minimental
+      get 'patient_aacc_tests/new_test_npi', to: "patient_aacc_tests#new_test_npi", as: :new_test_npi
+      get 'patient_aacc_tests/new_test_pfeiffer', to: "patient_aacc_tests#new_test_pfeiffer", as: :new_test_pfeiffer
+      get 'patient_aacc_tests/new_test_reloj', to: "patient_aacc_tests#new_test_reloj", as: :new_test_reloj
+      get 'patient_aacc_tests/new_test_yessavage_4', to: "patient_aacc_tests#new_test_yessavage_4", as: :new_test_yessavage_4
+      get 'patient_aacc_tests/new_test_yessavage_10', to: "patient_aacc_tests#new_test_yessavage_10", as: :new_test_yessavage_10
+      get 'patient_aacc_tests/new_test_yessavage_15', to: "patient_aacc_tests#new_test_yessavage_15", as: :new_test_yessavage_15
+      get 'patient_aacc_tests/new_test_yessavage_30', to: "patient_aacc_tests#new_test_yessavage_30", as: :new_test_yessavage_30
+        #get 'profile', action: :show, controller: 'users'
     end
   end
-  get 'new2', to: "patient_aacc_symptoms#new2", as: :newtest
 
   #get 'patients/:patient_id/aaccs/:id/edit', to: 'aaccs#edit'
 

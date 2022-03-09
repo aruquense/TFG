@@ -1,5 +1,6 @@
 class PatientAaccTestsController < ApplicationController
   before_action :set_patient_aacc_test, only: %i[ show edit update destroy ]
+  before_action :set_patient_aacc_test_new,  except: %i[ index show edit update destroy  ]
 
   # GET /patient_aacc_tests or /patient_aacc_tests.json
   def index
@@ -12,12 +13,16 @@ class PatientAaccTestsController < ApplicationController
 
   # GET /patient_aacc_tests/new
   def new
-    @patient_aacc_test = PatientAaccTest.new
-    
-    @patient_aacc_test.exploration_type_id = ExplorationType.where(idn: params[:exploration_type_id]).first._id
-    @patient_aacc_test.test_id = Test.where(idn: params[:test_id]).first._id
-    @patient_aacc_test.aacc_id = Aacc.find(params[:aacc_id])._id
-    @patient_aacc_test.patient_id = Patient.find(params[:patient_id])._id
+  end  
+  def new_test_reloj
+  end
+  def new_test_mec
+  end
+  def new_test_informador
+  end
+  def new_test_pfeiffer
+  end
+  def new_test_minimental
   end
 
   # GET /patient_aacc_tests/1/edit
@@ -65,7 +70,16 @@ class PatientAaccTestsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_patient_aacc_test
       @patient_aacc_test = PatientAaccTest.find(params[:id])
-    end
+    end    
+    def set_patient_aacc_test_new
+    
+      @patient_aacc_test = PatientAaccTest.new
+      @patient_aacc_test.exploration_type_id = ExplorationType.where(idn: params[:exploration_type_id]).first._id
+      @patient_aacc_test.test_id = Test.where(idn: params[:test_id]).first._id
+      @patient_aacc_test.aacc_id = Aacc.find(params[:aacc_id])._id
+      @patient_aacc_test.patient_id = Patient.find(params[:patient_id])._id
+  end
+    
 
     # Only allow a list of trusted parameters through.
     def patient_aacc_test_params
