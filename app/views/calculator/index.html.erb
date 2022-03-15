@@ -1,0 +1,11 @@
+<%= form_for :calculator, url: { action: :new }, method: :get do |f|   %>
+  <%= number_field_tag :a, params[:a] %>
+  <%= select_tag :operation, options_for_select([['+', :sum],['++++++++++++++++++', :test_reloj], ['-', :subtr], ['x', :multiply], ['/', :divide]], params[:operation]) %>
+  <%=f.label :b,"3. PRESENCIA Y LOCALIZACIÓN DE LAS MANECILLAS (MÁXIMO 4 PUNTOS)." %>
+  <%= select_tag :b, options_for_select([['4', '4'],['3.5', '3.5'],['3', '3'],['2', '2'],['1', 1],['999',2]], params[:b]) %>
+  <%= f.submit 'Calculate!' %>
+<% end %>
+
+<% unless @result.nil? %>
+  <p> = <%= @result %> </p>
+<% end %>

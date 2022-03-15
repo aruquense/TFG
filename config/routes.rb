@@ -45,7 +45,8 @@ Rails.application.routes.draw do
         #get 'profile', action: :show, controller: 'users'
     end
   end
-
+  get "calculator", to: "calculator#index"
+  resources :calculator
   #get 'patients/:patient_id/aaccs/:id/edit', to: 'aaccs#edit'
 
 

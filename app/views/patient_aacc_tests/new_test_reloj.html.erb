@@ -1,5 +1,80 @@
-<h1>New RELOJ Test</h1>
+<< Volver a Sintomatología Cognitiva de la Consulta ‘XXX’
 
-<%= render 'form', patient_aacc_test: @patient_aacc_test %>
+<hr>
+<h1>Test del RELOJ</h1>
+
+
+<hr>
+Este test consiste en pedir al paciente que dibuje la esfera de un reloj con las doce horas y las manecillas NEGRITA señalando las once horas y diez minutos NEGRITA.
+
+
+ 
+
+
+Dibujar las 2 Agujas del Reloj
+Colocar los 12 números (Horas)
+Poner la Hora indicada
+BOTÓN Realizar Test del Reloj
+<%= form_with(model: @patient_aacc_test) do |form| %>
+  
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.number_field :idn %>
+  </div>
+
+    <div class="field">
+    <%= hidden_field_tag 'operation', 'test_reloj' %>
+    
+    
+  </div>
+  
+  <div class="field">
+    <%= form.label :answers %>
+    <%= form.text_area :answers %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :score %>
+  </div>  <div class="field">
+    <%= form.hidden_field :operation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :exploration_type_id %>
+    <%= form.text_field :exploration_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :test_id %>
+    <%= form.text_field :test_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aacc_id %>
+    <%= form.text_field :aacc_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.text_field :patient_id %>
+  </div>
+        <div>
+        <%=form.label :s1,"   1. ESFERA DEL RELOJ (MÁXIMO 2 PUNTOS)." %>
+        <%= select_tag :s1, options_for_select([['2', '2'],['1', '1'],['0','0']], params[:s1]) %>
+    </div>
+    <div>
+        <%=form.label :s2,"2. PRESENCIA O SECUENCIA DE LOS NÚMEROS (MÁXIMO 4 PUNTOS)." %>
+        <%= select_tag :s2, options_for_select([['4', '4'],['3.5', '3.5'],['3', '3'],['2', '2'],['1', '1'],['0','0']], params[:s2]) %>
+    </div>    
+    <div>
+        <%=form.label :s3,"3. PRESENCIA Y LOCALIZACIÓN DE LAS MANECILLAS (MÁXIMO 4 PUNTOS)." %>
+        <%= select_tag :s3, options_for_select([['4', '4'],['3.5', '3.5'],['3', '3'],['2', '2'],['1', '1'],['0','0']], params[:s3]) %>
+    </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
         
 <%= link_to 'Back', patient_aacc_tests_path %>

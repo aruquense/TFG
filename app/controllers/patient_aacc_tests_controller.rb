@@ -1,7 +1,8 @@
 class PatientAaccTestsController < ApplicationController
   before_action :set_patient_aacc_test, only: %i[ show edit update destroy ]
-  before_action :set_patient_aacc_test_new,  except: %i[ index show edit update destroy  ]
+  before_action :set_patient_aacc_test_new,  except: %i[ index create show edit update destroy  ]
 
+  require 'calculate.rb'
   # GET /patient_aacc_tests or /patient_aacc_tests.json
   def index
     @patient_aacc_tests = PatientAaccTest.all
@@ -15,6 +16,7 @@ class PatientAaccTestsController < ApplicationController
   def new
   end  
   def new_test_reloj
+      
   end
   def new_test_mec
   end
@@ -32,6 +34,11 @@ class PatientAaccTestsController < ApplicationController
   # POST /patient_aacc_tests or /patient_aacc_tests.json
   def create
     @patient_aacc_test = PatientAaccTest.new(patient_aacc_test_params)
+    puts "\n\n\n\n LLAMADA A SCORE #{params[:operation]} \n\n\n"
+
+    @result = Calculate.send(params[:operation], *[params[:s1], params[:s2], params[:s3]])
+    puts "\n\n\n\n Resultado create #{@result} \n\n\n"
+    @patient_aacc_test.score=@result
 
     respond_to do |format|
       if @patient_aacc_test.save
@@ -83,6 +90,6 @@ class PatientAaccTestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def patient_aacc_test_params
-      params.require(:patient_aacc_test).permit(:idn, :answers, :score, :exploration_type_id, :test_id, :aacc_id, :patient_id, :s1)
+      params.require(:patient_aacc_test).permit(:idn, :answers, :score, :exploration_type_id, :test_id, :aacc_id, :patient_id, :s1, :s2, :s3, :operation)
     end
 end
