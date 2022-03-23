@@ -1,0 +1,2 @@
+module PatientAaccAnalyticsHelper
+end

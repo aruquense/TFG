@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Analytics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idn</th>
+      <th>Value</th>
+      <th>Physician eval</th>
+      <th>Received date</th>
+      <th>Analytics status</th>
+      <th>Physician</th>
+      <th>Type</th>
+      <th>Patient</th>
+      <th>Aacc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @analytics.each do |analytic| %>
+      <tr>
+        <td><%= analytic.idn %></td>
+        <td><%= analytic.value %></td>
+        <td><%= analytic.physician_eval %></td>
+        <td><%= analytic.received_date %></td>
+        <td><%= analytic.analytics_status_id %></td>
+        <td><%= analytic.physician_id %></td>
+        <td><%= analytic.type_id %></td>
+        <td><%= analytic.patient_id %></td>
+        <td><%= analytic.aacc_id %></td>
+        <td><%= link_to 'Show', analytic %></td>
+        <td><%= link_to 'Edit', edit_analytic_path(analytic) %></td>
+        <td><%= link_to 'Destroy', analytic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Analytic', new_analytic_path %>

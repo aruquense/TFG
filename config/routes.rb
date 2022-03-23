@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :analytics
+  resources :patient_aacc_analytics
   scope :admin do
     resources :professions
     resources :institutions
@@ -10,9 +12,9 @@ Rails.application.routes.draw do
   end
   resources :patient_aacc_prescriptions
   resources :patient_aacc_tests
-  resources :patient_aacc_habits
   resources :patient_aacc_symptoms
   resources :aaccs
+  resources :patient_aacc_habits
   get 'home/index'
   get "admin", to: "admin#index"
   devise_for :users
@@ -25,7 +27,8 @@ Rails.application.routes.draw do
     resources :aaccs do
       resources :patient_aacc_symptoms#, shallow: true
       resources :patient_aacc_tests, only: [:index, :new] #, shallow: true
-      
+      resources :patient_aacc_habits
+      resources :patient_aacc_prescriptions
       
       
       get 'patient_aacc_tests/new_test_barthel', to: "patient_aacc_tests#new_test_barthel", as: :new_test_barthel

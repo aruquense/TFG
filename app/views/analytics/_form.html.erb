@@ -1,0 +1,62 @@
+<%= form_with(model: analytic) do |form| %>
+  <% if analytic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(analytic.errors.count, "error") %> prohibited this analytic from being saved:</h2>
+
+      <ul>
+        <% analytic.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.number_field :idn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_area :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :physician_eval %>
+    <%= form.text_area :physician_eval %>
+  </div>
+
+  <div class="field">
+    <%= form.label :received_date %>
+    <%= form.date_select :received_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :analytics_status_id %>
+    <%= form.text_field :analytics_status_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :physician_id %>
+    <%= form.text_field :physician_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_id %>
+    <%= form.text_field :type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.text_field :patient_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aacc_id %>
+    <%= form.text_field :aacc_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -74,7 +74,10 @@ class PatientAaccTestsController < ApplicationController
       @result = params[:s1]
     when "test_informador"
       puts "\n\n\n\n LLAMADA A test INFORMADOR? #{params[:operation]} \n\n\n"
-      @result = Calculate.send(params[:operation], *[params[:s1], params[:s2], params[:s3], params[:s4], params[:s5], params[:s6], params[:s7], params[:s8], params[:s9], params[:s10], params[:s11], params[:s12], params[:s13], params[:s14], params[:s15], params[:s16], params[:s17], params[:s18], params[:s19], params[:s20], params[:s21], params[:s22], params[:s23], params[:s24], params[:s25], params[:s26]])
+      @result = Calculate.send(params[:operation], *[params[:s1], params[:s2], params[:s3], params[:s4], params[:s5], params[:s6], params[:s7], params[:s8], params[:s9], params[:s10], params[:s11], params[:s12], params[:s13], params[:s14], params[:s15], params[:s16], params[:s17], params[:s18], params[:s19], params[:s20], params[:s21], params[:s22], params[:s23], params[:s24], params[:s25], params[:s26]])    
+    when "test_pfeiffer"
+      puts "\n\n\n\n LLAMADA A test_pfeiffer? #{params[:operation]} \n\n\n"
+      @result = Calculate.send(params[:operation], *[params[:s1], params[:s2], params[:s3], params[:s4], params[:s5], params[:s6], params[:s7], params[:s8], params[:s9], params[:s10], params[:s11]])
     else
       puts "\n\n\n\n TEST NO IMPLEMENTADO O ERROR EN EL PARAMETRO #{params[:operation]} \n\n\n"
       

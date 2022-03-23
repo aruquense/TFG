@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idn:</strong>
+  <%= @patient_aacc_analytic.idn %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @patient_aacc_analytic.value %>
+</p>
+
+<p>
+  <strong>Physycian eval:</strong>
+  <%= @patient_aacc_analytic.physycian_eval %>
+</p>
+
+<p>
+  <strong>Parameter:</strong>
+  <%= @patient_aacc_analytic.parameter_id %>
+</p>
+
+<p>
+  <strong>Analytics:</strong>
+  <%= @patient_aacc_analytic.analytics_id %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @patient_aacc_analytic.patient_id %>
+</p>
+
+<p>
+  <strong>Aacc:</strong>
+  <%= @patient_aacc_analytic.aacc_id %>
+</p>
+
+<%= link_to 'Edit', edit_patient_aacc_analytic_path(@patient_aacc_analytic) %> |
+<%= link_to 'Back', patient_aacc_analytics_path %>

@@ -1,7 +1,23 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
+  idn: 1
+  value: MyText
+  physician_eval: MyText
+  received_date: 2022-03-23
+  analytics_status: one
+  physician: one
+  type: one
+  patient: one
+  aacc: one
 
 two:
-  id: 1
+  idn: 1
+  value: MyText
+  physician_eval: MyText
+  received_date: 2022-03-23
+  analytics_status: two
+  physician: two
+  type: two
+  patient: two
+  aacc: two

@@ -9,17 +9,28 @@
 <div class="">
   <li class="nav-item">
     <%=link_to "Sintomatología Cognitiva", new_patient_aacc_patient_aacc_symptom_path(:patient_id => @aacc.Patient_id, :aacc_id => @aacc)%>
-    
   </li>
-    <%=link_to "Sintomatología No Cognitiva"%>
+    <li class="nav-item">
+    <%=link_to "Sintomatología No Cognitiva", new_patient_aacc_patient_aacc_symptom_path(:patient_id => @aacc.Patient_id, :aacc_id => @aacc)%>
+  </li>
+    <%=link_to ""%>
     <%=link_to "Exploración Funcional"%>
     <%=link_to "Exploración Neurológica"%>
     <%=link_to "Exploración Física"%>
     
-    <%=link_to "Hábitos"%>
-    <%=link_to "Patologías Intercurrentes"%>
-    <%=link_to "Pruebas Complementarias"%>
-    <%=link_to "Prescripción Farmacológica"%>
+    <%=link_to ""%>
+    <li class="nav-item">
+    <%=link_to "Hábitos", new_patient_aacc_patient_aacc_habit_path(:patient_id => @aacc.Patient_id, :aacc_id => @aacc)%>
+  </li>
+    <li class="nav-item">
+      <%=link_to "Patologías Intercurrentes MODELO NO CREADO", new_patient_aacc_patient_aacc_habit_path(:patient_id => @aacc.Patient_id, :aacc_id => @aacc)%>
+    </li>
+    <li class="nav-item">
+      <%=link_to "Pruebas Complementarias MODELO NO CREADO", new_patient_aacc_patient_aacc_habit_path(:patient_id => @aacc.Patient_id, :aacc_id => @aacc)%>
+    </li>
+    <li class="nav-item">
+      <%=link_to "Prescripción Farmacológica", new_patient_aacc_patient_aacc_prescription_path(:patient_id => @aacc.Patient_id, :aacc_id => @aacc)%>
+    </li>
     <%=link_to "Diagnóstico"%>
 </div>
 
