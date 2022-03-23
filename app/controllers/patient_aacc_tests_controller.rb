@@ -15,16 +15,33 @@ class PatientAaccTestsController < ApplicationController
   # GET /patient_aacc_tests/new
   def new
   end  
-  def new_test_reloj
-      
+  def new_test_barthel
   end
-  def new_test_mec
+  def new_test_fast
   end
   def new_test_informador
   end
-  def new_test_pfeiffer
+  def new_test_katz
+  end
+  def new_test_lawton_brody
+  end
+  def new_test_mec
   end
   def new_test_minimental
+  end
+  def new_test_npi
+  end
+  def new_test_pfeiffer
+  end
+  def new_test_reloj
+  end
+  def new_test_yesavage_4
+  end
+  def new_test_yesavage_10
+  end
+  def new_test_yesavage_15
+  end
+  def new_test_yesavage_30
   end
 
   # GET /patient_aacc_tests/1/edit
@@ -35,8 +52,33 @@ class PatientAaccTestsController < ApplicationController
   def create
     @patient_aacc_test = PatientAaccTest.new(patient_aacc_test_params)
     puts "\n\n\n\n LLAMADA A SCORE #{params[:operation]} \n\n\n"
-
-    @result = Calculate.send(params[:operation], *[params[:s1], params[:s2], params[:s3]])
+    case params[:operation]
+    when "test_reloj"
+      puts "\n\n\n\n LLAMADA A test reloj? #{params[:operation]} \n\n\n"
+      @result = Calculate.send(params[:operation], *[params[:s1], params[:s2], params[:s3]])
+    when "test_yesavage_4"
+      puts "\n\n\n\n LLAMADA A test_yessavage_4 #{params[:operation]} \n\n\n"
+      @result = Calculate.send(params[:operation], *[params[:s1], params[:s2], params[:s3], params[:s4]])
+    when "test_yesavage_10"
+      puts "\n\n\n\n LLAMADA A test_yessavage_10? #{params[:operation]} \n\n\n"
+      @result = Calculate.send(params[:operation], *[params[:s1], params[:s2], params[:s3], params[:s4], params[:s5], params[:s6], params[:s7], params[:s8], params[:s9], params[:s10]])
+    when "test_yesavage_15"
+      puts "\n\n\n\n LLAMADA A test_yessavage_15? #{params[:operation]} \n\n\n"
+      @result = Calculate.send(params[:operation], *[params[:s1], params[:s2], params[:s3], params[:s4], params[:s5], params[:s6], params[:s7], params[:s8], params[:s9], params[:s10],params[:s11], params[:s12], params[:s13], params[:s14], params[:s15]])
+    when "test_yesavage_30"
+      puts "\n\n\n\n LLAMADA A test_yessavage_30? #{params[:operation]} \n\n\n"
+      @result = Calculate.send(params[:operation], *[params[:s1], params[:s2], params[:s3], params[:s4], params[:s5], params[:s6], params[:s7], params[:s8], params[:s9], params[:s10], params[:s11], params[:s12], params[:s13], params[:s14], params[:s15], params[:s16], params[:s17], params[:s18], params[:s19],params[:s20],params[:s21], params[:s22], params[:s23], params[:s24], params[:s25], params[:s26], params[:s27], params[:s28], params[:s29], params[:s30]])
+    when "test_katz"
+      @result = params[:s1]    
+    when "test_fast"
+      @result = params[:s1]
+    when "test_informador"
+      puts "\n\n\n\n LLAMADA A test INFORMADOR? #{params[:operation]} \n\n\n"
+      @result = Calculate.send(params[:operation], *[params[:s1], params[:s2], params[:s3], params[:s4], params[:s5], params[:s6], params[:s7], params[:s8], params[:s9], params[:s10], params[:s11], params[:s12], params[:s13], params[:s14], params[:s15], params[:s16], params[:s17], params[:s18], params[:s19], params[:s20], params[:s21], params[:s22], params[:s23], params[:s24], params[:s25], params[:s26]])
+    else
+      puts "\n\n\n\n TEST NO IMPLEMENTADO O ERROR EN EL PARAMETRO #{params[:operation]} \n\n\n"
+      
+    end
     puts "\n\n\n\n Resultado create #{@result} \n\n\n"
     @patient_aacc_test.score=@result
 
@@ -90,6 +132,6 @@ class PatientAaccTestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def patient_aacc_test_params
-      params.require(:patient_aacc_test).permit(:idn, :answers, :score, :exploration_type_id, :test_id, :aacc_id, :patient_id, :s1, :s2, :s3, :operation)
+      params.require(:patient_aacc_test).permit(:idn, :answers, :score, :exploration_type_id, :test_id, :aacc_id, :patient_id, :s1, :s2, :s3, :s4, :s5, :s6, :s7, :s8, :s9, :s10, :s11, :s12, :s13, :s14, :s15, :s16, :s17, :s18, :s19, :s20, :s21, :s22, :s23, :s24, :s25, :s26, :s27, :s28, :s29, :s30, :operation)
     end
 end

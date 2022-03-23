@@ -1,5 +1,98 @@
-<h1>New FAST Test</h1>
+<< Volver a la Exploración Funcional de la Consulta ‘XXX’
+<hr>
+<h1>Test de FAST</h1>
+<hr>
 
-<%= render 'form', patient_aacc_test: @patient_aacc_test %>
-        
+<%= form_with(model: @patient_aacc_test) do |form| %>
+  
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.number_field :idn %>
+  </div>
+
+    <div class="field">
+    <%= hidden_field_tag 'operation', 'test_fast' %>
+    
+    
+  </div>
+  
+  <div class="field">
+    <%= form.label :answers %>
+    <%= form.text_area :answers %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :score %>
+  </div>  <div class="field">
+    <%= form.hidden_field :operation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :exploration_type_id %>
+    <%= form.text_field :exploration_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :test_id %>
+    <%= form.text_field :test_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aacc_id %>
+    <%= form.text_field :aacc_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.text_field :patient_id %>
+  </div>
+    <div>
+        <%=form.label :s1,"Calificación del Test FAST(*) " %>
+        <%= select_tag :s1, options_for_select([['1.SIN DETERIORO COGNOSCITIVO', '1'],['2.DETERIORO COGNOSCITIVO MUY LEVE', '2'],['3.DETERIORO COGNOSCITIVO LEVE', '3'],['4.DÉFICIT COGNOSCITIVO MODERADO', '4'],['5.DÉFICIT COGNOSCITIVO GRAVE', '5'],['6.DÉFICIT COGNOSCITIVO MODERADAMENTE GRAVE', '6'],['7.DÉFICIT COGNOSCITIVO MUY GRAVE', '7']], params[:s1]) %>
+    </div>
+    <h2>1. SIN DETERIORO COGNOSCITIVO</h2>
+    <p>
+        <b>Diagnóstico clínico: Normal.</b>
+        Características en el Fast: No se aprecian déficit objetivos ni subjetivos.
+        Comentarios: Las capacidades funcionales en las áreas ocupacional, social o familiar permanecen intactas (como hace 5 o 10 años).
+    </p>
+        <h2>2. DETERIORO COGNOSCITIVO MUY LEVE</h2>
+    <p>
+        <b>Diagnóstico clínico: Normal para su edad.</b>
+        RELLENAR
+    </p>
+        <h2>3.DETERIORO COGNOSCITIVO LEVE</h2>
+    <p>
+        <b>Diagnóstico clínico: Normal.</b>
+        RELLENAR
+    </p>
+        <h2>4.DÉFICIT COGNOSCITIVO MODERADO</h2>
+    <p>
+        <b>Diagnóstico clínico: Normal.</b>
+        RELLENAR
+    </p>
+        <h2>5.DÉFICIT COGNOSCITIVO GRAVE</h2>
+    <p>
+        <b>Diagnóstico clínico: Normal.</b>
+        RELLENAR
+    </p>
+        <h2>6.DÉFICIT COGNOSCITIVO MODERADAMENTE GRAVE</h2>
+    <p>
+        <b>Diagnóstico clínico: Normal.</b>
+        RELLENAR
+    </p>
+        <h2>7.DÉFICIT COGNOSCITIVO MUY GRAVE</h2>
+    <p>
+        <b>Diagnóstico clínico: Normal.</b>
+        RELLENAR
+    </p>
+    
+  <div class="actions">
+    <%= form.submit "Almacenar Test FAST" %>
+  </div>
+<% end %>
+
+<hr>
+
+
 <%= link_to 'Back', patient_aacc_tests_path %>

@@ -1,5 +1,193 @@
-<h1>New YESAVAGE 30 Test</h1>
 
-<%= render 'form', patient_aacc_test: @patient_aacc_test %>
+H1 
+HR
+
+BOTON Realizar Test de Yesavage
+HR
+ 
+<< Volver a Sintomatología No-Cognitiva de la Consulta ‘XXX’
+
+<hr>
+<h1>Test de Yesavage (30 preguntas)</h1>
+
+<hr>
+<%= form_with(model: @patient_aacc_test) do |form| %>
+  
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.number_field :idn %>
+  </div>
+
+    <div class="field">
+    <%= hidden_field_tag 'operation', 'test_yesavage_30' %>
+    
+    
+  </div>
+  
+  <div class="field">
+    <%= form.label :answers %>
+    <%= form.text_area :answers %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :score %>
+  </div>  <div class="field">
+    <%= form.hidden_field :operation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :exploration_type_id %>
+    <%= form.text_field :exploration_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :test_id %>
+    <%= form.text_field :test_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aacc_id %>
+    <%= form.text_field :aacc_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.text_field :patient_id %>
+  </div>
+  	<div>
+ 		<%=form.label :s1,"1 ¿Está básicamente satisfecho con su vida? NO" %>
+     	<%= select_tag :s1, options_for_select([['SÍ', '0'],['NO', '1']], params[:s1]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s2,"2 ¿Ha renunciado a muchas de sus actividades e intereses? SI" %>
+     	<%= select_tag :s2, options_for_select([['SÍ', '1'],['NO', '0']], params[:s2]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s3,"3 ¿Siente que su vida está vacía? SI" %>
+     	<%= select_tag :s3, options_for_select([['SÍ', '1'],['NO', '0']], params[:s3]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s4,"4 ¿Se encuentra á menudo aburrido? SI" %>
+     	<%= select_tag :s4, options_for_select([['SÍ', '1'],['NO', '0']], params[:s4]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s5,"5 ¿Tiene esperanza en el futuro? NO" %>
+     	<%= select_tag :s5, options_for_select([['SÍ', '0'],['NO', '1']], params[:s5]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s6,"6 ¿Tiene molestias (malestar, mareo) por pensamientos que no pueda sacarse de la cabeza? SI" %>
+     	<%= select_tag :s6, options_for_select([['SÍ', '1'],['NO', '0']], params[:s6]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s7,"7 ¿Tiene a menudo buen ánimo? NO" %>
+     	<%= select_tag :s7, options_for_select([['SÍ', '0'],['NO', '1']], params[:s7]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s8,"8 ¿Tiene miedo de que algo le esté pasando? SI" %>
+     	<%= select_tag :s8, options_for_select([['SÍ', '1'],['NO', '0']], params[:s8]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s9,"9 ¿Se siente feliz muchas veces? NO" %>
+     	<%= select_tag :s9, options_for_select([['SÍ', '0'],['NO', '1']], params[:s9]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s10,"10 ¿Se siente a menudo abandonado? SI" %>
+     	<%= select_tag :s10, options_for_select([['SÍ', '1'],['NO', '0']], params[:s10]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s11,"11 ¿Está a menudo intranquilo e inquieto? SI" %>
+     	<%= select_tag :s11, options_for_select([['SÍ', '1'],['NO', '0']], params[:s11]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s12,"12 ¿Prefiere quedarse en casa que acaso salir y hacer cosas nuevas? SI" %>
+     	<%= select_tag :s12, options_for_select([['SÍ', '1'],['NO', '0']], params[:s12]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s13,"13 ¿Frecuentemente está preocupado por el futuro? SI" %>
+     	<%= select_tag :s13, options_for_select([['SÍ', '1'],['NO', '0']], params[:s13]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s14,"14 ¿Encuentra que tiene más problemas de memoria que la mayoría de la gente? SI" %>
+     	<%= select_tag :s14, options_for_select([['SÍ', '1'],['NO', '0']], params[:s14]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s15,"15 ¿Piensa que es maravilloso vivir? NO" %>
+     	<%= select_tag :s15, options_for_select([['SÍ', '0'],['NO', '1']], params[:s15]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s16,"16 ¿Se siente a menudo desanimado y melancólico? SI" %>
+     	<%= select_tag :s16, options_for_select([['SÍ', '1'],['NO', '0']], params[:s16]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s17,"17 ¿Se siente bastante inútil en el medio en que está? SI" %>
+     	<%= select_tag :s17, options_for_select([['SÍ', '1'],['NO', '0']], params[:s17]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s18,"18 ¿Está muy preocupado por el pasado? Si" %>
+     	<%= select_tag :s18, options_for_select([['SÍ', '1'],['NO', '0']], params[:s18]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s19,"19 ¿Encuentra la vida muy estimulante? NO" %>
+     	<%= select_tag :s19, options_for_select([['SÍ', '0'],['NO', '1']], params[:s19]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s20,"20 ¿Es difícil para usted poner en marcha nuevos proyectos? SI
+" %>
+     	<%= select_tag :s20, options_for_select([['SÍ', '1'],['NO', '0']], params[:s20]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s21,"21 ¿Se siente lleno de energía? NO
+" %>
+     	<%= select_tag :s21, options_for_select([['SÍ', '0'],['NO', '1']], params[:s21]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s22,"22 ¿Siente que su situación es desesperada? SI
+" %>
+     	<%= select_tag :s22, options_for_select([['SÍ', '1'],['NO', '0']], params[:s22]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s23,"23 ¿Cree que mucha gente está mejor que usted? SI
+" %>
+     	<%= select_tag :s23, options_for_select([['SÍ', '1'],['NO', '0']], params[:s23]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s24,"24 ¿Frecuentemente está preocupado por pequeñas cosas? SI
+" %>
+     	<%= select_tag :s24, options_for_select([['SÍ', '1'],['NO', '0']], params[:s24]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s25,"25 ¿Frecuentemente siente ganas de llorar? SI
+" %>
+     	<%= select_tag :s25, options_for_select([['SÍ', '1'],['NO', '0']], params[:s25]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s26,"26 ¿Tiene problemas para concentrarse? SI
+" %>
+     	<%= select_tag :s26, options_for_select([['SÍ', '1'],['NO', '0']], params[:s26]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s27,"27 ¿Se siente mejor por la mañana al levantarse? NO
+" %>
+     	<%= select_tag :s27, options_for_select([['SÍ', '0'],['NO', '1']], params[:s27]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s28,"28 ¿Prefiere evitar reuniones sociales? SI
+" %>
+     	<%= select_tag :s28, options_for_select([['SÍ', '1'],['NO', '0']], params[:s28]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s29,"29 ¿Es fácil para usted tomar decisiones? NO
+" %>
+     	<%= select_tag :s29, options_for_select([['SÍ', '0'],['NO', '1']], params[:s29]) %>
+   	</div>
+  	<div>
+ 		<%=form.label :s30,"30 ¿Su mente está tan ciará como lo acostumbraba a estar? NO" %>
+     	<%= select_tag :s30, options_for_select([['SÍ', '0'],['NO', '1']], params[:s30]) %>
+   	</div>
+  <div class="actions">
+    <%= form.submit "Almacenar Test de Yesavage 30"%>
+  </div>
+<% end %>
+
         
 <%= link_to 'Back', patient_aacc_tests_path %>

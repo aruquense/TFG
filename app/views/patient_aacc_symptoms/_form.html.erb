@@ -66,12 +66,6 @@
     
 <% end %>
 <h1>Realización de Tests</h1>
-<%=link_to "Realizar Test Informador "%>
-patient_aacc_patient_aacc_tests
-
-  <li class="nav-item">
-    <%= link_to "patient_aacc_patient_aacc_tests",new_patient_aacc_patient_aacc_test_url(:exploration_type_id => 1, :test_id => 2)%>
-  </li>
   <li class="nav-item">
     <%= link_to "Realizar Test Informador",patient_aacc_new_test_informador_url(:exploration_type_id => 2, :test_id => 5)%>
   </li>
@@ -84,10 +78,41 @@ patient_aacc_patient_aacc_tests
   <li class="nav-item">
     <%=link_to "Realizar Test de Pfeiffer",patient_aacc_new_test_pfeiffer_url(:exploration_type_id => 2, :test_id => 8)%>
   </li>
-  <li class="nav-item">
-  
-    <%=link_to "Realizar Test del Reloj",patient_aacc_new_test_reloj_url(:exploration_type_id => 2, :test_id => 9)%>
-  </li>
+
+<li class="nav-item">
+  <%=link_to "Realizar Test del Reloj",patient_aacc_new_test_reloj_url(:exploration_type_id => 2, :test_id => 9)%>
+</li>
+<h1>Exploración Funcional (esto no va aquí, es para pruebas)</h1>
+<li class="nav-item">
+  <%=link_to "Realizar Test Barthel",patient_aacc_new_test_barthel_url(:exploration_type_id => 1, :test_id => 1)%>
+</li>
+<li class="nav-item">
+  <%=link_to "Realizar Test Fast",patient_aacc_new_test_fast_url(:exploration_type_id => 1, :test_id => 2)%>
+</li>
+<li class="nav-item">
+  <%=link_to "Realizar Test Katz",patient_aacc_new_test_katz_url(:exploration_type_id => 1, :test_id => 3)%>
+</li>
+<li class="nav-item">
+  <%=link_to "Realizar Test Lawton-Brody",patient_aacc_new_test_lawton_brody_url(:exploration_type_id => 1, :test_id => 4)%>
+</li>
+<h1>Exploración Funcional (esto no va aquí, es para pruebas)</h1>
+<h1>Sintomatologia No-Cognitiva (esto no va aquí, es para pruebas)</h1>
+<li class="nav-item">
+  <%=link_to "Realizar Test Yesavage 4",patient_aacc_new_test_yesavage_4_url(:exploration_type_id => 3, :test_id => 10)%>
+</li>
+<li class="nav-item">
+  <%=link_to "Realizar Test Yesavage 10",patient_aacc_new_test_yesavage_10_url(:exploration_type_id => 3, :test_id => 11)%>
+</li>
+<li class="nav-item">
+  <%=link_to "Realizar Test Yesavage 15",patient_aacc_new_test_yesavage_15_url(:exploration_type_id => 3, :test_id => 12)%>
+</li>
+<li class="nav-item">
+  <%=link_to "Realizar Test Yesavage 30",patient_aacc_new_test_yesavage_30_url(:exploration_type_id => 3, :test_id => 13)%>
+</li>
+<li class="nav-item">
+  <%=link_to "Realizar Test NPI",patient_aacc_new_test_npi_url(:exploration_type_id => 3, :test_id => 14)%>
+</li>
+<h1>Sintomatologia No-Cognitiva (esto no va aquí, es para pruebas)</h1>
     <%=%>
     <%=%>
     <%=%>

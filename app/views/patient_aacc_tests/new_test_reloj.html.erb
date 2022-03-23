@@ -59,7 +59,7 @@ BOTÓN Realizar Test del Reloj
     <%= form.text_field :patient_id %>
   </div>
         <div>
-        <%=form.label :s1,"   1. ESFERA DEL RELOJ (MÁXIMO 2 PUNTOS)." %>
+        <%=form.label :s1,"1. ESFERA DEL RELOJ (MÁXIMO 2 PUNTOS)." %>
         <%= select_tag :s1, options_for_select([['2', '2'],['1', '1'],['0','0']], params[:s1]) %>
     </div>
     <div>
@@ -72,7 +72,7 @@ BOTÓN Realizar Test del Reloj
     </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Realizar Test del Reloj" %>
   </div>
 <% end %>
 

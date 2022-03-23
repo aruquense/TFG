@@ -38,10 +38,10 @@ Rails.application.routes.draw do
       get 'patient_aacc_tests/new_test_npi', to: "patient_aacc_tests#new_test_npi", as: :new_test_npi
       get 'patient_aacc_tests/new_test_pfeiffer', to: "patient_aacc_tests#new_test_pfeiffer", as: :new_test_pfeiffer
       get 'patient_aacc_tests/new_test_reloj', to: "patient_aacc_tests#new_test_reloj", as: :new_test_reloj
-      get 'patient_aacc_tests/new_test_yessavage_4', to: "patient_aacc_tests#new_test_yessavage_4", as: :new_test_yessavage_4
-      get 'patient_aacc_tests/new_test_yessavage_10', to: "patient_aacc_tests#new_test_yessavage_10", as: :new_test_yessavage_10
-      get 'patient_aacc_tests/new_test_yessavage_15', to: "patient_aacc_tests#new_test_yessavage_15", as: :new_test_yessavage_15
-      get 'patient_aacc_tests/new_test_yessavage_30', to: "patient_aacc_tests#new_test_yessavage_30", as: :new_test_yessavage_30
+      get 'patient_aacc_tests/new_test_yesavage_4', to: "patient_aacc_tests#new_test_yesavage_4", as: :new_test_yesavage_4
+      get 'patient_aacc_tests/new_test_yesavage_10', to: "patient_aacc_tests#new_test_yesavage_10", as: :new_test_yesavage_10
+      get 'patient_aacc_tests/new_test_yesavage_15', to: "patient_aacc_tests#new_test_yesavage_15", as: :new_test_yesavage_15
+      get 'patient_aacc_tests/new_test_yesavage_30', to: "patient_aacc_tests#new_test_yesavage_30", as: :new_test_yesavage_30
         #get 'profile', action: :show, controller: 'users'
     end
   end

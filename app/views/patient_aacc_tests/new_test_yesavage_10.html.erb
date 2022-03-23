@@ -1,5 +1,99 @@
-<h1>New YESAVAGE 10 Test</h1>
+<< Volver a Sintomatología No-Cognitiva de la Consulta ‘XXX’
 
-<%= render 'form', patient_aacc_test: @patient_aacc_test %>
+<hr>
+<h1>Test de Yesavage (10 preguntas)</h1>
+
+<hr>
+<%= form_with(model: @patient_aacc_test) do |form| %>
+  
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.number_field :idn %>
+  </div>
+
+    <div class="field">
+    <%= hidden_field_tag 'operation', 'test_yesavage_10' %>
+    
+    
+  </div>
+  
+  <div class="field">
+    <%= form.label :answers %>
+    <%= form.text_area :answers %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :score %>
+  </div>  <div class="field">
+    <%= form.hidden_field :operation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :exploration_type_id %>
+    <%= form.text_field :exploration_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :test_id %>
+    <%= form.text_field :test_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aacc_id %>
+    <%= form.text_field :aacc_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.text_field :patient_id %>
+  </div>
+    <div>
+        <%=form.label :s1,"1.	¿Está usted satisfecho de su vida?" %>
+        <%= select_tag :s1, options_for_select([['SÍ', '0'],['NO', '1']], params[:s1]) %>
+    </div>
+    <div>
+        <%=form.label :s2,"2.	¿Ha abandonado usted alguno de sus intereses y actividades?" %>
+        <%= select_tag :s2, options_for_select([['SÍ', '1'],['NO', '0']], params[:s2]) %>
+    </div>
+    <div>
+        <%=form.label :s3,"3.	¿Siente que su vida está vacía?" %>
+        <%= select_tag :s3, options_for_select([['SÍ', '1'],['NO', '0']], params[:s3]) %>
+    </div>
+    <div>
+        <%=form.label :s4,"4.	¿Tiene miedo de que algo malo le vaya a pasar?" %>
+        <%= select_tag :s4, options_for_select([['SÍ', '1'],['NO', '0']], params[:s4]) %>
+    </div>
+    <div>
+        <%=form.label :s5,"5.	¿Se siente usted feliz la mayoría del tiempo?" %>
+        <%= select_tag :s5, options_for_select([['SÍ', '0'],['NO', '1']], params[:s5]) %>
+    </div>
+    <div>
+        <%=form.label :s6,"6.	¿Se siente usted a menudo impotente, abandonado?" %>
+        <%= select_tag :s6, options_for_select([['SÍ', '1'],['NO', '0']], params[:s6]) %>
+    </div>
+    <div>
+        <%=form.label :s7,"7.	¿Cree que tiene mas problemas con su memoria que los demás?" %>
+        <%= select_tag :s7, options_for_select([['SÍ', '1'],['NO', '0']], params[:s7]) %>
+    </div>
+    <div>
+        <%=form.label :s8,"8.	¿Es difícil para usted empezar proyectos nuevos?" %>
+        <%= select_tag :s8, options_for_select([['SÍ', '1'],['NO', '0']], params[:s8]) %>
+    </div>
+    <div>
+        <%=form.label :s9,"9.	¿Se siente lleno de energía?" %>
+        <%= select_tag :s9, options_for_select([['SÍ', '0'],['NO', '1']], params[:s9]) %>
+    </div>
+    <div>
+        <%=form.label :s10,"10.	¿Se siente usted sin esperanza?" %>
+        <%= select_tag :s10, options_for_select([['SÍ', '1'],['NO', '0']], params[:s10]) %>
+    </div>
+    
+  <div class="actions">
+ 
+    <%= form.submit "Almacenar Test de Yesavage 10" %>
+  </div>
+<% end %>
+
         
+<hr>
 <%= link_to 'Back', patient_aacc_tests_path %>
