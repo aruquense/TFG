@@ -1,5 +1,19 @@
 << Volver a la Exploración Funcional de la Consulta ‘XXX’
 
+
+
+<hr>
+<h1>Test de LAWTON / BRODY</h1>
+
+<hr>
+<%= form_with(model: @patient_aacc_test) do |form| %>
+  
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.number_field :idn %>
+  </div>
+
+<h1>SIN IMPLEMENTAR</h1>    
 Capacidad para usar el Teléfono SELECTBOX
 Hacer Compras SELECTBOX
 Preparación de la Comida
@@ -8,12 +22,17 @@ Lavado de la Ropa
 Uso de Medios de Transporte
 Responsabilidad respecto a su Medicación
 Manejo de sus Asuntos Económicos
-BOTON Realizar Test de Lawton / Brody
-Hr
+BOTON Hr
 H1 
 HR
-<h1>Test de LAWTON / BRODY</h1>
 
-<%= render 'form', patient_aacc_test: @patient_aacc_test %>
+  <div class="actions">
+ 
+    <%= form.submit "Realizar Test de Lawton / Brody" %>
+  </div>
+<% end %>
+
+        
+<hr>
         
 <%= link_to 'Back', patient_aacc_tests_path %>

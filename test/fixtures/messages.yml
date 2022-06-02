@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idn: 1
+  value: MyText
+  viewed: false
+  answered: false
+  viewed_date: 2022-04-05
+  from_physician: 
+  physician: one
+
+two:
+  idn: 1
+  value: MyText
+  viewed: false
+  answered: false
+  viewed_date: 2022-04-05
+  from_physician: 
+  physician: two

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idn:</strong>
+  <%= @message.idn %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @message.value %>
+</p>
+
+<p>
+  <strong>Viewed:</strong>
+  <%= @message.viewed %>
+</p>
+
+<p>
+  <strong>Answered:</strong>
+  <%= @message.answered %>
+</p>
+
+<p>
+  <strong>Viewed date:</strong>
+  <%= @message.viewed_date %>
+</p>
+
+<p>
+  <strong>From physician:</strong>
+  <%= @message.from_physician %>
+</p>
+
+<p>
+  <strong>Physician:</strong>
+  <%= @message.physician_id %>
+</p>
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>

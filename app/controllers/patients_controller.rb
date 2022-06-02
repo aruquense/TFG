@@ -36,7 +36,10 @@ class PatientsController < ApplicationController
   # POST /patients or /patients.json
   def create
     @patient = Patient.new(patient_params)
-    @patient.medicalrecord = @patient.idn
+      puts "\n\n\n\n idn? #{params[:idn]} \n\n\n"
+      @patient.medicalrecord = params[:idn]
+      @result = params[:idn]
+      @patient.medicalrecord=@result
     #@patient.PatientAacc='1'
 
     respond_to do |format|
@@ -80,6 +83,6 @@ class PatientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def patient_params
-      params.require(:patient).permit(:medicalrecord, :nhc, :nss, :medicalcard, :name, :surname, :scholarship, :gender, :maritalstatus, :nif, :passport, :birthdate, :birthcity, :birthcountry, :adress, :city, :state, :country, :exitus, :profession, :employeestatus, :incoming_rate_id, :telephone, :telephone2, :mobilephone, :institution_id, :comments, :patient_aaccs)
+      params.require(:patient).permit(:idn, :medicalrecord, :nhc, :nss, :medicalcard, :name, :surname, :scholarship, :gender, :maritalstatus, :nif, :passport, :birthdate, :birthcity, :birthcountry, :adress, :city, :state, :country, :exitus, :profession, :employeestatus, :incoming_rate_id, :telephone, :telephone2, :mobilephone, :institution_id, :comments, :patient_aaccs)
     end
 end

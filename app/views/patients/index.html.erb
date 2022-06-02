@@ -1,10 +1,28 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-10">
 
+<body>
 <h1>Búsqueda de Pacientes</h1>
+<p>         
+<div>
+<%= form_with url: "/search", method: :get do |form| %>
+<%=form.label :search_field,"Buscar" %>
+  <%= select_tag :search_field, options_for_select([['Todos los campos', '0'],['APELLIDOS', '0'],['NOMBRE', '0'],['NHC', '0'],['NIF', '0'],['F.NAC', '0'],['SEXO', '0'],['EXITUS', '0'],['PACIENTE', '0'],['HIST. CLINICA', '0']], params[:search_field]) %>
+    <%= form.text_field :search_text %>
+  <%=form.label :search_order,"Opciones de búsqueda" %>
+  <%= select_tag :search_order, options_for_select([['Búsqueda por defecto', '0'],['Orden Ascendente', '0'],['Orden Descendente', '0']], params[:search_order]) %>
+<% end %>
+  
+</div>
+    
+    </p>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
+      <th>IDN</th>
       <th>APELLIDOS</th>
       <th>NOMBRE</th>
       <th>NHC</th>
@@ -26,6 +44,7 @@
       <tr>
 
 
+        <td><%= patient.idn %></td>
         <td><%= patient.surname %></td>
         <td><%= patient.name %></td>
         <td><%= patient.nhc %></td>
@@ -47,3 +66,15 @@
 <br>
 
 <%= link_to 'New Patient', new_patient_path %>
+
+        </div>
+        <div class="col-lg-2">
+
+        
+        
+    <%= render "partials/login" %>
+    <%= render "partials/message" %>
+
+</div>
+</div>
+</body>

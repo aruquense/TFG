@@ -41,6 +41,117 @@ Copie este dibujo
 
 <h1>New MEC Test</h1>
 
-<%= render 'form', patient_aacc_test: @patient_aacc_test %>
-        
+<%= form_with(model: @patient_aacc_test) do |form| %>
+  
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.number_field :idn %>
+  </div>
+
+    <div class="field">
+    <%= hidden_field_tag 'operation', 'test_fast' %>
+    
+    
+  </div>
+  
+  <div class="field">
+    <%= form.label :answers %>
+    <%= form.text_area :answers %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :score %>
+  </div>  <div class="field">
+    <%= form.hidden_field :operation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :exploration_type_id %>
+    <%= form.text_field :exploration_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :test_id %>
+    <%= form.text_field :test_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aacc_id %>
+    <%= form.text_field :aacc_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.text_field :patient_id %>
+  </div>
+    <div>
+        <%=form.label :s1,"Respuestas correctas " %>
+        <%= select_tag :s1, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5']], params[:s1]) %>
+    </div>
+    <div>
+        <%=form.label :s2,"Respuestas correctas " %>
+        <%= select_tag :s2, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5']], params[:s2]) %>
+    </div>
+    <div>
+        <%=form.label :s3,"Respuestas correctas " %>
+        <%= select_tag :s3, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3']], params[:s3]) %>
+    </div>
+    <div>
+        <%=form.label :s4,"Respuestas correctas " %>
+        <%= select_tag :s4, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5']], params[:s4]) %>
+    </div>
+    <div>
+        <%=form.label :s5,"Respuestas correctas " %>
+        <%= select_tag :s5, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3']], params[:s5]) %>
+    </div>
+    <div>
+        <%=form.label :s6,"Respuestas correctas " %>
+        <%= select_tag :s6, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3']], params[:s6]) %>
+    </div>
+    <div>
+        <%=form.label :s7,"Respuestas correctas " %>
+        <%= select_tag :s7, options_for_select([['0', '0'],['1', '1'],['2', '2']], params[:s7]) %>
+    </div>
+    <div>
+        <%=form.label :s8,"Respuestas correctas " %>
+        <%= select_tag :s8, options_for_select([['0', '0'],['1', '1']], params[:s8]) %>
+    </div>
+    <div>
+        <%=form.label :s9,"Respuestas correctas " %>
+        <%= select_tag :s9, options_for_select([['0', '0'],['1', '1'],['2', '2']], params[:s9]) %>
+    </div>
+    <div>
+        <%=form.label :s10,"Respuestas correctas " %>
+        <%= select_tag :s10, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3']], params[:s10]) %>
+    </div>
+    <div>
+        <%=form.label :s11,"Respuestas correctas " %>
+        <%= select_tag :s11, options_for_select([['0', '0'],['1', '1']], params[:s11]) %>
+    </div>
+    <div>
+        <%=form.label :s12,"Respuestas correctas " %>
+        <%= select_tag :s12, options_for_select([['0', '0'],['1', '1']], params[:s12]) %>
+    </div>
+    <div>
+        <%=form.label :s13,"Respuestas correctas " %>
+        <%= select_tag :s13, options_for_select([['0', '0'],['1', '1']], params[:s13]) %>
+    </div>
+    <div>
+        <%=form.label :s14,"Nº preguntas que el paciente no ha podido contestar por su nivel de escolarización " %>
+        <%= select_tag :s14, options_for_select([['0', '0'],['1', '1']], params[:s14]) %>
+    </div>
+    <div>
+    number_field_tag 'quantity', nil, min: 0, max: 5, step: 2
+        <%=form.label :s15,"Nº preguntas que el paciente no ha podido contestar por déficit visual correctas " %>
+        <%= number_field :s15 , nil, min: 0, max: 5 %>
+    </div>
+    (*) Para su cálculo excluimos las preguntas que hayan sido eliminadas, básicamente por analfabetismo o por imposibilidad física de cumplir un ítem (ej.: ceguera). La puntuación total corregida se obtiene por regla de tres. Por ejemplo si el paciente es ciego y no puede acceder a 4 de los 35 puntos posibles, la puntuación finalse calculará sobre 31 puntos posibles. Imaginemos que la puntuación total ha sido 20, aplicando la corrección obtenemos una puntuación (20x35/31) = 22,5 (redondearemos al núm. entero + próximo, el 23).
+  <div class="actions">
+    <%= form.submit "Almacenar Test MEC" %>
+  </div>
+<% end %>
+
+<hr>
+
+
 <%= link_to 'Back', patient_aacc_tests_path %>

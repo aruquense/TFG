@@ -2,7 +2,7 @@ class PatientAaccHabit
   include Mongoid::Document
   include Mongoid::Timestamps
   auto_increment :idn
-  field :habit, type: String
+  belongs_to :habit
   field :comments, type: String
   belongs_to :aacc
   belongs_to :patient

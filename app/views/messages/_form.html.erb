@@ -1,0 +1,52 @@
+<%= form_with(model: message) do |form| %>
+  <% if message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+        <% message.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.number_field :idn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_area :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :viewed %>
+    <%= form.check_box :viewed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answered %>
+    <%= form.check_box :answered %>
+  </div>
+
+  <div class="field">
+    <%= form.label :viewed_date %>
+    <%= form.date_select :viewed_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :from_physician %>
+    <%= form.text_field :from_physician %>
+  </div>
+
+  <div class="field">
+    <%= form.label :physician_id %>
+    <%= form.text_field :physician_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

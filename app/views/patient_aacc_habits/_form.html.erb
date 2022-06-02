@@ -13,29 +13,30 @@
 
   <div class="field">
     <%= form.label :idn %>
-    <%= form.number_field :idn %>
+    <%= form.hidden_field :idn %>
+  </div>
+
+    <%= form.label :aacc_id %>
+    <%= form.hidden_field :aacc_id %>
   </div>
 
   <div class="field">
     
     <%= form.label :habit,"Hábito (*)"%>
-    <%=form.select(:habit, options_for_select([['Drogas', 'Drogas'], ['Alcohol', 'Alcohol'], ['Tabaco', 'Tabaco']]), prompt: "Please Select")%>
-
+    <%= form.select :habit, options_from_collection_for_select(Habit.all, :_id, :description) , {:prompt => 'Selected Vendor'}  %>
+  
   </div>
-
+  
+    
   <div class="field">
     <%= form.label :comments,"Comentario" %>
     <%= form.text_area :comments %>
   </div>
 
-  <div class="field">
-    <%= form.label :aacc_id %>
-    <%= form.text_field :aacc_id %>
-  </div>
 
   <div class="field">
     <%= form.label :patient_id %>
-    <%= form.text_field :patient_id %>
+    <%= form.hidden_field :patient_id %>
   </div>
 
   <div class="actions">
