@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idn:</strong>
+  <%= @complementary_tests_type.idn %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @complementary_tests_type.description %>
+</p>
+
+<p>
+  <strong>Description en:</strong>
+  <%= @complementary_tests_type.description_en %>
+</p>
+
+<%= link_to 'Edit', edit_complementary_tests_type_path(@complementary_tests_type) %> |
+<%= link_to 'Back', complementary_tests_types_path %>

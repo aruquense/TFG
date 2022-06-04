@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idn:</strong>
+  <%= @diagnosis_dementium.idn %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @diagnosis_dementium.description %>
+</p>
+
+<p>
+  <strong>Description en:</strong>
+  <%= @diagnosis_dementium.description_EN %>
+</p>
+
+<p>
+  <strong>Erase:</strong>
+  <%= @diagnosis_dementium.erase %>
+</p>
+
+<%= link_to 'Edit', edit_diagnosis_dementium_path(@diagnosis_dementium) %> |
+<%= link_to 'Back', diagnosis_dementia_path %>

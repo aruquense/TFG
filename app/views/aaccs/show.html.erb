@@ -29,7 +29,10 @@
       <%=link_to "Pruebas Complementarias MODELO NO CREADO", new_patient_aacc_patient_aacc_habit_path(:patient_id => @aacc.Patient_id, :aacc_id => @aacc)%>
     </li>
     <li class="nav-item">
-      <%=link_to "Prescripción Farmacológica", new_patient_aacc_patient_aacc_prescription_path(:patient_id => @aacc.Patient_id, :aacc_id => @aacc)%>
+      <%=link_to "BORRAR Prescripción Farmacológica", new_patient_aacc_patient_aacc_prescription_path(:patient_id => @aacc.Patient_id, :aacc_id => @aacc)%>
+    </li>
+    <li class="nav-item">
+      <%=link_to "INDEX Prescripción Farmacológica", patient_aacc_patient_aacc_prescriptions_url(:patient_id => @aacc.Patient_id, :aacc_id => @aacc)%>
     </li>
     <%=link_to "Diagnóstico"%>
 </div>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idn:</strong>
+  <%= @diagnosis_ci.idn %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @diagnosis_ci.description %>
+</p>
+
+<p>
+  <strong>Description en:</strong>
+  <%= @diagnosis_ci.description_EN %>
+</p>
+
+<p>
+  <strong>Erase:</strong>
+  <%= @diagnosis_ci.erase %>
+</p>
+
+<%= link_to 'Edit', edit_diagnosis_ci_path(@diagnosis_ci) %> |
+<%= link_to 'Back', diagnosis_cis_path %>

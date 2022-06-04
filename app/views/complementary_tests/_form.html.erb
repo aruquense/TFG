@@ -1,0 +1,52 @@
+<%= form_with(model: complementary_test) do |form| %>
+  <% if complementary_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(complementary_test.errors.count, "error") %> prohibited this complementary_test from being saved:</h2>
+
+      <ul>
+        <% complementary_test.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.number_field :idn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_type %>
+    <%= form.number_field :id_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parameter %>
+    <%= form.text_area :parameter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parameter_en %>
+    <%= form.text_area :parameter_en %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unit %>
+    <%= form.text_field :unit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :intervalues %>
+    <%= form.text_field :intervalues %>
+  </div>
+
+  <div class="field">
+    <%= form.label :complementary_tests_type_id %>
+    <%= form.text_field :complementary_tests_type_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

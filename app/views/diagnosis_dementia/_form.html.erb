@@ -1,0 +1,37 @@
+<%= form_with(model: diagnosis_dementium) do |form| %>
+  <% if diagnosis_dementium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(diagnosis_dementium.errors.count, "error") %> prohibited this diagnosis_dementium from being saved:</h2>
+
+      <ul>
+        <% diagnosis_dementium.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idn %>
+    <%= form.number_field :idn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description_EN %>
+    <%= form.text_field :description_EN %>
+  </div>
+
+  <div class="field">
+    <%= form.label :erase %>
+    <%= form.number_field :erase %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

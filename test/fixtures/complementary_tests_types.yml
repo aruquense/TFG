@@ -1,13 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
-  description: 
-  description_EN: MyString
-  primary_care_needed: MyString
+  idn: 1
+  description: MyString
+  description_en: MyString
 
 two:
-  id: 1
-  description: 
-  description_EN: MyString
-  primary_care_needed: MyString
+  idn: 1
+  description: MyString
+  description_en: MyString

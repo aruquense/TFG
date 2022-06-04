@@ -1,8 +1,7 @@
 class ComplementaryTestsType
   include Mongoid::Document
   include Mongoid::Timestamps
-  field :id, type: Integer
+  auto_increment :idn
   field :description, type: String
-  field :description_EN, type: String
-  field :primary_care_needed, type: String
+  field :description_en, type: String
 end

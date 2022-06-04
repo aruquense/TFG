@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Complementary Tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idn</th>
+      <th>Id type</th>
+      <th>Parameter</th>
+      <th>Parameter en</th>
+      <th>Unit</th>
+      <th>Intervalues</th>
+      <th>Complementary tests type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @complementary_tests.each do |complementary_test| %>
+      <tr>
+        <td><%= complementary_test.idn %></td>
+        <td><%= complementary_test.id_type %></td>
+        <td><%= complementary_test.parameter %></td>
+        <td><%= complementary_test.parameter_en %></td>
+        <td><%= complementary_test.unit %></td>
+        <td><%= complementary_test.intervalues %></td>
+        <td><%= complementary_test.complementary_tests_type_id %></td>
+        <td><%= link_to 'Show', complementary_test %></td>
+        <td><%= link_to 'Edit', edit_complementary_test_path(complementary_test) %></td>
+        <td><%= link_to 'Destroy', complementary_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Complementary Test', new_complementary_test_path %>

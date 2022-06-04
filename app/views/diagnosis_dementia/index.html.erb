@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Diagnosis Dementia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idn</th>
+      <th>Description</th>
+      <th>Description en</th>
+      <th>Erase</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diagnosis_dementia.each do |diagnosis_dementium| %>
+      <tr>
+        <td><%= diagnosis_dementium.idn %></td>
+        <td><%= diagnosis_dementium.description %></td>
+        <td><%= diagnosis_dementium.description_EN %></td>
+        <td><%= diagnosis_dementium.erase %></td>
+        <td><%= link_to 'Show', diagnosis_dementium %></td>
+        <td><%= link_to 'Edit', edit_diagnosis_dementium_path(diagnosis_dementium) %></td>
+        <td><%= link_to 'Destroy', diagnosis_dementium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Diagnosis Dementium', new_diagnosis_dementium_path %>

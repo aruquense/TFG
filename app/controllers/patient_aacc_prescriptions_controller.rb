@@ -4,6 +4,8 @@ class PatientAaccPrescriptionsController < ApplicationController
   # GET /patient_aacc_prescriptions or /patient_aacc_prescriptions.json
   def index
     @patient_aacc_prescriptions = PatientAaccPrescription.all
+    @patient_aacc_prescription = PatientAaccPrescription.new
+    #@aaccs =Aacc.where(medicalrecord: @patient_aacc_prescription.aacc_id)
   end
 
   # GET /patient_aacc_prescriptions/1 or /patient_aacc_prescriptions/1.json

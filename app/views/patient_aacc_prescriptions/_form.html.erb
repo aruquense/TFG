@@ -1,15 +1,5 @@
 <%= form_with(model: patient_aacc_prescription) do |form| %>
-  <% if patient_aacc_prescription.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(patient_aacc_prescription.errors.count, "error") %> prohibited this patient_aacc_prescription from being saved:</h2>
 
-      <ul>
-        <% patient_aacc_prescription.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= form.label :idn %>

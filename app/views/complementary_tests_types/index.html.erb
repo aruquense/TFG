@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Complementary Tests Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idn</th>
+      <th>Description</th>
+      <th>Description en</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @complementary_tests_types.each do |complementary_tests_type| %>
+      <tr>
+        <td><%= complementary_tests_type.idn %></td>
+        <td><%= complementary_tests_type.description %></td>
+        <td><%= complementary_tests_type.description_en %></td>
+        <td><%= link_to 'Show', complementary_tests_type %></td>
+        <td><%= link_to 'Edit', edit_complementary_tests_type_path(complementary_tests_type) %></td>
+        <td><%= link_to 'Destroy', complementary_tests_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Complementary Tests Type', new_complementary_tests_type_path %>

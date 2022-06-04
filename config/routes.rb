@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :diagnosis_cis
+  resources :diagnosis_dementia
+  resources :complementary_tests_types
+  resources :complementary_tests
   resources :messages
   resources :analytics
   resources :patient_aacc_analytics

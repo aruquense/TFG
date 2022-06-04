@@ -1,0 +1,1 @@
+json.partial! "complementary_tests_types/complementary_tests_type", complementary_tests_type: @complementary_tests_type

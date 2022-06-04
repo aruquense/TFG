@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idn:</strong>
+  <%= @complementary_test.idn %>
+</p>
+
+<p>
+  <strong>Id type:</strong>
+  <%= @complementary_test.id_type %>
+</p>
+
+<p>
+  <strong>Parameter:</strong>
+  <%= @complementary_test.parameter %>
+</p>
+
+<p>
+  <strong>Parameter en:</strong>
+  <%= @complementary_test.parameter_en %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @complementary_test.unit %>
+</p>
+
+<p>
+  <strong>Intervalues:</strong>
+  <%= @complementary_test.intervalues %>
+</p>
+
+<p>
+  <strong>Complementary tests type:</strong>
+  <%= @complementary_test.complementary_tests_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_complementary_test_path(@complementary_test) %> |
+<%= link_to 'Back', complementary_tests_path %>

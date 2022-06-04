@@ -1,0 +1,2 @@
+module DiagnosisCisHelper
+end

@@ -1,7 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
+  idn: 1
+  id_type: 1
+  parameter: MyText
+  parameter_en: MyText
+  unit: MyString
+  intervalues: MyString
+  complementary_tests_type: one
 
 two:
-  id: 1
+  idn: 1
+  id_type: 1
+  parameter: MyText
+  parameter_en: MyText
+  unit: MyString
+  intervalues: MyString
+  complementary_tests_type: two
