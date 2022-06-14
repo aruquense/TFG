@@ -1,5 +1,6 @@
 class AaccsController < ApplicationController
   before_action :set_aacc, only: %i[ show edit update destroy ]
+  before_action :set_patient, only: %i[   all_history sc_history snc_history fe_history pc_history diagnosis_history habits_history pi_history pf_history]
 
   # GET /aaccs or /aaccs.json
   def index
@@ -65,6 +66,34 @@ class AaccsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def all_history
+    @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end
+  def sc_history
+    @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end
+  def snc_history
+    @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end
+  def fe_history
+    @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end
+  def pc_history
+    @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end
+  def diagnosis_history
+    @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end
+  def habits_history
+    @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end
+  def pi_history
+    @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end
+  def pf_history
+    @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -72,6 +101,9 @@ class AaccsController < ApplicationController
       @aacc = Aacc.find(params[:id])
       @patient_aacc_symptoms = PatientAaccSymptom.where(aacc: @aacc)
       @tests = PatientAaccTest.where(aacc: @aacc)
+    end
+    def set_patient
+      @paciente = Patient.find(params[:patient_id])
     end
 
     # Only allow a list of trusted parameters through.

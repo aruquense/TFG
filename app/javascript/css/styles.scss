@@ -29,7 +29,7 @@
     margin-top: 0.5em;
 }
 .margin{
-    margin: 1.5em;
+    margin: 1.0em;
 }
 .field{
     label{
@@ -54,9 +54,8 @@ body{
     background-color: #ffe9c9;
 }
 .card{
-    input{
-        //background: #5cb85c;
-    }
+    background-color: white;
+    margin-right: 0.5em;
 }
 $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222

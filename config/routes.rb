@@ -56,7 +56,15 @@ Rails.application.routes.draw do
     end
   end
   get "calculator", to: "calculator#index"
-  get "patient_aacc_habits_history", to: "patient_aacc_habits#habits_history", as: :habits_history
+  get "aacc/all_history", to: "aaccs#all_history", as: :all_history
+  get "aacc/diagnosis_history", to: "aaccs#diagnosis_history", as: :diagnosis_history
+  get "aacc/fe_history", to: "aaccs#fe_history", as: :fe_history
+  get "aacc/pc_history", to: "aaccs#pc_history", as: :pc_history
+  get "aacc/pf_history", to: "aaccs#pf_history", as: :pf_history
+  get "aacc/pi_history", to: "aaccs#pi_history", as: :pi_history
+  get "aacc/sc_history", to: "aaccs#sc_history", as: :sc_history
+  get "aacc/snc_history", to: "aaccs#snc_history", as: :snc_history
+  get "aacc/habits_history", to: "aaccs#habits_history", as: :habits_history
   resources :calculator
   #get 'patients/:patient_id/aaccs/:id/edit', to: 'aaccs#edit'
 

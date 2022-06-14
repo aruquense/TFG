@@ -154,7 +154,7 @@
 
   <div class="field">
     <%= form.label :profession,"Profesión" %>
-    <%= form.number_field :profession %>
+    <%= form.select :profession,options_from_collection_for_select(Profession.all, :_id, :description) , {:prompt => 'Selecciona'}  %>
   </div>
 
   <div class="field">

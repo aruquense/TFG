@@ -7,9 +7,9 @@ class PatientAaccHabitsController < ApplicationController
     @patient_aacc_habits = PatientAaccHabit.all
   end
 
-  def habits_history
-    @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
-  end  
+  #def habits_history
+  #  @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  #end  
   
   # GET /patient_aacc_habits/1 or /patient_aacc_habits/1.json
   def show

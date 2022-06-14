@@ -23,7 +23,7 @@
       <li class="nav-item">
 
 
-        <%=link_to "Informe de Historia Completa"%>
+        <%=link_to "Informe de Historia Completa",all_history_url(:patient_id => @paciente)%>
       </li>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
       </div>     <div class="d-flex justify-content-center">
       <li class="nav-item">
-    <%=link_to "Historia de Sintomatología Cognitiva"%>
+    <%=link_to "Historia de Sintomatología Cognitiva",sc_history_url(:patient_id => @paciente)%>
       </li>
       </div>
     </div>
@@ -39,7 +39,7 @@
       <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
       </div>     <div class="d-flex justify-content-center">
       <li class="nav-item">
-    <%=link_to "Historia de Sintomatología No Cognitiva"%>
+    <%=link_to "Historia de Sintomatología No Cognitiva",snc_history_url(:patient_id => @paciente)%>
       </li>
       </div>
     </div>
@@ -47,7 +47,7 @@
       <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
       </div>     <div class="d-flex justify-content-center">
       <li class="nav-item">
-    <%=link_to "Historia de Exploración Funcional"%>
+    <%=link_to "Historia de Exploración Funcional",fe_history_url(:patient_id => @paciente)%>
       </li>
       </div>
     </div>
@@ -57,7 +57,7 @@
       <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
       </div>     <div class="d-flex justify-content-center">
       <li class="nav-item">
-    <%=link_to "Historia de Pruebas Complementarias"%>
+    <%=link_to "Historia de Pruebas Complementarias",pc_history_url(:patient_id => @paciente)%>
       </li>
       </div>
     </div>
@@ -65,7 +65,7 @@
       <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
       </div>     <div class="d-flex justify-content-center">
       <li class="nav-item">
-    <%=link_to "Historia de Diagnósticos"%>
+    <%=link_to "Historia de Diagnósticos",diagnosis_history_url(:patient_id => @paciente)%>
       </li>
       </div>
     </div>
@@ -82,7 +82,7 @@
       <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
       </div>     <div class="d-flex justify-content-center">
       <li class="nav-item">
-    <%=link_to "Historia de Patologías Intercurrentes"%>
+    <%=link_to "Historia de Patologías Intercurrentes",pi_history_url(:patient_id => @paciente) %>
       </li>
       </div>
     </div>
@@ -90,7 +90,7 @@
       <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
       </div>     <div class="d-flex justify-content-center">
       <li class="nav-item">
-    <%=link_to "Historia de Prescripción Farmacológica"%>
+    <%=link_to "Historia de Prescripción Farmacológica",pf_history_url(:patient_id => @paciente)%>
       </li>
       </div>
     </div>

@@ -5,9 +5,6 @@ class TestsController < ApplicationController
   def index
     @tests = Test.all
   end
-  def tdasdsadsa
-    puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n djasljdkasdjlkasdjas"
-  end
   # GET /tests/1 or /tests/1.json
   def show
   end

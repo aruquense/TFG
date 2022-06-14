@@ -22,7 +22,7 @@ class Patient
   field :state, type: String
   field :country, type: Integer
   field :exitus, type: String
-  field :profession, type: Integer
+  belongs_to :profession
   field :employeestatus, type: Integer
   field :incoming_rate_id, type: Integer
   field :telephone, type: String

@@ -33,12 +33,6 @@ class PatientAaccSymptomsController < ApplicationController
     @patient_aacc_tests = PatientAaccTest.all
   end
 
-  def sintomatologia_no_cognitiva_history
-    #@patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
-  end    
-  def sintomatologia_no_cognitiva_history
-  #@patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
-end  
 
   # GET /patient_aacc_symptoms/1/edit
   def edit

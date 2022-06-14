@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: %i[ show edit update destroy ]
+  before_action :set_patient, only: %i[ show edit update destroy habits_history ]
 
   # GET /patients or /patients.json
   def index
@@ -66,6 +66,7 @@ class PatientsController < ApplicationController
     end
   end
 
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_patient
