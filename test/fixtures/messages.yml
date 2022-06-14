@@ -5,8 +5,8 @@ one:
   value: MyText
   viewed: false
   answered: false
-  viewed_date: 2022-04-05
-  from_physician: 
+  viewed_date: 2022-06-12
+  from_physician: one
   physician: one
 
 two:
@@ -14,6 +14,6 @@ two:
   value: MyText
   viewed: false
   answered: false
-  viewed_date: 2022-04-05
-  from_physician: 
+  viewed_date: 2022-06-12
+  from_physician: two
   physician: two

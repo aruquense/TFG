@@ -13,12 +13,12 @@
 
 <hr width=400>
 
-  <div class="field">
+  <div class="small-container field">
     <%=form.label :name,"Nombre (*)"%>
     <%=form.text_field :name%>
   </div>
 
-  <div class="field">
+  <div class="small-container field">
         <%=form.label :surname,"Apellidos (*)"%>
         <%=form.text_field :surname %>
   </div>
@@ -27,27 +27,27 @@
 
   <div class="field">
     <%= form.label :gender,"Sexo (*)"%>
-    <%=form.select(:gender, options_for_select([['Hombre', 'Hombre'], ['Mujer', 'Mujer']]), prompt: "Please Select")%>
+    <%=form.select(:gender, options_for_select([['Hombre', 'Hombre'], ['Mujer', 'Mujer']]), prompt: "Seleccionar...")%>
   
   </div>
 
-  <div class="field">
+  <div class="small-container field">
     <%=form.label :maritalstatus,"Estado civil (*)" %>
-    <%=form.select(:maritalstatus, options_for_select([['Soltero', 'Soltero'], ['Casado', 'Casado']]), prompt: "Please Select")%>
+    <%=form.select(:maritalstatus, options_for_select([['Soltero', 'Soltero'], ['Casado', 'Casado']]), prompt: "Seleccionar...")%>
   </div>
 <hr width=400>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :nif,"NIF (*)"%> 
     <%= form.text_field :nif %>
   </div>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :passport,"Pasaporte (si extranjero)"%>
     <%= form.text_field :passport %>
   </div>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :nss ,"Núm. Seg. Social" %>
     <%= form.text_field :nss %>
   </div>
@@ -59,35 +59,34 @@
 
   <hr width=400>
 
-  <div class="field">
-    <%= form.label :idn %>
-    <%= form.number_field :idn %>
+  <div class="small-container field">
+    <%= form.hidden_field :idn %>
   </div>
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :nhc, "NHC"%>
     <%= form.text_field :nhc %>
   </div>
 
 <hr width=400>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :exitus, "Exitus (*)" %>
-    <%=form.select(:exitus, options_for_select([['Sí', 'Sí'], ['No', 'No']]), prompt: "Please Select")%>
+    <%=form.select(:exitus, options_for_select([['Sí', 'Sí'], ['No', 'No']]), prompt: "Seleccionar...")%>
   </div>
 
 <hr width=400>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :telephone,"Teléfono fijo (*)"%>
     <%= form.text_field :telephone %>
   </div>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :telephone2,"Teléfono fijo 2" %>
     <%= form.text_field :telephone2 %>
   </div>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :mobilephone,"Teléfono móvil" %>
     <%= form.text_field :mobilephone %>
   </div>
@@ -106,17 +105,17 @@
 
 
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :birthdate %>
     <%= form.date_field :birthdate %>
   </div>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :birthcity %>
     <%= form.number_field :birthcity %>
   </div>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :birthcountry %>
     <%= form.number_field :birthcountry %>
   </div>
@@ -126,16 +125,16 @@
     <%= form.text_field :adress %>
   </div>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :city %>
     <%= form.text_field :city %>
   </div>
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :state %>
     <%= form.text_field :state %>
   </div>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :country %>
     <%= form.number_field :country %>
   </div>
@@ -144,11 +143,11 @@
 
 
 <hr width=400>
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :scholarship %>
     <%= form.number_field :scholarship %>
   </div>
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :employeestatus,"Situación Laboral" %>
     <%= form.number_field :employeestatus %>
   </div>
@@ -170,7 +169,7 @@
     <%= form.number_field :institution_id %>
   </div>
 
-  <div class="field">
+  <div class="container-fluid field">
     <%= form.label :comments,"Comentarios" %>
     <%= form.text_area :comments %>
   </div>

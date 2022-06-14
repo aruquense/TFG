@@ -15,7 +15,7 @@ class MessagesTest < ApplicationSystemTestCase
     click_on "New Message"
 
     check "Answered" if @message.answered
-    fill_in "From physician", with: @message.from_physician
+    fill_in "From physician", with: @message.from_physician_id
     fill_in "Idn", with: @message.idn
     fill_in "Physician", with: @message.physician_id
     fill_in "Value", with: @message.value
@@ -32,7 +32,7 @@ class MessagesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     check "Answered" if @message.answered
-    fill_in "From physician", with: @message.from_physician
+    fill_in "From physician", with: @message.from_physician_id
     fill_in "Idn", with: @message.idn
     fill_in "Physician", with: @message.physician_id
     fill_in "Value", with: @message.value

@@ -8,8 +8,16 @@ class PatientAaccSymptomsController < ApplicationController
 
   # GET /patient_aacc_symptoms/1 or /patient_aacc_symptoms/1.json
   def show
+    #@patient_aacc_symptom.aacc_id.patient_id
+    #@paciente = Patient.find(params[:patient_id])
+    #puts @paciente.idn
+    #puts "\n\n\n Paciente medicalrecord #{@paciente.idn} \n\n\n"
+    #@aacc =Aacc.where(medicalrecord: @paciente.idn)
     @aaa = PatientAaccSymptom.find(params[:id])
     render json: @aaa
+    
+    #redirect_to edit_patient_aacc_patient_aacc_symptom_url(:aacc_id => @patient_aacc_symptom.aacc_id, :patient_id => @patient_aacc_symptom.aacc_id.patient_id )
+
   end
 
   # GET /patient_aacc_symptoms/new
@@ -24,10 +32,13 @@ class PatientAaccSymptomsController < ApplicationController
     
     @patient_aacc_tests = PatientAaccTest.all
   end
-  def new2
-    
-    puts "\n\n\nholahola\n\n\n"
-  end
+
+  def sintomatologia_no_cognitiva_history
+    #@patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end    
+  def sintomatologia_no_cognitiva_history
+  #@patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+end  
 
   # GET /patient_aacc_symptoms/1/edit
   def edit

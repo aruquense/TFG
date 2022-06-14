@@ -8,6 +8,10 @@ class PatientAaccPrescriptionsController < ApplicationController
     #@aaccs =Aacc.where(medicalrecord: @patient_aacc_prescription.aacc_id)
   end
 
+  def prescription_history
+    #@patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end  
+  
   # GET /patient_aacc_prescriptions/1 or /patient_aacc_prescriptions/1.json
   def show
   end

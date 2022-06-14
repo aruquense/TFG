@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Idn:</strong>
@@ -17,22 +16,22 @@
 
 <p>
   <strong>Exploration type:</strong>
-  <%= @patient_aacc_test.exploration_type_id %>
+  <%= ExplorationType.find(@patient_aacc_test.exploration_type_id).description %>
 </p>
 
 <p>
   <strong>Test:</strong>
-  <%= @patient_aacc_test.test_id %>
+  <%= Test.find(@patient_aacc_test.test_id).description %>
 </p>
 
 <p>
   <strong>Aacc:</strong>
-  <%= @patient_aacc_test.aacc_id %>
+  <%= Aacc.find(@patient_aacc_test.aacc_id).medicalrecord %>
 </p>
 
 <p>
   <strong>Patient:</strong>
-  <%= @patient_aacc_test.patient_id %>
+  <%= Patient.find(@patient_aacc_test.patient_id).name %>
 </p>
 
 <%= link_to 'Edit', edit_patient_aacc_test_path(@patient_aacc_test) %> |

@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Historia Clínica | Actividad Asistencial del Paciente</h1>
 <hr>
@@ -7,38 +6,96 @@
 <hr>
 
 <%= link_to '<< Volver a Listado de Pacientes', patients_url%>
-<div class="">
-  <li class="nav-item">
-    <%= link_to "Crear nueva Consulta",new_patient_aacc_url%>
-  </li>
-  <li class="nav-item">
-    <%=link_to "***Informe de Historia Completa"%>
-  </li>
-  <li class="nav-item">
-    <%=link_to "***Historia de Sintomatología No Cognitiva"%>
-  </li>
-  <li class="nav-item">
-    <%=link_to "***Historia de Exploración Funcional"%>
-  </li>
-  <li class="nav-item">
-    <%=link_to "***Historia de Pruebas Complementarias"%>
-  </li>
-  <li class="nav-item">
-    <%=link_to "***Historia de Diagnósticos"%>
-  </li>
-  <li class="nav-item">
-    <%=link_to "***Historia de Hábitos"%>
-  </li>
-  <li class="nav-item">
-    <%=link_to "***Historia de Patologías Intercurrentes"%>
-  </li>
-  <li class="nav-item">
-    <%=link_to "***Historia de Prescripción Farmacológica"%>
-  </li>
+
+<div class=""><div class="container">
+  <div class="row">
+    <div class="col">     <div class="d-flex justify-content-center">
+      <%= image_tag "new-icon-png-24.png", style: 'height:4vw' %>
+      </div>     <div class="d-flex justify-content-center">
+      <li class="nav-item">
+        <%= link_to "Crear nueva Consulta",new_patient_aacc_url%>
+      </li>
+      </div>
+    </div>
+    <div class="col">     <div class="d-flex justify-content-center">
+      <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
+      </div>     <div class="d-flex justify-content-center">
+      <li class="nav-item">
 
 
-
-
+        <%=link_to "Informe de Historia Completa"%>
+      </li>
+      </div>
+    </div>
+    <div class="col">     <div class="d-flex justify-content-center">
+      <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
+      </div>     <div class="d-flex justify-content-center">
+      <li class="nav-item">
+    <%=link_to "Historia de Sintomatología Cognitiva"%>
+      </li>
+      </div>
+    </div>
+    <div class="col">     <div class="d-flex justify-content-center">
+      <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
+      </div>     <div class="d-flex justify-content-center">
+      <li class="nav-item">
+    <%=link_to "Historia de Sintomatología No Cognitiva"%>
+      </li>
+      </div>
+    </div>
+    <div class="col">     <div class="d-flex justify-content-center">
+      <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
+      </div>     <div class="d-flex justify-content-center">
+      <li class="nav-item">
+    <%=link_to "Historia de Exploración Funcional"%>
+      </li>
+      </div>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="col">     <div class="d-flex justify-content-center">
+      <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
+      </div>     <div class="d-flex justify-content-center">
+      <li class="nav-item">
+    <%=link_to "Historia de Pruebas Complementarias"%>
+      </li>
+      </div>
+    </div>
+    <div class="col">     <div class="d-flex justify-content-center">
+      <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
+      </div>     <div class="d-flex justify-content-center">
+      <li class="nav-item">
+    <%=link_to "Historia de Diagnósticos"%>
+      </li>
+      </div>
+    </div>
+    <div class="col">     <div class="d-flex justify-content-center">
+      <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
+      </div>     <div class="d-flex justify-content-center">
+      <li class="nav-item">       
+        <%= link_to 'Historia de Hábitos',habits_history_url(:patient_id => @paciente) %>
+  
+      </li>
+      </div>
+    </div>
+    <div class="col">     <div class="d-flex justify-content-center">
+      <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
+      </div>     <div class="d-flex justify-content-center">
+      <li class="nav-item">
+    <%=link_to "Historia de Patologías Intercurrentes"%>
+      </li>
+      </div>
+    </div>
+    <div class="col">     <div class="d-flex justify-content-center">
+      <%= image_tag "history335.png", style: 'height:4vw;width:3vw' %>
+      </div>     <div class="d-flex justify-content-center">
+      <li class="nav-item">
+    <%=link_to "Historia de Prescripción Farmacológica"%>
+      </li>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <hr>
@@ -70,37 +127,10 @@
       </tr>
     <% end %>
   </tbody>
-</table>
 <table>
-  <thead>
-    <tr>
-      <th>Medicalrecord</th>
-      <th>Id activity type</th>
-      <th>Id physician</th>
-      <th>Observations</th>
-      <th>Finished</th>
-      <th>Patient</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @aaccs.each do |aacc| %>
-      <tr>
-        <td><%= aacc.medicalrecord %></td>
-        <td><%= aacc.id_activity_type %></td>
-        <td><%= aacc.id_physician %></td>
-        <td><%= aacc.observations %></td>
-        <td><%= aacc.finished %></td>
-        <td><%= aacc.Patient_id %></td>
-        <td><%= link_to 'Show', patient_aacc_url(:patient_id => aacc.Patient_id, :id => aacc) %></td>
-        <td><%= link_to 'Edit', edit_patient_aacc_url(:patient_id => aacc.Patient_id, :id => aacc) %></td>
-        <td><%= link_to 'Destroy', patient_aacc_url(:patient_id => aacc.Patient_id, :id => aacc), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
 </table>
 
 <br>
-
 <%= link_to 'New Aacc', new_patient_aacc_url %>
+

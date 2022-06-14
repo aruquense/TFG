@@ -1,7 +1,7 @@
 class PatientAaccAnalytic
   include Mongoid::Document
   include Mongoid::Timestamps
-  field :idn, type: Integer
+  auto_increment :idn
   field :value, type: String
   field :physycian_eval, type: String
   belongs_to :parameter

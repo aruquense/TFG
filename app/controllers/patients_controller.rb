@@ -9,37 +9,28 @@ class PatientsController < ApplicationController
 
   # GET /patients/1 or /patients/1.json
   def show
+    #@aaa = Patient.find(params[:id])
+    #render json: @aaa
   end
 
   # GET /patients/new
   def new
     @patient = Patient.new
+    #puts "\n\n\n\n idn? #{params[:idn]} \n\n\n"
+    #@patient.medicalrecord = params[:idn]
   end
 
   # GET /patients/1/edit
   def edit
   end
 
-
-
-
-
-  def aacc
-    puts "Random text "
-  end
-
-
-
-
-
-
   # POST /patients or /patients.json
   def create
     @patient = Patient.new(patient_params)
-      puts "\n\n\n\n idn? #{params[:idn]} \n\n\n"
-      @patient.medicalrecord = params[:idn]
-      @result = params[:idn]
-      @patient.medicalrecord=@result
+   #   puts "\n\n\n\n idn? #{params[:idn]} \n\n\n"
+   #   @patient.medicalrecord = params[:idn]
+   #   @result = params[:idn]
+    #  @patient.medicalrecord=@result
     #@patient.PatientAacc='1'
 
     respond_to do |format|

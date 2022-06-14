@@ -21,6 +21,20 @@
   
   
     <%= render "partials/nav" %>
-    <%= yield %>
+    <div class="container-fluid padding margin">
+      <div class="row">
+        <div class="col-lg-10">
+        <%= yield %>
+        <%if user_signed_in? %>        </div>
+         <div class="col-lg-2">
+
+        
+        
+    <%= render "partials/login" %>
+    <%= render "partials/message" %>
+
+</div>
+        <%end%>
+
   </body>
 </html>

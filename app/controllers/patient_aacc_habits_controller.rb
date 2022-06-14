@@ -1,11 +1,16 @@
 class PatientAaccHabitsController < ApplicationController
   before_action :set_patient_aacc_habit, only: %i[ show edit update destroy ]
+  before_action :set_patient, only: %i[ habits_history ]
 
   # GET /patient_aacc_habits or /patient_aacc_habits.json
   def index
     @patient_aacc_habits = PatientAaccHabit.all
   end
 
+  def habits_history
+    @patient_aacc_habits = PatientAaccHabit.where(patient: @paciente)
+  end  
+  
   # GET /patient_aacc_habits/1 or /patient_aacc_habits/1.json
   def show
   end
@@ -62,6 +67,9 @@ class PatientAaccHabitsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_patient_aacc_habit
       @patient_aacc_habit = PatientAaccHabit.find(params[:id])
+    end    
+    def set_patient
+      @paciente = Patient.find(params[:patient_id])
     end
 
     # Only allow a list of trusted parameters through.

@@ -17,7 +17,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create message" do
     assert_difference('Message.count') do
-      post messages_url, params: { message: { answered: @message.answered, from_physician: @message.from_physician, idn: @message.idn, physician_id: @message.physician_id, value: @message.value, viewed: @message.viewed, viewed_date: @message.viewed_date } }
+      post messages_url, params: { message: { answered: @message.answered, from_physician_id: @message.from_physician_id, idn: @message.idn, physician_id: @message.physician_id, value: @message.value, viewed: @message.viewed, viewed_date: @message.viewed_date } }
     end
 
     assert_redirected_to message_url(Message.last)
@@ -34,7 +34,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update message" do
-    patch message_url(@message), params: { message: { answered: @message.answered, from_physician: @message.from_physician, idn: @message.idn, physician_id: @message.physician_id, value: @message.value, viewed: @message.viewed, viewed_date: @message.viewed_date } }
+    patch message_url(@message), params: { message: { answered: @message.answered, from_physician_id: @message.from_physician_id, idn: @message.idn, physician_id: @message.physician_id, value: @message.value, viewed: @message.viewed, viewed_date: @message.viewed_date } }
     assert_redirected_to message_url(@message)
   end
 

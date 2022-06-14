@@ -8,5 +8,7 @@ class Aacc
   field :observations, type: String
   field :finished, type: String
   has_many :PatientAaccSymptom, dependent: :destroy
+  has_many :PatientAaccHabit, dependent: :destroy   
   belongs_to :Patient
+
 end

@@ -6,6 +6,8 @@ class HabitsController < ApplicationController
     @habits = Habit.all
   end
 
+
+
   # GET /habits/1 or /habits/1.json
   def show
   end
@@ -64,6 +66,6 @@ class HabitsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def habit_params
-      params.require(:habit).permit(:idn, :description, :description_EN)
+      params.require(:habit).permit(:idn, :description, :description_EN, :medicalrecord)
     end
 end

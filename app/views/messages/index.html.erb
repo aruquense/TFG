@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Messages</h1>
 
@@ -25,7 +24,7 @@
         <td><%= message.answered %></td>
         <td><%= message.viewed_date %></td>
         <td><%= message.from_physician %></td>
-        <td><%= message.physician_id %></td>
+        <td><%= User.find(message.user).email %></td>
         <td><%= link_to 'Show', message %></td>
         <td><%= link_to 'Edit', edit_message_path(message) %></td>
         <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -35,5 +34,6 @@
 </table>
 
 <br>
-
 <%= link_to 'New Message', new_message_path %>
+
+ 

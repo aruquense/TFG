@@ -8,11 +8,14 @@ class MessagesController < ApplicationController
 
   # GET /messages/1 or /messages/1.json
   def show
+    @user = User.find(@message.user)
   end
 
   # GET /messages/new
   def new
     @message = Message.new
+    #@patient.PatientAacc='1'
+    @message.from_physician = '1'
   end
 
   # GET /messages/1/edit
@@ -64,6 +67,6 @@ class MessagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.require(:message).permit(:idn, :value, :viewed, :answered, :viewed_date, :from_physician, :physician_id)
+      params.require(:message).permit(:idn, :value, :viewed, :answered, :viewed_date, :from_physician, :user)
     end
 end

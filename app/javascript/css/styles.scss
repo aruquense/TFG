@@ -2,7 +2,62 @@
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
+.nav{
+    background-color: #f7fbff;
 
+}
+.col-lg-10{
+    background-color: white;
+}
+
+.small-container{
+    width: 100%;
+    max-width: 320px;
+}
+.large-container{
+    width: 100%;
+    max-width: 960px;
+    padding: 30px 30px;
+}
+.center-block{
+    margin: 0 auto;
+}
+.padding{
+    padding: 10px 15px;
+}
+.margintop{
+    margin-top: 0.5em;
+}
+.margin{
+    margin: 1.5em;
+}
+.field{
+    label{
+        @extend .text-uppercase;
+        @extend .text-secondary;
+    }
+&:first-of-type{
+    margin-top: 0;
+}
+input{
+    @extend.form-control;
+    @extend .bg-light;
+}
+input[type='checkbox']{
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+}
+body{
+    background-color: #ffe9c9;
+}
+.card{
+    input{
+        //background: #5cb85c;
+    }
+}
 $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333

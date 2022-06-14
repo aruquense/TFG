@@ -21,9 +21,9 @@
         <td><%= patient_aacc_prescription.idn %></td>
         <td><%= patient_aacc_prescription.id_physician %></td>
         <td><%= patient_aacc_prescription.value %></td>
-        <td><%= patient_aacc_prescription.prescription_drugs_type_id %></td>
-        <td><%= patient_aacc_prescription.aacc_id  %></td>
-        <td><%= patient_aacc_prescription.patient_id%></td>
+        <td><%= PrescriptionDrugsType.find( patient_aacc_prescription.prescription_drugs_type_id).description %></td>
+        <td><%=  patient_aacc_prescription.aacc_id  %></td>
+        <td><%= Patient.find(patient_aacc_prescription.patient_id).name %></td>
         <td><%= link_to 'Show', patient_aacc_prescription %></td>
         <td><%= link_to 'Edit', edit_patient_aacc_prescription_path(patient_aacc_prescription) %></td>
         <td><%= link_to 'Destroy', patient_aacc_prescription, method: :delete, data: { confirm: 'Are you sure?' } %></td>

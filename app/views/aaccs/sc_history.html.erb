@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+    <%= render "partials/patient" %>
+<h1>Histórico de Sintomatología Cognitiva del Paciente</h1>
+<table>
+  <thead>
+    <tr>
+      <th>NHC</th>
+      <th>CONSULTA</th>
+      <th>FECHA</th>
+      <th>HABITO</th>
+      <th>COMENTARIOS</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patient_aacc_habits.each do |patient_aacc_habit| %>
+      <tr>
+        <td><%= Patient.find(patient_aacc_habit.patient_id).nhc
+        
+        
+        
+        %></td>
+        <td><%= Aacc.find(patient_aacc_habit.aacc_id).idn %></td>
+        <td><%= patient_aacc_habit.created_at %></td>
+        <td><%= Habit.find(patient_aacc_habit.habit).description %></td>
+        <td><%= patient_aacc_habit.comments %></td>
+        <td><%= link_to 'Show', patient_aacc_habit %></td>
+        <td><%= link_to 'Edit', edit_patient_aacc_habit_path(patient_aacc_habit) %></td>
+        <td><%= link_to 'Destroy', patient_aacc_habit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to 'New Patient Aacc Habit', new_patient_aacc_habit_path %>

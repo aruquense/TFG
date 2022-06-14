@@ -4,7 +4,7 @@ class Patient
   include Mongoid::Attributes::Dynamic
   field :medicalrecord, type: Integer
   auto_increment :idn
-  field :nhc, type: String
+  auto_increment :nhc
   field :nss, type: String
   field :medicalcard, type: String
   field :name, type: String
@@ -31,7 +31,11 @@ class Patient
   field :institution_id, type: Integer
   field :comments, type: String, default: 'PACIENTE DE PRUEBA'
   has_many :aaccs, dependent: :destroy
-  #has_many :objects, through: :join_association, source: :join_association_table_foreign_key_to_objects_table
-  #has_and_belongs_to_many :object, join_table: "table_name", foreign_key: "object_id"
-  #has_many :objects, class_name: "object", foreign_key: "reference_id", dependent: :destroy
+    
+  validates :name,     presence: true
+  validates :surname,     presence: true
+  validates :gender,     presence: true
+  validates :birthdate,     presence: true
+  validates :nif, :presence => true, :uniqueness => true
+    
 end

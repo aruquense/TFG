@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :idn %>
-    <%= form.number_field :idn %>
+    <%= form.hidden_field :idn %>
   </div>
 
   <div class="field">
@@ -22,28 +21,24 @@
   </div>
 
   <div class="field">
-    <%= form.label :viewed %>
-    <%= form.check_box :viewed %>
+    <%= form.hidden_field :viewed %>
   </div>
 
   <div class="field">
-    <%= form.label :answered %>
-    <%= form.check_box :answered %>
+    <%= form.hidden_field :answered %>
   </div>
 
   <div class="field">
-    <%= form.label :viewed_date %>
-    <%= form.date_select :viewed_date %>
+    <%= form.hidden_field :viewed_date %>
   </div>
 
   <div class="field">
-    <%= form.label :from_physician %>
-    <%= form.text_field :from_physician %>
+    <%= form.hidden_field :from_physician %>
   </div>
 
   <div class="field">
-    <%= form.label :physician_id %>
-    <%= form.text_field :physician_id %>
+    <%= form.label :user, "Lista de Facultativos" %>
+    <%= form.select :user, options_from_collection_for_select(User.all, :_id, :email) , {:prompt => 'Selecciona Facultativo'}  %>
   </div>
 
   <div class="actions">

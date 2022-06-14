@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   resources :patient_aacc_habits
   get 'home/index'
   get "admin", to: "admin#index"
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   #resources :patients
   root "patients#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -54,6 +56,7 @@ Rails.application.routes.draw do
     end
   end
   get "calculator", to: "calculator#index"
+  get "patient_aacc_habits_history", to: "patient_aacc_habits#habits_history", as: :habits_history
   resources :calculator
   #get 'patients/:patient_id/aaccs/:id/edit', to: 'aaccs#edit'
 
