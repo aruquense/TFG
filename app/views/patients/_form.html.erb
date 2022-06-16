@@ -96,47 +96,38 @@
 
 
 
-
-
-
-
-
-
-
-
-
   <div class="small-container field">
-    <%= form.label :birthdate %>
+    <%= form.label :birthdate, "Fecha de nacimiento" %>
     <%= form.date_field :birthdate %>
   </div>
 
   <div class="small-container field">
-    <%= form.label :birthcity %>
-    <%= form.number_field :birthcity %>
+    <%= form.label :birthcity,"Lugar de nacimiento" %>
+    <%= form.text_field :birthcity %>
   </div>
 
   <div class="small-container field">
-    <%= form.label :birthcountry %>
-    <%= form.number_field :birthcountry %>
+    <%= form.label :birthcountry,"País de nacimiento" %>
+    <%= form.text_field :birthcountry %>
   </div>
 
   <div class="field">
-    <%= form.label :adress %>
+    <%= form.label :adress,"Dirección" %>
     <%= form.text_field :adress %>
   </div>
 
   <div class="small-container field">
-    <%= form.label :city %>
+    <%= form.label :city,"Ciudad" %>
     <%= form.text_field :city %>
   </div>
   <div class="small-container field">
-    <%= form.label :state %>
+    <%= form.label :state,"Provincia" %>
     <%= form.text_field :state %>
   </div>
 
   <div class="small-container field">
-    <%= form.label :country %>
-    <%= form.number_field :country %>
+    <%= form.label :country,"País" %>
+    <%= form.text_field :country %>
   </div>
 
 
@@ -144,34 +135,46 @@
 
 <hr width=400>
   <div class="small-container field">
-    <%= form.label :scholarship %>
-    <%= form.number_field :scholarship %>
+    <%= form.label :scholarship,"Nivel de Estudios" %>
+    <%=form.select(:scholarship, options_for_select([['Sin estudios', 'Sin estudios'],
+    ['Educacion primaria', 'Educacion primaria'],
+    ['Educación secundaria', 'Educación secundaria'],
+    ['Bachillerato', 'Bachillerato'],
+    ['Formación profesional', 'Formación profesional'],
+    ['Carrera universitaria', 'Carrera universitaria'],
+    ['Másteres y postgrados', 'Másteres y postgrados'],
+    ['Doctorado', 'Doctorado']]), prompt: "Seleccionar...")%>
   </div>
   <div class="small-container field">
     <%= form.label :employeestatus,"Situación Laboral" %>
-    <%= form.number_field :employeestatus %>
+    <%=form.select(:employeestatus, options_for_select([['Jubilado', 'Jubilado'],
+    ['Trabajando', 'Trabajando']]), prompt: "Seleccionar...")%>
   </div>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :profession,"Profesión" %>
     <%= form.select :profession,options_from_collection_for_select(Profession.all, :_id, :description) , {:prompt => 'Selecciona'}  %>
   </div>
 
-  <div class="field">
+  <div class="small-container field">
     <%= form.label :incoming_rate_id, "Situación Económica" %>
-    <%= form.number_field :incoming_rate_id %>
+    <%=form.select(:incoming_rate_id, options_for_select([['Rico', 'Rico'],
+    ['Pobre', 'Pobre']]), prompt: "Seleccionar...")%>
   </div>
 
 
 
   <div class="field">
     <%= form.label :institution_id,"Institucionalizado" %>
-    <%= form.number_field :institution_id %>
+    <%= form.text_field :institution_id %>
   </div>
 
-  <div class="container-fluid field">
+  <div class="field">
     <%= form.label :comments,"Comentarios" %>
-    <%= form.text_area :comments %>
+    
+    <div class="text">
+      <%= form.text_area :comments %>
+    </div>
   </div>
   
   <div class="field">

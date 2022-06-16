@@ -7,4 +7,5 @@ class Diagnoser
   field :description_EN, type: String
   field :observations, type: String
   field :observations_EN, type: String
+  belongs_to :aacc
 end

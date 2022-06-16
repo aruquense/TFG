@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idn:</strong>
+  <%= @patient_aacc_disease.idn %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @patient_aacc_disease.description %>
+</p>
+
+<p>
+  <strong>Description en:</strong>
+  <%= @patient_aacc_disease.description_en %>
+</p>
+
+<%= link_to 'Edit', edit_patient_aacc_disease_path(@patient_aacc_disease) %> |
+<%= link_to 'Back', patient_aacc_diseases_path %>

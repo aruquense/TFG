@@ -9,6 +9,10 @@ class Aacc
   field :finished, type: String
   has_many :PatientAaccSymptom, dependent: :destroy
   has_many :PatientAaccHabit, dependent: :destroy   
+  has_many :PatientAaccPrescription, dependent: :destroy   
+  has_many :PatientAaccDisease, dependent: :destroy  
+  has_many :Exploration, dependent: :destroy  
+  has_many :ComplementaryTest, dependent: :destroy   
   belongs_to :Patient
 
 end
