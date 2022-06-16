@@ -31,7 +31,19 @@ class Patient
   field :institution_id, type: Integer
   field :comments, type: String, default: 'PACIENTE DE PRUEBA'
   has_many :aaccs, dependent: :destroy
-    
+
+  validates :nss,  presence: true
+  validates :medicalcard,  presence: true
+  validates :scholarship,  presence: true
+  validates :maritalstatus,  presence: true
+  validates :birthcity,  presence: true
+  validates :adress,  presence: true
+  validates :city,  presence: true
+  validates :state,  presence: true
+  validates :country,  presence: true
+  validates :profession, presence: true
+  validates :employeestatus,  presence: true
+  
   validates :name,     presence: true
   validates :surname,     presence: true
   validates :gender,     presence: true
