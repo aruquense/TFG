@@ -1,46 +1,43 @@
 <div class="card center-block padding">
 <h4>SESION DE USUARIO</h4>
-    <%if user_signed_in? %> 
-    <div>
+<%if user_signed_in? %> 
+  <div>
     Está Ud. conectad@ como:
     <%=  current_user.email%>
-    
-  <%= button_to 'Finalizar sesión', destroy_user_session_path, method: :delete, :class => "btn btn-primary" %> 
 
+    <%= button_to 'Finalizar sesión', destroy_user_session_path, method: :delete, :class => "btn btn-primary" %> 
+
+  </div>
+  <% else %>
+  <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="t-bh1xSEsP6U7EdGeNWYpPHUL4z65yWVWQzRZhyX-Uhqi9KkkOG3A30CamitmeItwBeK1RSkV1M9BPSak5neEw" />
+    <div class="field">
+      <label for="user_email">Email</label><br />
+      <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email" />
     </div>
-
-        
-        
-    <% else %>
-            <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="t-bh1xSEsP6U7EdGeNWYpPHUL4z65yWVWQzRZhyX-Uhqi9KkkOG3A30CamitmeItwBeK1RSkV1M9BPSak5neEw" />
-              <div class="field">
-                  <label for="user_email">Email</label><br />
-                      <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email" />
-              </div>
-                <div class="field">
-                    <label for="user_password">Password</label><br />
-    <input autocomplete="current-password" type="password" name="user[password]" id="user_password" />
+    <div class="field">
+      <label for="user_password">Password</label><br />
+      <input autocomplete="current-password" type="password" name="user[password]" id="user_password" />
+    </div>
     <div class="field">
       <input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
       <label for="user_remember_me">Remember me</label>
     </div>
 
-  <div class="actions">
-    <input type="submit" name="commit" value="Log in" data-disable-with="Log in" />
-  </div>
-</form>
+    <div class="actions">
+      <input type="submit" name="commit" value="Log in" data-disable-with="Log in" />
+    </div>
+  </form>
 
 
   <a href="/users/sign_up">Sign up</a><br />
 
   <a href="/users/password/new">Forgot your password?</a><br />
-        </div>
-
-    <%end%>
-    
-            
   </div>
 
+<%end%>
 
 
-    
+</div>
+
+
+

@@ -39,6 +39,7 @@ Rails.application.routes.draw do
       resources :patient_aacc_prescriptions
       
       
+      get 'exploracion_funcional', to: "patient_aacc_symptoms#exploracion_funcional", as: :exploracion_funcional
       get 'patient_aacc_tests/new_test_barthel', to: "patient_aacc_tests#new_test_barthel", as: :new_test_barthel
       get 'patient_aacc_tests/new_test_fast', to: "patient_aacc_tests#new_test_fast", as: :new_test_fast
       get 'patient_aacc_tests/new_test_informador', to: "patient_aacc_tests#new_test_informador", as: :new_test_informador

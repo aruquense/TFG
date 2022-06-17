@@ -1,5 +1,7 @@
 class PatientAaccSymptomsController < ApplicationController
   before_action :set_patient_aacc_symptom, only: %i[ show edit update destroy ]
+  before_action :set_tests, only: %i[ exploracion_funcional ]
+  
 
   # GET /patient_aacc_symptoms or /patient_aacc_symptoms.json
   def index
@@ -36,6 +38,10 @@ class PatientAaccSymptomsController < ApplicationController
 
   # GET /patient_aacc_symptoms/1/edit
   def edit
+  end  
+  def exploracion_funcional
+    @paciente = Patient.find(params[:patient_id])
+    @aacc = Aacc.find(params[:aacc_id])
   end
 
   # POST /patient_aacc_symptoms or /patient_aacc_symptoms.json
@@ -79,6 +85,21 @@ class PatientAaccSymptomsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_tests
+      @patient_aacc_tests = PatientAaccTest.where(exploration_type: ExplorationType.where(idn: '1').first)
+      @x=ExplorationType.where(idn: '1').first
+      @y=ExplorationType.where(idn: '2').first
+      @z=ExplorationType.where(idn: '3').first
+      
+      puts "\n\n\n\n xxx #{@x.description} \n"
+      puts " xxx #{@y.description} \n"
+      puts " xxx #{@z.description} \n\n\n"
+      
+      #@patient_aacc_tests = PatientAaccTest.where('idn, = ?', 13)
+      #x=PatientAaccTest.find_by(exploration_type: ExplorationType.where('idn= 1').first)
+      #@patient_aacc_tests = x.all
+      
+    end
     def set_patient_aacc_symptom
       @patient_aacc_symptom = PatientAaccSymptom.find(params[:id])
       

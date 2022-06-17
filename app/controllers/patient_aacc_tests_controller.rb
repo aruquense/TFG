@@ -22,6 +22,8 @@ class PatientAaccTestsController < ApplicationController
   def new_test_informador
   end
   def new_test_katz
+    @paciente = Patient.find(params[:patient_id])
+    @aacc = Aacc.find(params[:aacc_id])
   end
   def new_test_lawton_brody
   end

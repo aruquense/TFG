@@ -1,14 +1,5 @@
-<< Volver a la Exploración Funcional de la Consulta ‘XXX’
-HR 
-H1 Test de KATZ
-HR
-Calificacion del Test KATZ (*)
 
-
-HR
-H2 Valoración del Test de Katz
-
-<< Volver a la Exploración Funcional de la Consulta ‘XXX’
+    <%= render "partials/aacc" %><%= link_to '<<Volver al Protocolo Clínico para la consulta' , :back %>
 <hr>
 <h1>Test de KATZ</h1>
 <hr>
@@ -16,8 +7,7 @@ H2 Valoración del Test de Katz
 <%= form_with(model: @patient_aacc_test) do |form| %>
   
   <div class="field">
-    <%= form.label :idn %>
-    <%= form.number_field :idn %>
+    <%= form.hidden_field :idn %>
   </div>
 
     <div class="field">
@@ -27,8 +17,7 @@ H2 Valoración del Test de Katz
   </div>
   
   <div class="field">
-    <%= form.label :answers %>
-    <%= form.text_area :answers %>
+    <%= form.hidden_field :answers %>
   </div>
 
   <div class="field">
@@ -38,25 +27,21 @@ H2 Valoración del Test de Katz
   </div>
 
   <div class="field">
-    <%= form.label :exploration_type_id %>
-    <%= form.text_field :exploration_type_id %>
+    <%= form.hidden_field :exploration_type_id %>
   </div>
 
   <div class="field">
-    <%= form.label :test_id %>
-    <%= form.text_field :test_id %>
+    <%= form.hidden_field :test_id %>
   </div>
 
   <div class="field">
-    <%= form.label :aacc_id %>
-    <%= form.text_field :aacc_id %>
+    <%= form.hidden_field :aacc_id %>
   </div>
 
   <div class="field">
-    <%= form.label :patient_id %>
-    <%= form.text_field :patient_id %>
+    <%= form.hidden_field :patient_id %>
   </div>
-    <div>
+    <div class="test">
         <%=form.label :s1,"Calificación del Test FAST(*) " %>
         <%= select_tag :s1, options_for_select([['•	A – Independiente en alimentación/continencia/movilidad/uso del inodoro/vestirse y bañarse', 'A'],
         ['•	B – Independiente para todas las funciones acteriores excepto una', 'B'],
@@ -67,50 +52,61 @@ H2 Valoración del Test de Katz
         ['•	G – Dependiente en las seis funciones', 'G'],
         ['•	H – Dependiente en al menos dos funciones pero no clasificable como C/D/E/F', 'H']],params[:s1]) %>
     </div>
+<hr>
     <h2>Valoracion del Test de Katz</h2>
-•	A – Independiente en alimentación/continencia/movilidad/uso del inodoro/vestirse y bañarse
-•	B – Independiente para todas las funciones acteriores excepto una
-•	C Independiente para todas excepto bañarse y otra función adicional
-•	D – Independiente para todas excepto bañarse/vestirse y otra función adicional
-•	E – Independiente para todas excepto bañarse/vestirse/uso del inodoro y otra función adicional
-•	F – Independiente para todas excepto bañarse/vestirse/uso del inodoro y otra función adicional
-•	G – Dependiente en las seis funciones
-•	H – Dependiente en al menos dos funciones pero no clasificable como C/D/E/F
 
-Independiente significa sin supervisión, dirección o ayuda personal activa, con las excepciones que se indican más abajo. Se basan en el estado actual y no en la capacidad de hacerlas. Se considera que un paciente que se niega a realizar una función no hace esa función, aunque se le considere capaz.
+  <div class="field">•	A – Independiente en alimentación/continencia/movilidad/uso del inodoro/vestirse y bañarse</div>
 
-Bañarse (con esponja, ducha o bañera):
-Independiente: necesita ayuda para lavarse una sola parte (como la espalda o una extremidad incapacitada) o se baña completamente sin ayuda.
+  <div class="field">•	B – Independiente para todas las funciones acteriores excepto una</div>
 
-Dependiente: necesita ayuda para lavarse más de una parte del cuerpo, para salir o entrar en la bañera, o no se lava solo.
+  <div class="field">•	C Independiente para todas excepto bañarse y otra función adicional</div>
 
-Vestirse:
-Independiente: coge la ropa solo, se la pone, se pone adornos y abrigos y usa cremalleras (se excluye el atarse los zapatos).
+  <div class="field">•	D – Independiente para todas excepto bañarse/vestirse y otra función adicional</div>
 
-Dependiente: no se viste solo o permanece vestido parcialmente.
+  <div class="field">•	E – Independiente para todas excepto bañarse/vestirse/uso del inodoro y otra función adicional</div>
 
-Usar el retrete:
-Independiente: accede al retrete, entra y sale de él, se limpia los órganos excretores y se arregla la ropa (puede usar o no soportes mecánicos).
+  <div class="field">•	F – Independiente para todas excepto bañarse/vestirse/uso del inodoro y otra función adicional</div>
 
-Dependiente: usa orinal o cuña o precisa ayuda para acceder al retrete y utilizarlo.
+  <div class="field">•	G – Dependiente en las seis funciones</div>
 
-Movilidad:
-Independiente: entra y sale de la cama y se sienta y levanta de la silla solo (puede usar o no soportes mecánicos).
+  <div class="field">•	H – Dependiente en al menos dos funciones pero no clasificable como C/D/E/F</div>
+ <p>Independiente significa sin supervisión, dirección o ayuda personal activa, con las excepciones que se indican más abajo. Se basan en el estado actual y no en la capacidad de hacerlas. Se considera que un paciente que se niega a realizar una función no hace esa función, aunque se le considere capaz.
+<p>Bañarse (con esponja, ducha o bañera):
 
-Dependiente: precisa de ayuda para utilizar la cama y/o la silla; no realiza uno o más desplazamientos.
+<p>Independiente: necesita ayuda para lavarse una sola parte (como la espalda o una extremidad incapacitada) o se baña completamente sin ayuda.
 
-Continencia:
-Independiente: control completo de micción y defecación.
 
-Dependiente: incontinencia urinaria o fecal parcial o total.
+<p>Dependiente: necesita ayuda para lavarse más de una parte del cuerpo, para salir o entrar en la bañera, o no se lava solo.
+<p>Vestirse:
 
-Alimentación:
-Independiente: lleva la comida desde el plato o su equivalente a la boca (se excluyen cortar la carne y untar la mantequilla o similar).
+<p>Independiente: coge la ropa solo, se la pone, se pone adornos y abrigos y usa cremalleras (se excluye el atarse los zapatos).
 
-Dependiente: precisa ayuda para la acción de alimentarse, o necesita de alimentación enteral o parenteral.
-https://www.hipocampo.org/katz.asp
+
+<p>Dependiente: no se viste solo o permanece vestido parcialmente.
+<p>Usar el retrete:
+
+<p>Independiente: accede al retrete, entra y sale de él, se limpia los órganos excretores y se arregla la ropa (puede usar o no soportes mecánicos).
+
+
+<p>Dependiente: usa orinal o cuña o precisa ayuda para acceder al retrete y utilizarlo.
+<p>Movilidad:
+
+<p>Independiente: entra y sale de la cama y se sienta y levanta de la silla solo (puede usar o no soportes mecánicos).
+
+
+<p>Dependiente: precisa de ayuda para utilizar la cama y/o la silla; no realiza uno o más desplazamientos.
+<p>Continencia:
+
+<p>Independiente: control completo de micción y defecación.
+
+
+<p>Dependiente: incontinencia urinaria o fecal parcial o total.
+<p>Alimentación:
+<p>Independiente: lleva la comida desde el plato o su equivalente a la boca (se excluyen cortar la carne y untar la mantequilla o similar).
+<p>Dependiente: precisa ayuda para la acción de alimentarse, o necesita de alimentación enteral o parenteral.
+<h4>https://www.hipocampo.org/katz.asp </h4>
+
   <div class="actions">
-  Realizar Test de Yesavage
     <%= form.submit "Almacenar Test de Yesavage 4" %>
   </div>
 <% end %>

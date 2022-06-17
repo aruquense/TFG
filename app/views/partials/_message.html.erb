@@ -1,13 +1,18 @@
-            <div class="card padding">
-            
-            <h4>BUZON DE INTERCONSULTAS</h4>
-            <div>
-            <p><%=  %> 
-    <%= link_to "Buzón de entrada: 0",messages_url%><%= %>
-                    <%=  %> 
-               <p>             
-    <%= link_to "Solicitudes realizadas: 0"%><%= %>
-                  <p>                  
-    <%= link_to "Crear Solicitud de Interconsulta realizadas",new_message_url%><%= %> <%=  %></div>
-            </div>
-            </div>
+<div class="card padding margintop">
+        <h4>BUZON DE INTERCONSULTAS</h4>
+                <div>
+                <p>
+                <%=  %> 
+                
+      <%= image_tag "1904659-entrada.png", class: 'img-responsive icon' %> <%= link_to "Buzón de entrada: 0",messages_url%>
+                <p>             
+               
+      <%= image_tag "1904676-salida", class: 'img-responsive icon' %> <%= link_to "Solicitudes realizadas: 0"%>
+                <p>                  
+        
+      <%= image_tag "1904660-nuevo.png", class: 'img-responsive icon' %> <%= link_to "Crear Solicitud de Interconsulta realizadas",new_message_url%>
+      
+
+                </div>
+        </div>
+</div>
