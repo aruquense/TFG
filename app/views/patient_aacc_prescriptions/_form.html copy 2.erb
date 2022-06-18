@@ -19,6 +19,18 @@
     
   </div>
 
+  <div class="field">
+    <%= form.label :aacc_id %>
+    <%= form.hidden_field :aacc_id %>
+    <%= form.select :aacc_id, options_from_collection_for_select(Aacc.all, :_id, :idn) , {:prompt => 'Selected Vendor'}  %>
+    
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.select :patient_id, options_from_collection_for_select(Patient.all, :_id, :name) , {:prompt => 'Selected Vendor'}  %>
+    
+  </div>
 
   <div class="actions">
     <%= form.submit "Almacenar Prescripción" %>

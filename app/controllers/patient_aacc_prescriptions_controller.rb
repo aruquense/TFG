@@ -5,6 +5,8 @@ class PatientAaccPrescriptionsController < ApplicationController
   def index
     @patient_aacc_prescriptions = PatientAaccPrescription.all
     @patient_aacc_prescription = PatientAaccPrescription.new
+    @paciente = Patient.find(params[:patient_id])
+    @aacc = Aacc.find(params[:aacc_id])
     #@aaccs =Aacc.where(medicalrecord: @patient_aacc_prescription.aacc_id)
   end
 

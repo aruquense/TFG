@@ -1,16 +1,14 @@
-<p id="notice"><%= notice %></p>
+<%= render 'partials/aacc'%>
+<h2>Histórico de Prescripción Farmacológica del Paciente</h2>
 
-<h1>Patient Aacc Prescriptions</h1>
-
-<table>
+<table class="table table-striped ">
   <thead>
     <tr>
-      <th>Idn</th>
-      <th>Id physician</th>
-      <th>Value</th>
-      <th>Prescription drugs type</th>
-      <th>Aacc</th>
-      <th>Patient</th>
+      <th>ENTRADA</th>
+      <th>NHC</th>
+      <th>CONSULTA</th>
+      <th>PRESCRIPCION</th>
+      <th>TIPO DE FARMACO</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,11 +17,11 @@
     <% @patient_aacc_prescriptions.each do |patient_aacc_prescription| %>
       <tr>
         <td><%= patient_aacc_prescription.idn %></td>
-        <td><%= patient_aacc_prescription.id_physician %></td>
+        <td><%= @paciente.nhc %></td>
+        <td><%= @aacc.idn %></td>
         <td><%= patient_aacc_prescription.value %></td>
         <td><%= PrescriptionDrugsType.find( patient_aacc_prescription.prescription_drugs_type_id).description %></td>
-        <td><%=  patient_aacc_prescription.aacc_id  %></td>
-        <td><%= Patient.find(patient_aacc_prescription.patient_id).name %></td>
+
         <td><%= link_to 'Show', patient_aacc_prescription %></td>
         <td><%= link_to 'Edit', edit_patient_aacc_prescription_path(patient_aacc_prescription) %></td>
         <td><%= link_to 'Destroy', patient_aacc_prescription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,6 +31,8 @@
 </table>
 
 <br>
+
+<h1>Prescription Farmacológica del Paciente</h1>
+
 <%= render 'form', patient_aacc_prescription: @patient_aacc_prescription %>
 
-<%= link_to 'New Patient Aacc Prescription', new_patient_aacc_prescription_path %>

@@ -12,18 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :medicalrecord %>
+    <%= form.label :medicalrecord, "Paciente" %>
+    <%= form.text_field :medicalrecord %>
+  </div>  
+  <div class="field">
+    <%= form.label :medicalrecord,"NHC" %>
     <%= form.number_field :medicalrecord %>
   </div>
 
   <div class="field">
-    <%= form.label :id_activity_type %>
-    <%= form.number_field :id_activity_type %>
-  </div>
+    <%= form.label :id_activity_type, "Tipo de actividad" %>
+    <%= form.select(:id_activity_type, options_for_select([['AE', 'AE'], ['AP', 'AP']]), prompt: "Seleccionar...")%>
+ </div>
 
   <div class="field">
-    <%= form.label :id_physician %>
-    <%= form.text_field :id_physician %>
+    <%= form.label :id_physician, "Facultativo" %>
+    <%= form.select(:id_physician, options_for_select([['Doctor Strange', 'Doctor Strange'], ['Doctor Octopus', 'Doctor Octopus']]), prompt: "Seleccionar...")%>
   </div>
 
   <div class="field">
@@ -32,8 +36,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :finished %>
-    <%= form.text_field :finished %>
+    <%= form.hidden_field :finished %>
   </div>
 
   <div class="field">

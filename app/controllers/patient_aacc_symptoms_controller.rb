@@ -1,6 +1,6 @@
 class PatientAaccSymptomsController < ApplicationController
-  before_action :set_patient_aacc_symptom, only: %i[ show edit update destroy ]
-  before_action :set_tests, only: %i[ exploracion_funcional ]
+  before_action :set_patient_aacc_symptom, only: %i[ show edit update destroy  ]
+  before_action :set_tests, only: %i[ exploracion_funcional  ]
   
 
   # GET /patient_aacc_symptoms or /patient_aacc_symptoms.json
@@ -42,6 +42,12 @@ class PatientAaccSymptomsController < ApplicationController
   def exploracion_funcional
     @paciente = Patient.find(params[:patient_id])
     @aacc = Aacc.find(params[:aacc_id])
+  end
+  def exploracion_neurologica
+    @patient_aacc_symptom = PatientAaccSymptom.new
+    @paciente = Patient.find(params[:patient_id])
+    @aacc = Aacc.find(params[:aacc_id])
+    @patient_aacc_symptoms = PatientAaccSymptom.new
   end
 
   # POST /patient_aacc_symptoms or /patient_aacc_symptoms.json
@@ -102,8 +108,7 @@ class PatientAaccSymptomsController < ApplicationController
     end
     def set_patient_aacc_symptom
       @patient_aacc_symptom = PatientAaccSymptom.find(params[:id])
-      
-    end
+   end
 
     # Only allow a list of trusted parameters through.
     def patient_aacc_symptom_params

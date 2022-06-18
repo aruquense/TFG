@@ -1,0 +1,77 @@
+<%= form_with(model: patient_aacc_symptom) do |form| %>
+  <% if patient_aacc_symptom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient_aacc_symptom.errors.count, "error") %> prohibited this patient_aacc_symptom from being saved:</h2>
+
+      <ul>
+        <% patient_aacc_symptom.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<h1>Exploracion Neurológica de la Consulta Actual</h1>
+<div>
+  <div class="field">
+    <%= form.hidden_field :aacc_id %>
+  </div>
+
+
+  <hr>
+
+    <div>
+        <%=form.label :s1,"Anomalías Pupilares (*)" %>
+        <%=form.select(:s1, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    </div>    
+    <div>
+        <%=form.label :s2,"Papiledema (*)" %>
+        <%=form.select(:s2, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    </div>    
+    <div>
+        <%=form.label :s3,"Pérdida de Agudeza Auditiva (*)" %>
+        <%=form.select(:s3, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    </div>    
+    <hr>
+    <div>
+        <%=form.label :s4,"Pérdida de Agudeza Visual (*)" %>
+        <%=form.select(:s4, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    </div>    
+    <div>
+        <%=form.label :s5,"Defectos Campimétricos (*)" %>
+        <%=form.select(:s5, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    </div>    
+    <div>
+        <%=form.label :s6,"Alt. Motilidad Ocular Global (*)" %>
+        <%=form.select(:s6, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    </div>    
+    <div>
+        <%=form.label :s7,"Alt. Mirada Conjugada Vertical (*)" %>
+        <%=form.select(:s7, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    </div>    
+    <div>
+        <%=form.label :s8,"Paresia Facial (*)" %>
+        <%=form.select(:s8, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    </div>    
+    <div>
+        <%=form.label :s9,"Pares IX, X (*)" %>
+        <%=form.select(:s9, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    </div>    
+    <hr    >
+    <div>
+        <%=form.label :s10,"Pares XI, XII (*)" %>
+        <%=form.select(:s10, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    </div>    
+    <div>
+        <%=form.label :s11,"Paresia (Braquial/Crural) (*)" %>
+        <%=form.select(:s11, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    </div>    
+        <%=form.label :s12,"Hiperreflexia / Espasticidad  (*)" %>
+        <%=form.select(:s12, options_for_select([['Normal', 'Normal'],['Derecho', 'Derecho'], ['Izquierdo', 'Izquierdo'],['Desconocido', 'Desconocido']]), prompt: "Selecciona...")%>
+    <div>
+     
+  <hr>   <%=form.submit "Almacenar Exploración Neurológica"%>
+    </div> 
+    </div>
+<% end %>
