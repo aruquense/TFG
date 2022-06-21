@@ -37,16 +37,16 @@
   </div>
   <div class="field">
     <%= form.label :diagnosis_dementium %>
-    <%= form.select :diagnosis_dementium, options_from_collection_for_select(DiagnosisDementium.all, :_id, :description) , {:prompt => 'Selecciona...'}  %>
+    <%= form.select :diagnosis_dementium, options_from_collection_for_select(DiagnosisDementium.where(idn: '5'), :_id, :description)   %>
    
   </div>
   <div class="field">
     <%= form.label :diagnosis_ci %>
-    <%= form.select :diagnosis_ci, options_from_collection_for_select(DiagnosisCi.all, :_id, :description) , {:prompt => 'Selecciona...'}  %>
+    <%= form.select :diagnosis_ci, options_from_collection_for_select(DiagnosisCi.where(idn: '7'), :_id, :description)  %>
    
   </div>
     <div class="field">
-    <%= form.select :diagnosis_type, options_from_collection_for_select(DiagnosisType.where(idn: '1'), :_id, :description) %>
+    <%= form.select :diagnosis_type, options_from_collection_for_select(DiagnosisType.where(idn: '2'), :_id, :description) %>
     
     
   </div>

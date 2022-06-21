@@ -1,13 +1,54 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Patient Aacc Diseases</h1>
+<%= render 'partials/aacc'%>
 
-<table>
+<%= link_to '<< Volver al Protocolo Clínico de la consulta ', patient_aaccs_path(:patient_id => @paciente._id, :aacc_id => @aacc._id)%>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-center">
+        <%= image_tag "1904670-avatar.png", class: 'img-responsive' %>
+      </div>
+      <div class="d-flex justify-content-center">
+        <li class="nav-item">
+          <%= link_to 'Realizar Diagnóstico Facultativo', new_patient_aacc_patient_aacc_disease_path(:patient_id => @aacc.Patient_id, :aacc_id => @aacc) %>
+        </li>
+      </div>
+    </div><div class="col">
+      <div class="d-flex justify-content-center">
+        <%= image_tag "1904667-computer.png", class: 'img-responsive' %>
+      </div>
+      <div class="d-flex justify-content-center">
+        <li class="nav-item">
+          <%= link_to 'Solicitar Diagnóstico Computacional Tipo1', patient_aacc_new_computacional_diagnosis1_url(:patient_id => @aacc.Patient_id, :aacc_id => @aacc) %>
+        </li>
+      </div>
+    </div><div class="col">
+      <div class="d-flex justify-content-center">
+        <%= image_tag "1904667-computer.png", class: 'img-responsive' %>
+      </div>
+      <div class="d-flex justify-content-center">
+        <li class="nav-item">
+          <%= link_to 'Solicitar Diagnóstico Computacional Tipo2', patient_aacc_new_computacional_diagnosis2_url(:patient_id => @aacc.Patient_id, :aacc_id => @aacc) %>
+        </li>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<h1>Resumen de Todos los Diagnósticos Realizados </h1>
+
+<table class="table table-striped ">
   <thead>
     <tr>
-      <th>Idn</th>
-      <th>Description</th>
-      <th>Description en</th>
+      <th>NHC</th>
+      <th>CONSULTA</th>
+      <th>ID</th>
+      <th>FECHA</th>
+      <th>PACIENTE</th>
+      <th>DCL</th>
+      <th>DEMENCIA</th>
+      
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,17 +56,55 @@
   <tbody>
     <% @patient_aacc_diseases.each do |patient_aacc_disease| %>
       <tr>
+        <td><%= Patient.find(patient_aacc_disease.patient).nhc %></td>
+        <td><%= Aacc.find(patient_aacc_disease.aacc).idn %></td>
         <td><%= patient_aacc_disease.idn %></td>
-        <td><%= patient_aacc_disease.description %></td>
-        <td><%= patient_aacc_disease.description_en %></td>
+        <td><%= patient_aacc_disease.created_at %></td>
+        <td><%= Patient.find(patient_aacc_disease.patient).name %></td>
+        <td><%= DiagnosisDementium.find( patient_aacc_disease.diagnosis_dementium).description %></td>
+        <td><%= DiagnosisCi.find( patient_aacc_disease.diagnosis_ci).description %></td>
         <td><%= link_to 'Show', patient_aacc_disease %></td>
-        <td><%= link_to 'Edit', edit_patient_aacc_disease_path(patient_aacc_disease) %></td>
+        <td><%= link_to 'Edit', edit_patient_aacc_patient_aacc_disease_path(patient_aacc_disease,:patient_id => patient_aacc_disease.patient, :aacc_id => patient_aacc_disease.aacc) %></td>
         <td><%= link_to 'Destroy', patient_aacc_disease, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<hr>
+<h1>Resumen de Diagnósticos Computacionales Recibidos</h1>
+<hr>
+<h1>Resumen de Diagnósticos Computacionales Solicitados</h1>
 
+<table class="table table-striped ">
+  <thead>
+    <tr>
+      <th>NHC</th>
+      <th>CONSULTA</th>
+      <th>ID</th>
+      <th>SOLICITUD</th>
+      <th>SID</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patient_aacc_diseases.each do |patient_aacc_disease| %>
+      <% if DiagnosisType.find(patient_aacc_disease.diagnosis_type).idn != 1 %>
+        <tr>
+          <td><%= Patient.find(patient_aacc_disease.patient).nhc %></td>
+          <td><%= Aacc.find(patient_aacc_disease.aacc).idn %></td>
+          <td><%= patient_aacc_disease.idn %></td>
+          <td><%= patient_aacc_disease.created_at %></td>
+          <td><%= DiagnosisType.find(patient_aacc_disease.diagnosis_type).description %></td>
+          <td><%= link_to 'Show', patient_aacc_disease %></td>
+          <td><%= link_to 'Edit', edit_patient_aacc_patient_aacc_disease_path(patient_aacc_disease,:patient_id => patient_aacc_disease.patient, :aacc_id => patient_aacc_disease.aacc) %></td>
+          <td><%= link_to 'Destroy', patient_aacc_disease, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
 <br>
 
-<%= link_to 'New Patient Aacc Disease', new_patient_aacc_disease_path %>
+

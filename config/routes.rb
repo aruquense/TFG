@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :patient_aacc_diseases
+  resources :diagnosis_types
   resources :diagnosis_cis
   resources :diagnosis_dementia
+  resources :patient_aacc_diseases
   resources :complementary_tests_types
   resources :complementary_tests
   resources :messages
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
     resources :prescription_drugs_types
     resources :exploration_types
     resources :tests
+    resources :diagnosis_types
   end
   resources :patient_aacc_prescriptions
   resources :patient_aacc_tests
@@ -37,8 +39,12 @@ Rails.application.routes.draw do
       resources :patient_aacc_tests, only: [:index, :new] #, shallow: true
       resources :patient_aacc_habits
       resources :patient_aacc_prescriptions
+      resources :patient_aacc_diseases
       
       
+      get 'patient_aacc_diagnosis/new_computacional_diagnosis1', to: "patient_aacc_diseases#new_computacional_diagnosis1", as: :new_computacional_diagnosis1
+      get 'patient_aacc_diagnosis/new_computacional_diagnosis2', to: "patient_aacc_diseases#new_computacional_diagnosis2", as: :new_computacional_diagnosis2
+
       get 'exploracion_funcional', to: "patient_aacc_symptoms#exploracion_funcional", as: :exploracion_funcional
       get 'exploracion_neurologica', to: "patient_aacc_symptoms#exploracion_neurologica", as: :exploracion_neurologica
       get 'patient_aacc_tests/new_test_barthel', to: "patient_aacc_tests#new_test_barthel", as: :new_test_barthel

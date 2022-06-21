@@ -1,8 +1,8 @@
 
 <%= render 'partials/aacc'%>
 <%= link_to '<< Volver a la Exploración Funcional de la Consulta ', patient_aacc_patient_aacc_diseases_url(:patient_id => @aacc.Patient_id, :aacc_id => @aacc) %>
-<h1>Diagnostico Facultativo en Consulta</h1>
+<h1>Solicitar Diagnostico Computacional Tipo 1</h1>
 
-<%= render 'form', patient_aacc_disease: @patient_aacc_disease %>
+<%= render 'form2', patient_aacc_disease: @patient_aacc_disease %>
 
 <%= link_to 'Back', patient_aacc_diseases_path %>
