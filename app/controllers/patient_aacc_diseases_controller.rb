@@ -1,6 +1,7 @@
 class PatientAaccDiseasesController < ApplicationController
   before_action :set_patient_aacc_disease, only: %i[ show edit update destroy ]
-  before_action :set_params, only: %i[ index edit new new_computacional_diagnosis1 new_computacional_diagnosis2 ] 
+  before_action :set_params, only: %i[ index edit new new_computacional_diagnosis1 new_computacional_diagnosis2  ]
+  after_action :write_file, only: %i[ new_computacional_diagnosis1 ]
 
   # GET /patient_aacc_diseases or /patient_aacc_diseases.json
   def index
@@ -38,15 +39,45 @@ class PatientAaccDiseasesController < ApplicationController
   def edit
   end
 
+  require 'nokogiri'
   # POST /patient_aacc_diseases or /patient_aacc_diseases.json
   def create
     @patient_aacc_disease = PatientAaccDisease.new(patient_aacc_disease_params)
+    puts "\n\n\n Paciente medicalrecord #{@patient_aacc_disease.aacc} \n\n\n"
     puts "\n\n\n Paciente medicalrecord #{@patient_aacc_disease.aacc} \n\n\n"
 
 
     respond_to do |format|
       if @patient_aacc_disease.save
-        format.html { redirect_to patient_aacc_patient_aacc_diseases_url(:patient_id => Patient.last, :aacc_id => Aacc.last), notice: "Patient aacc disease was successfully created." }
+
+        if DiagnosisType.find(@patient_aacc_disease.diagnosis_type).idn == 2
+          xml= Nokogiri::XML::Builder.new{ |xml|
+            xml.diagnosis do
+              xml.nhc Patient.find(@patient_aacc_disease.patient).nhc
+              xml.aacc Aacc.find(@patient_aacc_disease.aacc).idn
+              xml.barthelscore "1"
+            end
+    
+          }.to_xml
+          numberDC=PatientAaccDisease.last.idn
+          File.open("diagnosisfiles/CCnumber#{numberDC}.xml",'w'){|f| f.write(xml)}
+        end
+
+
+        if DiagnosisType.find(@patient_aacc_disease.diagnosis_type).idn == 3
+          xml= Nokogiri::XML::Builder.new{ |xml|
+            xml.diagnosis do
+              xml.nhc Patient.find(@patient_aacc_disease.patient).nhc
+              xml.aacc Aacc.find(@patient_aacc_disease.aacc).idn
+              xml.fastscore "4"
+            end
+          }.to_xml
+          numberDC=PatientAaccDisease.last.idn
+          File.open("diagnosisfiles/CCnumber#{numberDC}.xml",'w'){|f| f.write(xml)}
+        end
+
+
+        format.html { redirect_to patient_aacc_patient_aacc_diseases_url(:patient_id => @patient_aacc_disease.patient, :aacc_id => @patient_aacc_disease.aacc), notice: "Patient aacc disease was successfully created." }
         format.json { render :show, status: :created, location: @patient_aacc_disease }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -72,7 +103,7 @@ class PatientAaccDiseasesController < ApplicationController
   def destroy
     @patient_aacc_disease.destroy
     respond_to do |format|
-      format.html { redirect_to patient_aacc_diseases_url, notice: "Patient aacc disease was successfully destroyed." }
+      format.html { redirect_to patient_aacc_patient_aacc_diseases_url(:patient_id => @patient_aacc_disease.patient, :aacc_id => @patient_aacc_disease.aacc), notice: "Patient aacc disease was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -87,6 +118,11 @@ class PatientAaccDiseasesController < ApplicationController
       @paciente = Patient.find(params[:patient_id])
       @aacc = Aacc.find(params[:aacc_id])
     end
+    def write_file
+      
+      
+    end
+
     # Only allow a list of trusted parameters through.
     def patient_aacc_disease_params
       params.require(:patient_aacc_disease).permit(:idn, :description, :description_en, :diagnosis_dementium, :diagnosis_ci, :aacc, :patient, :diagnosis_type)

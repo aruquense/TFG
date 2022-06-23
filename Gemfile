@@ -10,6 +10,7 @@ gem "mongo", "~> 2"
 gem'mongoid', '~> 7.1.0'
 gem 'mongoid_auto_increment'
 gem 'devise'
+gem 'nokogiri', '~> 1.13', '>= 1.13.6'
 
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
