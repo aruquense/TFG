@@ -1,25 +1,82 @@
-<< Volver a la Exploración Funcional de la Consulta ‘XXX’
-HR
-H1 Test de BARTHEL
-HR
-Comida (*) CHECKBOX
-	10 – Independiente. Capaz de comer por sí solo en un tiempo razonable. La comida puede ser cocinada y servida por otra persona
-	5 – Necesita ayuda para cortar la carne, extender la mantequilla, etc., peso es capaz de comer solo
-	0 – Dependiente. Necesita ser alimentado por otra persona.
-MINIHR 
-Lavado (Baño) (*) CHEBOX
-	5 – Independiente. Capaz de lavarse entero, de entrar y salir del baño sin ayuda y de hacerlo sin que una persona supervise
-	0 – Dependiente. Necesita algún tipo de ayuda o supervisión
-MINIHR 
-Vestido (*) CHECKBOX
-	10 – Independiente. Capazde ponerse y quitarse la ropa sin ayuda
-	5 – Necesita ayuda. Realiza sin ayuda más de la mitad de estas tareas en un tiempo razonable.
-	0 – Dependiente. Necesita ayuda para las mismas.
-MINIHR  
+    <%= render "partials/aacc" %><%= link_to '<<Volver al Protocolo Clínico para la consulta' , :back %>
+<hr>
 
-<hr>
-<h1>New BARTHEL Test</h1>
+<h1>Test de BARTHEL</h1>
+<hr><%= form_with(model: @patient_aacc_test) do |form| %>
+  
+  <div class="field">
+    <%= form.hidden_field :idn %>
+  </div>
 
+    <div class="field">
+    <%= hidden_field_tag 'operation', 'test_barthel' %>
+    
+    
+  </div>
+  
+  <div class="field">
+    <%= form.hidden_field :answers %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :score %>
+  </div>  <div class="field">
+    <%= form.hidden_field :operation %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :exploration_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :test_id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :aacc_id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :patient_id %>
+  </div>
+  
+    <div class="">
+        <%=form.label :s1,"Comida (*) " %>
+        <%= select_tag :s1, options_for_select([['10', '10'],['5', '5'],['0', '0']], params[:s1]) %>
+    </div>
+<hr>    
+<div class="">
+        <%=form.label :s2,"Lavado (Baño) (*)  " %>
+        <%= select_tag :s2, options_for_select([['5', '5'],['0', '0']], params[:s2]) %>
+    </div>
+<hr>    
+<div class="">
+        <%=form.label :s3,"Vestido (*)  " %>
+        <%= select_tag :s3, options_for_select([['10', '10'],['5', '5'],['0', '0']], params[:s3]) %>
+    </div>
 <hr>
-<hr>
-<%= link_to 'Back', patient_aacc_tests_path %>
+        <div class="field">•	Comida CHECKBOX
+	<p>10 – Independiente. Capaz de comer por sí solo en un tiempo razonable. La comida puede ser cocinada y servida por otra persona
+	<p>5 – Necesita ayuda para cortar la carne, extender la mantequilla, etc., peso es capaz de comer solo
+	<p>0 – Dependiente. Necesita ser alimentado por otra persona.
+</div>
+  <div class="field">•
+Lavado (Baño)
+	<p>5 – Independiente. Capaz de lavarse entero, de entrar y salir del baño sin ayuda y de hacerlo sin que una persona supervise
+	<p>0 – Dependiente. Necesita algún tipo de ayuda o supervisión 
+</div><div class="field">•
+Vestido 
+	<p>10 – Independiente. Capazde ponerse y quitarse la ropa sin ayuda
+	<p>5 – Necesita ayuda. Realiza sin ayuda más de la mitad de estas tareas en un tiempo razonable.
+	<p>0 – Dependiente. Necesita ayuda para las mismas.
+</div>
+<hr>    
+
+
+  <div class="actions">
+ 
+    <%= form.submit "Realizar Test de Barthel" %>
+  </div>
+<% end %>
+
+        

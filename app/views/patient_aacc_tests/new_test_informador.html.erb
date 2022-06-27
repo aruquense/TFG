@@ -1,25 +1,29 @@
 
 
-<%= link_to '<< Volver a Sintomatología Cognitiva de la Consulta ‘XXX’', :back %>
+    <%= render "partials/aacc" %><%= link_to '<<Volver al Protocolo Clínico para la consulta' , :back %>
 <hr>
 <h1>Test INFORMADOR</h1>
 
 
 <hr>
+<div>
 CRIBADO DE DEMENCIAS - TEST DEL INFORMADOR -
-Población diana: Población informante clave de una persona con sospecha de deterioro
+<p>&nbspPoblación diana: Población informante clave de una persona con sospecha de deterioro
 cognitivo. Se trata de un test autoadministrado.
+</div>
+<div>Instrucciones para el informante clave:
 
-Instrucciones para el informante clave:
-
-Recuerde, por favor, cómo era su familiar hace 5 ó 10 años y compare cómo es él en este momento. Conteste si ha habido algún cambio a lo largo de este tiempo en
+<p>&nbspRecuerde, por favor, cómo era su familiar hace 5 ó 10 años y compare cómo es él en este momento. Conteste si ha habido algún cambio a lo largo de este tiempo en
 la capacidad de su familiar para cada uno de los aspectos que le preguntamos. Puntúe con los siguientes criterios:
-Descripción Criterio
-Ha mejorado mucho Valor 1
-Ha mejorado levemente Valor 2 
-Practicamente sin cambios Valor 3
-Ha empeorado levemente Valor 4
-Ha empeorado mucho Valor 5
+<p>Descripción Criterio
+<p>• Ha mejorado mucho Valor → 1
+<p>• Ha mejorado levemente Valor → 2  
+<p>• Practicamente sin cambios Valor → 3
+<p>• Ha empeorado levemente Valor → 4
+<p>• Ha empeorado mucho Valor → 5
+<hr>
+</div>
+
 <%= form_with(model: @patient_aacc_test) do |form| %>
   
   <div class="field">
@@ -60,8 +64,9 @@ Ha empeorado mucho Valor 5
         
 
 Los resultados son independientes de la inteligencia previa del paciente, el nivel de escolarización y de la edad. En la escala de 26 una puntuación superior a 85 es indicativa de probable deterioro cognitivo.
+    <p>
     <div>
-        <%=form.label :s1,"1.	Capacidad para reconocer las caras de sus personas másíntimas (parientes, amigos)" %>
+        <%=form.label :s1,"1.	Capacidad para reconocer las caras de sus personas más íntimas (parientes, amigos)" %>
         <%= select_tag :s1, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s1]) %>
     </div>    
     <div>
@@ -165,11 +170,9 @@ Los resultados son independientes de la inteligencia previa del paciente, el niv
         <%=form.label :s26,"26.	¿Cree que su inteligencia (en general) ha cambiado en algo durante los últimos 10 años?" %>
         <%= select_tag :s26, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s26]) %>
     </div>    
+    <hr>
 
   <div class="actions">
     <%= form.submit "Realizar Test del INFORMADOR" %>
   </div>
 <% end %>
-
-        
-<%= link_to 'Back', patient_aacc_tests_path %>

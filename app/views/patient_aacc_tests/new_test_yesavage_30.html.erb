@@ -1,12 +1,5 @@
 
-H1 
-HR
-
-BOTON Realizar Test de Yesavage
-HR
- 
-<< Volver a Sintomatología No-Cognitiva de la Consulta ‘XXX’
-
+    <%= render "partials/aacc" %><%= link_to '<<Volver al Protocolo Clínico para la consulta' , :back %>
 <hr>
 <h1>Test de Yesavage (30 preguntas)</h1>
 
@@ -14,8 +7,7 @@ HR
 <%= form_with(model: @patient_aacc_test) do |form| %>
   
   <div class="field">
-    <%= form.label :idn %>
-    <%= form.number_field :idn %>
+    <%= form.hidden_field :idn %>
   </div>
 
     <div class="field">
@@ -25,8 +17,7 @@ HR
   </div>
   
   <div class="field">
-    <%= form.label :answers %>
-    <%= form.text_area :answers %>
+    <%= form.hidden_field :answers %>
   </div>
 
   <div class="field">
@@ -36,23 +27,19 @@ HR
   </div>
 
   <div class="field">
-    <%= form.label :exploration_type_id %>
-    <%= form.text_field :exploration_type_id %>
+    <%= form.hidden_field :exploration_type_id %>
   </div>
 
   <div class="field">
-    <%= form.label :test_id %>
-    <%= form.text_field :test_id %>
+    <%= form.hidden_field :test_id %>
   </div>
 
   <div class="field">
-    <%= form.label :aacc_id %>
-    <%= form.text_field :aacc_id %>
+    <%= form.hidden_field :aacc_id %>
   </div>
 
   <div class="field">
-    <%= form.label :patient_id %>
-    <%= form.text_field :patient_id %>
+    <%= form.hidden_field :patient_id %>
   </div>
   	<div>
  		<%=form.label :s1,"1 ¿Está básicamente satisfecho con su vida? NO" %>

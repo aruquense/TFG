@@ -1,6 +1,7 @@
 class PatientAaccTestsController < ApplicationController
   before_action :set_patient_aacc_test, only: %i[ show edit update destroy ]
   before_action :set_patient_aacc_test_new,  except: %i[ index create show edit update destroy  ]
+  before_action :set_aacc_paciente_render, only: %i[     new_test_barthel new_test_fast new_test_informador new_test_katz new_test_lawton_brody new_test_mec new_test_minimental new_test_npi new_test_pfeiffer new_test_reloj new_test_yesavage_4 new_test_yesavage_10 new_test_yesavage_15 new_test_yesavage_30      ]
 
   require 'calculate.rb'
   # GET /patient_aacc_tests or /patient_aacc_tests.json
@@ -22,8 +23,6 @@ class PatientAaccTestsController < ApplicationController
   def new_test_informador
   end
   def new_test_katz
-    @paciente = Patient.find(params[:patient_id])
-    @aacc = Aacc.find(params[:aacc_id])
   end
   def new_test_lawton_brody
   end
@@ -133,8 +132,13 @@ class PatientAaccTestsController < ApplicationController
       @patient_aacc_test.aacc_id = Aacc.find(params[:aacc_id])._id
       @patient_aacc_test.patient_id = Patient.find(params[:patient_id])._id
   end
+  
     
 
+    def set_aacc_paciente_render
+      @paciente = Patient.find(params[:patient_id])
+      @aacc = Aacc.find(params[:aacc_id])
+    end
     # Only allow a list of trusted parameters through.
     def patient_aacc_test_params
       params.require(:patient_aacc_test).permit(:idn, :answers, :score, :exploration_type_id, :test_id, :aacc_id, :patient_id, :s1, :s2, :s3, :s4, :s5, :s6, :s7, :s8, :s9, :s10, :s11, :s12, :s13, :s14, :s15, :s16, :s17, :s18, :s19, :s20, :s21, :s22, :s23, :s24, :s25, :s26, :s27, :s28, :s29, :s30, :operation)

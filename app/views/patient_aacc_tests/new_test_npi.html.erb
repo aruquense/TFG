@@ -1,18 +1,43 @@
-<< Volver a Sintomatología No-Cognitiva de la Consulta ‘XXX’
-HR
-H1 Test NPI
-HR
-H2 Delirios
-Frecuencia (*) CHECKBOX
-Gravedad (*) CHECKBOX
-Molestia (*) CHECKBOX
-H2 Alucinaciones
-Frecuencia (*) CHECKBOX
-Gravedad (*) CHECKBOX
-Molestia (*) CHECKBOX
- 
-<h1>New NPI Test</h1>
 
-<%= render 'form', patient_aacc_test: @patient_aacc_test %>
+    <%= render "partials/aacc" %><%= link_to '<<Volver al Protocolo Clínico para la consulta' , :back %>
+<hr>
+<h1>Test NPI</h1>
+
+<hr>
+
+<%= form_with(model: @patient_aacc_test) do |form| %>
+  
+<h2>Delirios</h2>
+    <div>
+        <%=form.label :s1,"Frecuencia (*)" %>
+        <%= select_tag :s1, options_for_select([['SÍ', '0'],['NO', '1']], params[:s1]),:prompt=>"" %>
+    </div>
+    <div>
+        <%=form.label :s2,"Gravedad (*)" %>
+        <%= select_tag :s2, options_for_select([['SÍ', '0'],['NO', '1']], params[:s2]),:prompt=>"" %>
+    </div>
+    <div>
+        <%=form.label :s3,"Molestia (*)" %>
+        <%= select_tag :s3, options_for_select([['SÍ', '0'],['NO', '1']], params[:s3]),:prompt=>"" %>
+    </div>
+<h2>Alucinaciones</h2>
+    <div>
+        <%=form.label :s4,"Frecuencia (*)" %>
+        <%= select_tag :s4, options_for_select([['SÍ', '0'],['NO', '1']], params[:s4]),:prompt=>"" %>
+    </div>
+    <div>
+        <%=form.label :s5,"Gravedad (*)" %>
+        <%= select_tag :s5, options_for_select([['SÍ', '0'],['NO', '1']], params[:s5]),:prompt=>"" %>
+    </div>
+    <div>
+        <%=form.label :s6,"Molestia (*)" %>
+        <%= select_tag :s6, options_for_select([['SÍ', '0'],['NO', '1']], params[:s6]) %>
+    </div>
+<hr>
+ 
+  <div class="actions">
+    <%= form.submit "Almacenar Test NPI" %>
+  </div>
+<% end %>
         
 <%= link_to 'Back', patient_aacc_tests_path %>

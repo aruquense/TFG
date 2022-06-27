@@ -1,7 +1,4 @@
-<< Volver a la Exploración Funcional de la Consulta ‘XXX’
-
-
-
+    <%= render "partials/aacc" %><%= link_to '<<Volver al Protocolo Clínico para la consulta' , :back %>
 <hr>
 <h1>Test de LAWTON / BRODY</h1>
 
@@ -9,9 +6,44 @@
 <%= form_with(model: @patient_aacc_test) do |form| %>
   
   <div class="field">
-    <%= form.label :idn %>
-    <%= form.number_field :idn %>
+    <%= form.hidden_field :idn %>
   </div>
+
+    <div class="field">
+    <%= hidden_field_tag 'operation', 'test_lawton-brody' %>
+    
+    
+  </div>
+  
+  <div class="field">
+    <%= form.hidden_field :answers %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :score %>
+  </div>  <div class="field">
+    <%= form.hidden_field :operation %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :exploration_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :test_id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :aacc_id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :patient_id %>
+  </div>
+    <div class="test">
+        <%=form.label :s1,"Calificación de NO IMPLEMENTADO " %>
+        <%= select_tag :s1, options_for_select([['1.SIN DETERIORO COGNOSCITIVO', '1'],['2.DETERIORO COGNOSCITIVO MUY LEVE', '2'],['3.DETERIORO COGNOSCITIVO LEVE', '3'],['4.DÉFICIT COGNOSCITIVO MODERADO', '4'],['5.DÉFICIT COGNOSCITIVO GRAVE', '5'],['6.DÉFICIT COGNOSCITIVO MODERADAMENTE GRAVE', '6'],['7.DÉFICIT COGNOSCITIVO MUY GRAVE', '7']], params[:s1]) %>
+    </div>
 
 <h1>SIN IMPLEMENTAR</h1>    
 Capacidad para usar el Teléfono SELECTBOX

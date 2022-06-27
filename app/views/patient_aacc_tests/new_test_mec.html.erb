@@ -1,157 +1,148 @@
-Orientación
-Dígame el día____ Fecha_____ Mes_____ Estación______ Año______
-Dígame el Hospital (o el lugar)____ Planta_____ Ciudad______
-Provincia____ Nación______
-Poner un punto por cada respuesta correcta
-(5)
-(5)
-( )
-( )
-Fijación (memoria inmediata)
-Repita estas 3 palabras: peseta, caballo, manzana. (Repetirlas hasta que las
-aprenda)
-Poner un punto por cada respuesta correcta
-(3) ( )
-Concentración y cálculo
-Si tiene 30 pesetas. y me va dando de 3 en 3, ¿cuántas le van quedando?
-Poner un punto por cada sustracción correcta.
-Repita estos números: 5-9-2 (hasta que los aprenda). Ahora hacia atrás
-Un punto por cada dígito que coloque en posición inversa correcta.
-(5)
-(3)
-( )
-( )
-Memoria (reciente)
-¿Recuerda las tres palabras que le he dicho antes?
-Poner un punto por cada respuesta correcta
-(3) ( )
-Lenguaje y construcción
-Mostrar un bolígrafo “¿Qué es esto?”. Repetirlo con el reloj.
-Poner un punto por cada respuesta correcta
-Repita esta frase: “en un trigal había cinco perros”
-Un fallo en una letra es 0 puntos en el ítem.
-Una manzana y una pera son frutas, ¿verdad?, ¿Qué son el rojo y el verde?,
-¿Qué son un perro y un gato?
-Poner un punto por cada respuesta correcta
-Coja este papel con la mano derecha, dóblelo y póngalo encima de la mesa”
-Poner un punto por cada respuesta correcta
-Lea esto y haga lo que dice: CIERRE LOS OJOS
-Escriba una frase
-Copie este dibujo
 
-<h1>New MEC Test</h1>
+    <%= render "partials/aacc" %><%= link_to '<<Volver al Protocolo Clínico para la consulta' , :back %>
+<hr>
+<h1>Test MEC</h1>
 
 <%= form_with(model: @patient_aacc_test) do |form| %>
   
   <div class="field">
-    <%= form.label :idn %>
-    <%= form.number_field :idn %>
+    <%= form.hidden_field :idn %>
   </div>
 
     <div class="field">
-    <%= hidden_field_tag 'operation', 'test_fast' %>
+    <%= hidden_field_tag 'operation', 'test_mec' %>
     
     
   </div>
   
   <div class="field">
-    <%= form.label :answers %>
-    <%= form.text_area :answers %>
+    <%= form.hidden_field :answers %>
   </div>
 
   <div class="field">
     <%= form.hidden_field :score %>
-  </div>  <div class="field">
+  </div>  
+  <div class="field">
     <%= form.hidden_field :operation %>
   </div>
 
   <div class="field">
-    <%= form.label :exploration_type_id %>
-    <%= form.text_field :exploration_type_id %>
+    <%= form.hidden_field :exploration_type_id %>
   </div>
 
   <div class="field">
-    <%= form.label :test_id %>
-    <%= form.text_field :test_id %>
+    <%= form.hidden_field :test_id %>
   </div>
 
   <div class="field">
-    <%= form.label :aacc_id %>
-    <%= form.text_field :aacc_id %>
+    <%= form.hidden_field :aacc_id %>
   </div>
 
   <div class="field">
-    <%= form.label :patient_id %>
-    <%= form.text_field :patient_id %>
+    <%= form.hidden_field :patient_id %>
   </div>
-    <div>
-        <%=form.label :s1,"Respuestas correctas " %>
-        <%= select_tag :s1, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5']], params[:s1]) %>
-    </div>
-    <div>
-        <%=form.label :s2,"Respuestas correctas " %>
-        <%= select_tag :s2, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5']], params[:s2]) %>
-    </div>
-    <div>
-        <%=form.label :s3,"Respuestas correctas " %>
-        <%= select_tag :s3, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3']], params[:s3]) %>
-    </div>
-    <div>
-        <%=form.label :s4,"Respuestas correctas " %>
-        <%= select_tag :s4, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5']], params[:s4]) %>
-    </div>
-    <div>
-        <%=form.label :s5,"Respuestas correctas " %>
-        <%= select_tag :s5, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3']], params[:s5]) %>
-    </div>
-    <div>
-        <%=form.label :s6,"Respuestas correctas " %>
-        <%= select_tag :s6, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3']], params[:s6]) %>
-    </div>
-    <div>
-        <%=form.label :s7,"Respuestas correctas " %>
-        <%= select_tag :s7, options_for_select([['0', '0'],['1', '1'],['2', '2']], params[:s7]) %>
-    </div>
-    <div>
-        <%=form.label :s8,"Respuestas correctas " %>
-        <%= select_tag :s8, options_for_select([['0', '0'],['1', '1']], params[:s8]) %>
-    </div>
-    <div>
-        <%=form.label :s9,"Respuestas correctas " %>
-        <%= select_tag :s9, options_for_select([['0', '0'],['1', '1'],['2', '2']], params[:s9]) %>
-    </div>
-    <div>
-        <%=form.label :s10,"Respuestas correctas " %>
-        <%= select_tag :s10, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3']], params[:s10]) %>
-    </div>
-    <div>
-        <%=form.label :s11,"Respuestas correctas " %>
-        <%= select_tag :s11, options_for_select([['0', '0'],['1', '1']], params[:s11]) %>
-    </div>
-    <div>
-        <%=form.label :s12,"Respuestas correctas " %>
-        <%= select_tag :s12, options_for_select([['0', '0'],['1', '1']], params[:s12]) %>
-    </div>
-    <div>
-        <%=form.label :s13,"Respuestas correctas " %>
-        <%= select_tag :s13, options_for_select([['0', '0'],['1', '1']], params[:s13]) %>
-    </div>
-    <div>
-        <%=form.label :s14,"Nº preguntas que el paciente no ha podido contestar por su nivel de escolarización " %>
-        <%= select_tag :s14, options_for_select([['0', '0'],['1', '1']], params[:s14]) %>
-    </div>
-    <div>
-    number_field_tag 'quantity', nil, min: 0, max: 5, step: 2
-        <%=form.label :s15,"Nº preguntas que el paciente no ha podido contestar por déficit visual correctas " %>
-        <%= number_field :s15 , nil, min: 0, max: 5 %>
-    </div>
-    (*) Para su cálculo excluimos las preguntas que hayan sido eliminadas, básicamente por analfabetismo o por imposibilidad física de cumplir un ítem (ej.: ceguera). La puntuación total corregida se obtiene por regla de tres. Por ejemplo si el paciente es ciego y no puede acceder a 4 de los 35 puntos posibles, la puntuación finalse calculará sobre 31 puntos posibles. Imaginemos que la puntuación total ha sido 20, aplicando la corrección obtenemos una puntuación (20x35/31) = 22,5 (redondearemos al núm. entero + próximo, el 23).
-  <div class="actions">
-    <%= form.submit "Almacenar Test MEC" %>
-  </div>
-<% end %>
-
+    
 <hr>
 
+<h4>Orientación</h4><div>
+        <%=form.label :s1,"Dígame el día____ Fecha_____ Mes_____ Estación______ Año______ " %>
+        <%= select_tag :s1, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5']], params[:s1]) %>
+    </div><div>
+        <%=form.label :s2,"Dígame el Hospital (o el lugar)____ Planta_____ Ciudad______ Provincia____ Nación______" %>
+        <%= select_tag :s2, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5']], params[:s2]) %>
+    </div>
 
-<%= link_to 'Back', patient_aacc_tests_path %>
+
+
+Poner un punto por cada respuesta correcta
+<p>
+<h4>Fijación (memoria inmediata)</h4>
+<div>
+        <%=form.label :s3,"Repita estas 3 palabras: peseta, caballo, manzana. (Repetirlas hasta que las aprenda)" %>
+        <%= select_tag :s3, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3']], params[:s3]) %>
+    </div>
+     Poner un punto por cada respuesta correcta
+<p>
+
+<h4>Concentración y cálculo</h4>
+
+<div>
+        <%=form.label :s4,"Si tiene 30 pesetas. y me va dando de 3 en 3, ¿cuántas le van quedando?" %>
+        <%= select_tag :s4, options_for_select([['0', '0'],['1', '1'],['1', '1'],['1', '1'],['1', '1'],['1', '1'],['1', '1'],['1', '1'],['1', '1'],['1', '1'],['1', '1']], params[:s4]) %>
+    </div>
+    
+<p>Poner un punto por cada sustracción correcta. 
+<div>
+        <%=form.label :s5,"Repita estos números: 5-9-2 (hasta que los aprenda). Ahora hacia atrás " %>
+        <%= select_tag :s5, options_for_select([['0', '0'],['1', '1']], params[:s5]) %>
+    </div>
+    
+    <p>Un punto por cada dígito que coloque en posición inversa correcta. 
+<h4>Memoria (reciente)</h4>
+<div>
+        <%=form.label :s6,"¿Recuerda las tres palabras que le he dicho antes?
+(3) ( ) " %>
+        <%= select_tag :s6, options_for_select([['0', '0'],['1', '1']], params[:s6]) %>
+    </div>
+<p>Poner un punto por cada respuesta correcta
+    <h4>Lenguaje y construcción</h4>
+    <div>
+        <%=form.label :s7,"Mostrar un bolígrafo “¿Qué es esto?”. Repetirlo con el reloj." %>
+        <%= select_tag :s7, options_for_select([['0', '0'],['1', '1'],['2','2']], params[:s7]) %>
+    </div>
+    <p> Poner un punto por cada respuesta correcta 
+    <div>
+        <%=form.label :s8,"Repita esta frase: “en un trigal había cinco perros” . " %>
+        <%= select_tag :s8, options_for_select([['0', '0'],['1', '1']], params[:s8]) %>
+    </div>
+    <p>Un fallo en una letra es 0 puntos en el ítem
+    
+    <div>
+        <%=form.label :s9,"Una manzana y una pera son frutas, ¿verdad?, ¿Qué son el rojo y el verde?, ¿Qué son un perro y un gato?" %>
+        <%= select_tag :s9, options_for_select([['0', '0'],['1', '1'],['2', '2']], params[:s9]) %>
+    </div>
+    
+    <div>
+        <%=form.label :s10,"Coja este papel con la mano derecha, dóblelo y póngalo encima de la mesa” " %>
+        <%= select_tag :s10, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3']], params[:s10]) %>
+    </div>
+    <p>Poner un punto por cada respuesta correcta<div>
+        <%=form.label :s11,"Lea esto y haga lo que dice: CIERRE LOS OJOS " %>
+        <%= select_tag :s11, options_for_select([['0', '0'],['1', '1']], params[:s11]) %>
+    </div>
+    <p><div>
+        <%=form.label :s12,"Escriba una frase " %>
+        <%= select_tag :s12, options_for_select([['0', '0'],['1', '1']], params[:s12]) %>
+    </div>
+    <p>Frase: Advertir que no se considerará correcta si escribe su nombre. Si es necesario se le puede poner un ejemplo, pero insistiendo en que ha de escribir algo diferente. Debe construir una frase con sujeto, verbo y complemento para valorarla con un punto.
+    <div>
+        <%=form.label :s13,"Copie este dibujo " %>
+        <%= select_tag :s13, options_for_select([['0', '0'],['1', '1']], params[:s13]) %>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="d-flex justify-content-left">
+          <%= image_tag "test-minimental.jpg", class: '' %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>- Figura. Cada pentágono ha de tener exactamente 5 lados y 5 ángulos y debe entrelazarse en dos puntos de contacto.
+    <hr>
+    <p>
+    (*) Para su cálculo excluimos las preguntas que hayan sido eliminadas, básicamente por analfabetismo o por imposibilidad física de cumplir un ítem (ej.: ceguera). La puntuación total corregida se obtiene por regla de tres. Por ejemplo si el paciente es ciego y no puede acceder a 4 de los 35 puntos posibles, la puntuación finalse calculará sobre 31 puntos posibles. Imaginemos que la puntuación total ha sido 20, aplicando la corrección obtenemos una puntuación (20x35/31) = 22,5 (redondearemos al núm. entero + próximo, el 23).
+        <div>
+        <%=form.label :s14,"Número de puntos a los que el paciente no puede acceder " %>
+        <%= select_tag :s14, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5'],['6', '6'],['7', '7'],['8', '8'],['9', '9'],['10', '10']], params[:s13]) %>
+    </div>
+    
+    <hr>
+<h4><%= link_to "Documentación MEC", "https://www.infogerontologia.com/documents/vgi/escalas/mini_mental.pdf" %> </h4>
+<hr>
+  <div class="btn btn-primary"">
+    <%= form.submit "Almacenar Test MEC" %>
+    <%= f.button type: :button%>
+  </div>
+<% end %>

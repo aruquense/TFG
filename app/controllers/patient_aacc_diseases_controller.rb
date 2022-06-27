@@ -53,6 +53,7 @@ class PatientAaccDiseasesController < ApplicationController
         if DiagnosisType.find(@patient_aacc_disease.diagnosis_type).idn == 2
           xml= Nokogiri::XML::Builder.new{ |xml|
             xml.diagnosis do
+              xml.idn PatientAaccDisease.last.idn
               xml.nhc Patient.find(@patient_aacc_disease.patient).nhc
               xml.aacc Aacc.find(@patient_aacc_disease.aacc).idn
               xml.barthelscore "1"
@@ -60,20 +61,21 @@ class PatientAaccDiseasesController < ApplicationController
     
           }.to_xml
           numberDC=PatientAaccDisease.last.idn
-          File.open("diagnosisfiles/CCnumber#{numberDC}.xml",'w'){|f| f.write(xml)}
+          File.open("diagnosisfiles/DCnumber#{numberDC}.xml",'w'){|f| f.write(xml)}
         end
 
 
         if DiagnosisType.find(@patient_aacc_disease.diagnosis_type).idn == 3
           xml= Nokogiri::XML::Builder.new{ |xml|
             xml.diagnosis do
+              xml.idn PatientAaccDisease.last.idn
               xml.nhc Patient.find(@patient_aacc_disease.patient).nhc
               xml.aacc Aacc.find(@patient_aacc_disease.aacc).idn
               xml.fastscore "4"
             end
           }.to_xml
           numberDC=PatientAaccDisease.last.idn
-          File.open("diagnosisfiles/CCnumber#{numberDC}.xml",'w'){|f| f.write(xml)}
+          File.open("diagnosisfiles/DCnumber#{numberDC}.xml",'w'){|f| f.write(xml)}
         end
 
 
