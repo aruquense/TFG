@@ -41,26 +41,30 @@
   <div class="field">
     <%= form.hidden_field :patient_id %>
   </div>
-        <div>
+    
+    <div class="padding">
         <%=form.label :s1,"¿Está usted satisfecho de su vida?" %>
         <%= select_tag :s1, options_for_select([['SÍ', '0'],['NO', '1']], params[:s1]) %>
     </div>
-        <div>
+    
+    <div class="padding">
         <%=form.label :s2,"¿Tiene miedo de que algo malo le vaya a pasar?" %>
         <%= select_tag :s2, options_for_select([['SÍ', '1'],['NO', '0']], params[:s2]) %>
     </div>
-        <div>
+    
+    <div class="padding">
         <%=form.label :s3,"¿Siente que su vida está vacía?" %>
         <%= select_tag :s3, options_for_select([['SÍ', '1'],['NO', '0']], params[:s3]) %>
     </div>
-        <div>
+    
+    <div class="padding">
         <%=form.label :s4,"¿Se siente usted feliz la mayoría del tiempo?" %>
         <%= select_tag :s4, options_for_select([['SÍ', '0'],['NO', '1']], params[:s4]) %>
     </div>
     
-  <div class="actions">
-    <%= form.submit "Almacenar Test de Yesavage 4" %>
-  </div>
+  <div class="padding">
+    <button name="button" type="submit" class="btn btn-primary">Almacenar Test de Yesavage 4 </button>
+    </div>
 <% end %>
 
 <hr>

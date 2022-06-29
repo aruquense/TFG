@@ -71,6 +71,7 @@ class PatientAaccDiseasesController < ApplicationController
               xml.idn PatientAaccDisease.last.idn
               xml.nhc Patient.find(@patient_aacc_disease.patient).nhc
               xml.aacc Aacc.find(@patient_aacc_disease.aacc).idn
+              #xml.fastscore PatientAaccTest.find(Test.find("2"])).last.score
               xml.fastscore "4"
             end
           }.to_xml

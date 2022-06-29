@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   resources :patient_aacc_analytics
   scope :admin do
     resources :professions
-    resources :institutions
-    resources :activity_types #FAP o FAE
+      resources :activity_types #FAP o FAE
     resources :habits
     resources :prescription_drugs_types
     resources :exploration_types

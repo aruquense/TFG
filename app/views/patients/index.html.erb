@@ -3,12 +3,13 @@
   <h1>Búsqueda de Pacientes</h1>
   <p>         
   <div>
-    <%= form_with url: "/search", method: :get do |form| %>
+    <%= form_with url: "/patients", method: :get do |form| %>
     <%=form.label :search_field,"Buscar" %>
       <%= select_tag :search_field, options_for_select([['Todos los campos', '0'],['APELLIDOS', 'surname'],['NOMBRE', 'name'],['NHC', 'nhc'],['NIF', 'nif'],['F.NAC', 'birthdate'],['SEXO', 'gender'],['EXITUS', 'exitus'],['PACIENTE', 'patient_id'],['HIST. CLINICA', 'aacc']], params[:search_field]) %>
       <%= form.text_field :search_text %>
       <%=form.label :search_order,"Opciones de búsqueda" %>
       <%= select_tag :search_order, options_for_select([['Búsqueda por defecto', '0'],['Orden Ascendente', 'asc'],['Orden Descendente', 'desc']], params[:search_order]) %>
+      <%= form.submit "Filtrar", :id => "search", :onclick => ";", class: '' %>
     <% end %>
       
   </div>

@@ -40,43 +40,42 @@
     <%= form.hidden_field :patient_id %>
   </div>
   
-    <div class="">
+    <div class="padding">
         <%=form.label :s1,"Comida (*) " %>
         <%= select_tag :s1, options_for_select([['10', '10'],['5', '5'],['0', '0']], params[:s1]) %>
     </div>
-<hr>    
-<div class="">
+<hr width=400>
+    <div class="padding">
         <%=form.label :s2,"Lavado (Baño) (*)  " %>
         <%= select_tag :s2, options_for_select([['5', '5'],['0', '0']], params[:s2]) %>
     </div>
-<hr>    
-<div class="">
+<hr width=400>
+    <div class="padding">
         <%=form.label :s3,"Vestido (*)  " %>
         <%= select_tag :s3, options_for_select([['10', '10'],['5', '5'],['0', '0']], params[:s3]) %>
     </div>
-<hr>
-        <div class="field">•	Comida CHECKBOX
+<hr width=400>
+        <div class="field padding">•	Comida CHECKBOX
 	<p>10 – Independiente. Capaz de comer por sí solo en un tiempo razonable. La comida puede ser cocinada y servida por otra persona
 	<p>5 – Necesita ayuda para cortar la carne, extender la mantequilla, etc., peso es capaz de comer solo
 	<p>0 – Dependiente. Necesita ser alimentado por otra persona.
 </div>
-  <div class="field">•
+  <div class="field padding">•
 Lavado (Baño)
 	<p>5 – Independiente. Capaz de lavarse entero, de entrar y salir del baño sin ayuda y de hacerlo sin que una persona supervise
 	<p>0 – Dependiente. Necesita algún tipo de ayuda o supervisión 
-</div><div class="field">•
+</div><div class="field padding">•
 Vestido 
 	<p>10 – Independiente. Capazde ponerse y quitarse la ropa sin ayuda
 	<p>5 – Necesita ayuda. Realiza sin ayuda más de la mitad de estas tareas en un tiempo razonable.
 	<p>0 – Dependiente. Necesita ayuda para las mismas.
 </div>
-<hr>    
+<hr width=400>
 
 
-  <div class="actions">
- 
-    <%= form.submit "Realizar Test de Barthel" %>
-  </div>
+  <div class="padding">
+    <button name="button" type="submit" class="btn btn-primary">Almacenar Test de Barthel </button>
+    </div>
 <% end %>
 
         

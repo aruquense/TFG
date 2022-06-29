@@ -56,6 +56,7 @@
 
 Poner un punto por cada respuesta correcta
 <p>
+<hr width=400>
 <h4>Fijación (memoria inmediata)</h4>
 <div>
         <%=form.label :s3,"Repita estas 3 palabras: peseta, caballo, manzana. (Repetirlas hasta que las aprenda)" %>
@@ -64,6 +65,7 @@ Poner un punto por cada respuesta correcta
      Poner un punto por cada respuesta correcta
 <p>
 
+<hr width=400>
 <h4>Concentración y cálculo</h4>
 
 <div>
@@ -78,6 +80,7 @@ Poner un punto por cada respuesta correcta
     </div>
     
     <p>Un punto por cada dígito que coloque en posición inversa correcta. 
+<hr width=400>
 <h4>Memoria (reciente)</h4>
 <div>
         <%=form.label :s6,"¿Recuerda las tres palabras que le he dicho antes?
@@ -85,6 +88,7 @@ Poner un punto por cada respuesta correcta
         <%= select_tag :s6, options_for_select([['0', '0'],['1', '1']], params[:s6]) %>
     </div>
 <p>Poner un punto por cada respuesta correcta
+<hr width=400>
     <h4>Lenguaje y construcción</h4>
     <div>
         <%=form.label :s7,"Mostrar un bolígrafo “¿Qué es esto?”. Repetirlo con el reloj." %>
@@ -130,7 +134,8 @@ Poner un punto por cada respuesta correcta
       </div>
     </div>
     <p>- Figura. Cada pentágono ha de tener exactamente 5 lados y 5 ángulos y debe entrelazarse en dos puntos de contacto.
-    <hr>
+
+<hr width=400>
     <p>
     (*) Para su cálculo excluimos las preguntas que hayan sido eliminadas, básicamente por analfabetismo o por imposibilidad física de cumplir un ítem (ej.: ceguera). La puntuación total corregida se obtiene por regla de tres. Por ejemplo si el paciente es ciego y no puede acceder a 4 de los 35 puntos posibles, la puntuación finalse calculará sobre 31 puntos posibles. Imaginemos que la puntuación total ha sido 20, aplicando la corrección obtenemos una puntuación (20x35/31) = 22,5 (redondearemos al núm. entero + próximo, el 23).
         <div>
@@ -138,11 +143,10 @@ Poner un punto por cada respuesta correcta
         <%= select_tag :s14, options_for_select([['0', '0'],['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5'],['6', '6'],['7', '7'],['8', '8'],['9', '9'],['10', '10']], params[:s13]) %>
     </div>
     
-    <hr>
+<hr width=400>
 <h4><%= link_to "Documentación MEC", "https://www.infogerontologia.com/documents/vgi/escalas/mini_mental.pdf" %> </h4>
 <hr>
-  <div class="btn btn-primary"">
-    <%= form.submit "Almacenar Test MEC" %>
-    <%= f.button type: :button%>
-  </div>
+<div class="padding">
+    <button name="button" type="submit" class="btn btn-primary">Almacenar Test MEC </button>
+    </div>
 <% end %>

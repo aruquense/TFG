@@ -15,13 +15,15 @@ cognitivo. Se trata de un test autoadministrado.
 
 <p>&nbspRecuerde, por favor, cómo era su familiar hace 5 ó 10 años y compare cómo es él en este momento. Conteste si ha habido algún cambio a lo largo de este tiempo en
 la capacidad de su familiar para cada uno de los aspectos que le preguntamos. Puntúe con los siguientes criterios:
+
+<hr width=400>
 <p>Descripción Criterio
 <p>• Ha mejorado mucho Valor → 1
 <p>• Ha mejorado levemente Valor → 2  
 <p>• Practicamente sin cambios Valor → 3
 <p>• Ha empeorado levemente Valor → 4
 <p>• Ha empeorado mucho Valor → 5
-<hr>
+<hr width=400>
 </div>
 
 <%= form_with(model: @patient_aacc_test) do |form| %>
@@ -65,114 +67,116 @@ la capacidad de su familiar para cada uno de los aspectos que le preguntamos. Pu
 
 Los resultados son independientes de la inteligencia previa del paciente, el nivel de escolarización y de la edad. En la escala de 26 una puntuación superior a 85 es indicativa de probable deterioro cognitivo.
     <p>
-    <div>
+    <div class="padding">
         <%=form.label :s1,"1.	Capacidad para reconocer las caras de sus personas más íntimas (parientes, amigos)" %>
         <%= select_tag :s1, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s1]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s2,"2.	Capacidad para recordar los nombres de estas mismas personas" %>
         <%= select_tag :s2, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s2]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s3,"3.	Recordar las cosas de esas personas (dónde viven, de qué viven, cuándo es su cumpleaños)" %>
         <%= select_tag :s3, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s3]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s4,"4.	Recordar cosas que han ocurrido recientemente, en los últimos 2 o 3 meses (noticias, cosas suyas o de sus familiares)" %>
         <%= select_tag :s4, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s4]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s5,"5.	Recordar lo que habló en una conversación unos días antes" %>
         <%= select_tag :s5, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s5]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s6,"6.	Olvidar lo que se ha dicho unos minutos antes, pararse a la mitad de una frase y no saber lo que iba a decir, repetir lo que ha dicho antes" %>
         <%= select_tag :s6, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s6]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s7,"7.	Recordar su propia dirección o número de teléfono" %>
         <%= select_tag :s7, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s7]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s8,"8.	Recordar la fecha en que vive" %>
         <%= select_tag :s8, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s8]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s9,"9.	Conocer el sitio exacto de los armarios de su casa y dónde se guardan las cosas" %>
         <%= select_tag :s9, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s9]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s10,"10.	Saber dónde se pone una cosa que se ha encontrado descolocada" %>
         <%= select_tag :s10, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s10]) %>
     </div>    
-    <div>
+<hr width=400>
+    <div class="padding">
         <%=form.label :s11,"11.	Adaptarse a la situación cuando su rutina diaria se ve alterada (ir de visita, en alguna celebración, de vacaciones)" %>
         <%= select_tag :s11, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s11]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s12,"12.	Saber manejar los aparatos de la casa (teléfono, coche, lavadora, máquina de afeitar, etc.)" %>
         <%= select_tag :s12, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s12]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s13,"13.	Capacidad para aprender a manejar un aparato nuevo (lavadora, tocadiscos, radio, secador de pelo, etc.)" %>
         <%= select_tag :s13, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s13]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s14,"14.	Recordar las cosas que han sucedido recientemente (en general)" %>
         <%= select_tag :s14, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s14]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s15,"15.	Aprender cosas nuevas (en general)" %>
         <%= select_tag :s15, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s15]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s16,"16.	Capacidad para recordar cosas que ocurrieron o que aprendió cuando era joven" %>
         <%= select_tag :s16, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s16]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s17,"17.	Comprender el significado de palabras poco corrientes (del periódico, televisión, conversación)" %>
         <%= select_tag :s17, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s17]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s18,"18.	Entender artículos de periódicos o revistas en las que está interesado
 " %>
         <%= select_tag :s18, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s18]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s19,"19.	Seguir una historia del libro, la prensa, el cine, la radio o la televisión" %>
         <%= select_tag :s19, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s19]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s20,"20.	Redactar cartas a parientes o amigos o cartas de negocios" %>
         <%= select_tag :s20, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s20]) %>
     </div>    
-    <div>
+<hr width=400>
+    <div class="padding">
         <%=form.label :s21,"21.	Recordar gentes y hechos históricos del pasado (guerra civil, república, etc.)" %>
         <%= select_tag :s21, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s21]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s22,"22.	Tomar decisiones tanto en cuestiones cotidianas (qué traje ponerse, qué comida preparar) corno en asuntos a más largo plazo (dónde ir de vacaciones o invertir el dinero)" %>
         <%= select_tag :s22, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s22]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s23,"23.	Manejar asuntos financieros (cobrar la pensión, pagar la renta o los impuestos, tratar con el banco)" %>
         <%= select_tag :s23, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s23]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s24,"24.	Manejar dinero para la compra (cuánto dinero dar, calcular el cambio)" %>
         <%= select_tag :s24, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s24]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s25,"25.	Manejar otros problemas aritméticos cotidianos (tiempo entre visitas de parientes, cuánta comida comprar y preparar, especialmente si hay invitados)" %>
         <%= select_tag :s25, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s25]) %>
     </div>    
-    <div>
+    <div class="padding">
         <%=form.label :s26,"26.	¿Cree que su inteligencia (en general) ha cambiado en algo durante los últimos 10 años?" %>
         <%= select_tag :s26, options_for_select([['Ha mejorado mucho', 1],['Ha mejorado levemente', 2],['Practicamente sin cambios',3],['Ha empeorado levemente',4],['Ha empeorado mucho',5]], params[:s26]) %>
     </div>    
     <hr>
 
-  <div class="actions">
-    <%= form.submit "Realizar Test del INFORMADOR" %>
-  </div>
+  <div class="padding">
+    <button name="button" type="submit" class="btn btn-primary">Realizar Test del INFORMADOR </button>
+    </div>
 <% end %>
