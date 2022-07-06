@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     resources :exploration_types
     resources :tests
     resources :diagnosis_types
+    resources :complementary_tests_types
+    resources :diagnosis_types
+    resources :diagnosis_cis
+    resources :diagnosis_dementia
   end
   resources :patient_aacc_prescriptions
   resources :patient_aacc_tests
@@ -24,6 +28,9 @@ Rails.application.routes.draw do
   resources :patient_aacc_habits
   get 'home/index'
   get "admin", to: "admin#index"
+  get "admin/physicians", to: "admin#physicians"
+  get "admin/new_physician", to: "admin#new_physician"
+  get "admin/dis_physician", to: "admin#dis_physician"
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }

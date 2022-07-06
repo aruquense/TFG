@@ -1,0 +1,12 @@
+<h1>DESHABILITAR FACULTATIVO</h1>
+<hr>
+<%= form_with do |form| %>
+  <div class="small-container field">
+    <%= form.label :user,"Facultativo" %>
+    <%= form.select :user,options_from_collection_for_select(User.all, :_id, :email) , {:prompt => 'Selecciona'}  %>
+  </div>
+  
+  <div class="padding">
+    <button name="button" type="submit" class="btn btn-primary">Deshabilitar Facultativo </button>
+    </div>
+<% end %>

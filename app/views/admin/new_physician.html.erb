@@ -1,0 +1,35 @@
+<h1>NUEVO FACULTATIVO</h1>
+<hr>
+<%= form_with do |form| %>
+  <div class="small-container field">
+    <%=form.label :name,"Nombre (*)"%>
+    <%=form.text_field :name%>
+  </div>
+
+  <div class="small-container field">
+        <%=form.label :surname,"Apellidos (*)"%>
+        <%=form.text_field :surname %>
+  </div>  
+  
+  <div class="small-container field">
+        <%=form.label :email,"Email (*)"%>
+        <%=form.text_field :email %>
+  </div>
+  <div class="small-container field">
+        <%=form.label :password,"password (*)"%>
+        <%=form.password_field :password %>
+  </div>
+  <div class="small-container field">
+        <%=form.label :cpassword,"Confirmar password (*)"%>
+        <%=form.password_field :cpassword %>
+  </div>
+  <div class="field">
+    <%= form.label :activity_type,"Tipo de Facultativo (*)"%>
+    <%=form.select(:activity_type, options_for_select([['FAP', 'FAP'], ['FAE', 'FAE']]), prompt: "Seleccionar...")%>
+  
+  </div>
+ 
+  <div class="padding">
+    <button name="button" type="submit" class="btn btn-primary">Dar de Alta Facultativo </button>
+    </div>
+<% end %>
