@@ -1,175 +1,81 @@
 <%= form_with(model: patient_aacc_symptom) do |form| %>
-  <% if patient_aacc_symptom.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(patient_aacc_symptom.errors.count, "error") %> prohibited this patient_aacc_symptom from being saved:</h2>
 
-      <ul>
-        <% patient_aacc_symptom.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 
 <h1>Exploraciones Fisica y Cardiaca</h1>
 
 
 
-  <div class="field">
-    <%= form.label :aacc_id %>
+
+  <div class="small-container field">
     <%= form.hidden_field :aacc_id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 
   <hr>
 
-    <div>
+    
+  <div class="small-container field">
         <%=form.label :s1,"Talla (*)" %>
-        <%=form.select(:s1, options_for_select([['No Explorado', 'No Explorado'],['Si', 'Sí'], ['No', 'No'],['Desconocido', 'Desconocido']]), prompt: "Please Select")%>
+        
+        <%=form.text_field :s1 %>
+        
     </div>    
-    <div>
+    
+  <div class="small-container field">
         <%=form.label :s2,"Peso (*)" %>
-        <%=form.select(:s2, options_for_select([['No Explorado', 'No Explorado'],['Si', 'Sí'], ['No', 'No'],['Desconocido', 'Desconocido']]), prompt: "Please Select")%>
+        <%=form.text_field :s3 %>
     </div>    
-    <div>
+    
+  <div class="small-container field">
         <%=form.label :s3,"Tensión Arterial (*)" %>
-        <%=form.select(:s3, options_for_select([['No Explorado', 'No Explorado'],['Si', 'Sí'], ['No', 'No'],['Desconocido', 'Desconocido']]), prompt: "Please Select")%>
+        <%=form.text_field :s3 %>
     </div>    
     
     <hr width=400>
-    <div>
+    
+  <div class="small-container field">
         <%=form.label :s4,"Focalidad Neurológica (*)" %>
         <%=form.select(:s4, options_for_select([['No Explorado', 'No Explorado'],['Si', 'Sí'], ['No', 'No'],['Desconocido', 'Desconocido']]), prompt: "Please Select")%>
     </div>    
-    <div>
+    
+  <div class="small-container field">
         <%=form.label :s5,"Crisis Comiciales (*)" %>
         <%=form.select(:s5, options_for_select([['No Explorado', 'No Explorado'],['Si', 'Sí'], ['No', 'No'],['Desconocido', 'Desconocido']]), prompt: "Please Select")%>
     </div>    
-    <div>
+    
+  <div class="small-container field">
         <%=form.label :s6,"Temblor (*)" %>
         <%=form.select(:s6, options_for_select([['No Explorado', 'No Explorado'],['Si', 'Sí'], ['No', 'No'],['Desconocido', 'Desconocido']]), prompt: "Please Select")%>
     </div>    
-    <div>
+    
+  <div class="small-container field">
         <%=form.label :s7,"Parkinsonismo (*)" %>
         <%=form.select(:s7, options_for_select([['No Explorado', 'No Explorado'],['Si', 'Sí'], ['No', 'No'],['Desconocido', 'Desconocido']]), prompt: "Please Select")%>
     </div>    
-    <div>
+    
+  <div class="small-container field">
         <%=form.label :s8,"Alteración de la Marcha (*)" %>
         <%=form.select(:s8, options_for_select([['No Explorado', 'No Explorado'],['Si', 'Sí'], ['No', 'No'],['Desconocido', 'Desconocido']]), prompt: "Please Select")%>
     </div>    
-    <div>
+    
+  <div class="small-container field">
         <%=form.label :s9,"Incontinencia de Esfínteres (*)" %>
         <%=form.select(:s9, options_for_select([['No Explorado', 'No Explorado'],['Si', 'Sí'], ['No', 'No'],['Desconocido', 'Desconocido']]), prompt: "Please Select")%>
     </div>
     <hr width=400>
-    <div>
+    
+  <div class="small-container field">
         <%=form.label :s10,"Soplos Carotideos (*)" %>
         <%=form.select(:s10, options_for_select([['No Explorado', 'No Explorado'],['Si', 'Sí'], ['No', 'No'],['Desconocido', 'Desconocido']]), prompt: "Please Select")%>
     </div>    
-    <div>
-        <%=form.label :s11,"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX (*)" %>
-        <%=form.select(:s11, options_for_select([['No Explorado', 'No Explorado'],['Si', 'Sí'], ['No', 'No'],['Desconocido', 'Desconocido']]), prompt: "Please Select")%>
-    </div>    
-    <div>
-        <%=form.submit "Almacenar Exploraciones Física y Cardiaca"%>
-    </div> 
+    
+  <div class="padding">
+    <button name="button" type="submit" class="btn btn-primary">Almacenar Exploraciones Física y Cardiaca </button>
+    </div>
     <hr>
     
 <% end %>
-<h1>Realización de Tests (esto no va aquí, es para pruebas)</h1>
-  <li class="nav-item">
-    <%= link_to "Realizar Test Informador",patient_aacc_new_test_informador_url(:exploration_type_id => 2, :test_id => 5)%>
-  </li>
-  <li class="nav-item">
-    <%= link_to "Realizar Test Minimental",patient_aacc_new_test_minimental_url(:exploration_type_id => 2, :test_id => 7)%>
-  </li>
-  <li class="nav-item">
-    <%=link_to "Realizar Test MEC",patient_aacc_new_test_mec_url(:exploration_type_id => 2, :test_id => 6)%>
-  </li>
-  <li class="nav-item">
-    <%=link_to "Realizar Test de Pfeiffer",patient_aacc_new_test_pfeiffer_url(:exploration_type_id => 2, :test_id => 8)%>
-  </li>
-
-<li class="nav-item">
-  <%=link_to "Realizar Test del Reloj",patient_aacc_new_test_reloj_url(:exploration_type_id => 2, :test_id => 9)%>
-</li>
-<h1>Exploración Funcional (esto no va aquí, es para pruebas)</h1>
-<li class="nav-item">
-  <%=link_to "Realizar Test Barthel",patient_aacc_new_test_barthel_url(:exploration_type_id => 1, :test_id => 1)%>
-</li>
-<li class="nav-item">
-  <%=link_to "Realizar Test Fast",patient_aacc_new_test_fast_url(:exploration_type_id => 1, :test_id => 2)%>
-</li>
-<li class="nav-item">
-  <%=link_to "Realizar Test Katz",patient_aacc_new_test_katz_url(:exploration_type_id => 1, :test_id => 3)%>
-</li>
-<li class="nav-item">
-  <%=link_to "Realizar Test Lawton-Brody",patient_aacc_new_test_lawton_brody_url(:exploration_type_id => 1, :test_id => 4)%>
-</li>
-<h1>Exploración Funcional (esto no va aquí, es para pruebas)</h1>
-<h1>Sintomatologia No-Cognitiva </h1>
-<li class="nav-item">
-  <%=link_to "Realizar Test Yesavage 4",patient_aacc_new_test_yesavage_4_url(:exploration_type_id => 3, :test_id => 10)%>
-</li>
-<li class="nav-item">
-  <%=link_to "Realizar Test Yesavage 10",patient_aacc_new_test_yesavage_10_url(:exploration_type_id => 3, :test_id => 11)%>
-</li>
-<li class="nav-item">
-  <%=link_to "Realizar Test Yesavage 15",patient_aacc_new_test_yesavage_15_url(:exploration_type_id => 3, :test_id => 12)%>
-</li>
-<li class="nav-item">
-  <%=link_to "Realizar Test Yesavage 30",patient_aacc_new_test_yesavage_30_url(:exploration_type_id => 3, :test_id => 13)%>
-</li>
-<li class="nav-item">
-  <%=link_to "Realizar Test NPI",patient_aacc_new_test_npi_url(:exploration_type_id => 3, :test_id => 14)%>
-</li>
-<h1>Sintomatologia No-Cognitiva </h1>
-    <%=%>
-    <%=%>
-    <%=%>
-    <%=%>
-    TABLA Tests
-
-    <h1>Patient Aacc Tests</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Idn</th>
-      <th>Answers</th>
-      <th>Score</th>
-      <th>Exploration type</th>
-      <th>Test</th>
-      <th>Aacc</th>
-      <th>Patient</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @patient_aacc_tests.each do |patient_aacc_test| %>
-      <tr>
-        <td><%= patient_aacc_test.idn %></td>
-        <td><%= patient_aacc_test.answers %></td>
-        <td><%= patient_aacc_test.score %></td>
-        <td><%= patient_aacc_test.exploration_type_id %></td>
-        <td><%= patient_aacc_test.test_id %></td>
-        <td><%= patient_aacc_test.aacc_id %></td>
-        <td><%= patient_aacc_test.patient_id %></td>
-        <td><%= link_to 'Show', patient_aacc_test %></td>
-        <td><%= link_to 'Edit', edit_patient_aacc_test_path(patient_aacc_test) %></td>
-        <td><%= link_to 'Destroy', patient_aacc_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <br>
-
-<%= link_to 'New Patient Aacc Test', new_patient_aacc_test_path %>
 
 

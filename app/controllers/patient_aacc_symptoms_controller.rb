@@ -43,6 +43,10 @@ class PatientAaccSymptomsController < ApplicationController
     @paciente = Patient.find(params[:patient_id])
     @aacc = Aacc.find(params[:aacc_id])
   end
+  def exploracion_fisica
+    @paciente = Patient.find(params[:patient_id])
+    @aacc = Aacc.find(params[:aacc_id])
+  end
   def exploracion_neurologica
     @patient_aacc_symptom = PatientAaccSymptom.new
     @paciente = Patient.find(params[:patient_id])

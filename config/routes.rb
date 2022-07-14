@@ -53,6 +53,7 @@ Rails.application.routes.draw do
 
       get 'exploracion_funcional', to: "patient_aacc_symptoms#exploracion_funcional", as: :exploracion_funcional
       get 'exploracion_neurologica', to: "patient_aacc_symptoms#exploracion_neurologica", as: :exploracion_neurologica
+      get 'exploracion_fisica', to: "patient_aacc_symptoms#exploracion_fisica", as: :exploracion_fisica
       get 'patient_aacc_tests/new_test_barthel', to: "patient_aacc_tests#new_test_barthel", as: :new_test_barthel
       get 'patient_aacc_tests/new_test_fast', to: "patient_aacc_tests#new_test_fast", as: :new_test_fast
       get 'patient_aacc_tests/new_test_informador', to: "patient_aacc_tests#new_test_informador", as: :new_test_informador
@@ -67,10 +68,8 @@ Rails.application.routes.draw do
       get 'patient_aacc_tests/new_test_yesavage_10', to: "patient_aacc_tests#new_test_yesavage_10", as: :new_test_yesavage_10
       get 'patient_aacc_tests/new_test_yesavage_15', to: "patient_aacc_tests#new_test_yesavage_15", as: :new_test_yesavage_15
       get 'patient_aacc_tests/new_test_yesavage_30', to: "patient_aacc_tests#new_test_yesavage_30", as: :new_test_yesavage_30
-        #get 'profile', action: :show, controller: 'users'
     end
   end
-  get "calculator", to: "calculator#index"
   get "aacc/all_history", to: "aaccs#all_history", as: :all_history
   get "aacc/diagnosis_history", to: "aaccs#diagnosis_history", as: :diagnosis_history
   get "aacc/fe_history", to: "aaccs#fe_history", as: :fe_history
@@ -82,6 +81,7 @@ Rails.application.routes.draw do
   get "aacc/habits_history", to: "aaccs#habits_history", as: :habits_history
   resources :calculator
   #get 'patients/:patient_id/aaccs/:id/edit', to: 'aaccs#edit'
+  get "calculator", to: "calculator#index"
 
 
 end

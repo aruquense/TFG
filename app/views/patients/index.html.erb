@@ -26,7 +26,6 @@
         <th>NIF</th>
         <th>F.NAC</th>
         <th>SEXO</th>
-        <th>EXITUS</th>
         <th>PACIENTE</th>
         <th>HIST. CLINICA</th>
         
@@ -49,7 +48,6 @@
           <td><%= patient.nif %></td>
           <td><%= patient.birthdate %></td>
           <td><%= patient.gender %></td>
-          <td><%= patient.exitus %></td>
           <td><%= link_to 'Más datos', patient  %></td>
           <td><%= link_to 'Ver Historia', patient_aaccs_path(patient) %></td>
 
@@ -61,8 +59,6 @@
   </table>
 
   <br>
-
-  <%= link_to 'New Patient', new_patient_path %>
 
         
 </body>
